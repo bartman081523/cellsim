@@ -1,0 +1,15 @@
+{
+  "distance_nm": 1000.0,
+  "coupling_strength": 1.0,
+  "t_end_s": 100.0,
+  "correlation_r": 0.9999867325683675,
+  "signal": "STRONG",
+  "atp_a_final": 171.03769585193893,
+  "atp_b_final": 170.84900454998498,
+  "n_samples": 100,
+  "next_vectors": [
+    "iter-3: Radikal-Paar-Magnetorezeption",
+    "iter-4: QuQuint-Beschleunigung der RDME-Raten",
+    "iter-5: N>2 Zellen \u2192 populations-Synchronisation"
+  ]
+}

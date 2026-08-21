@@ -1,0 +1,16 @@
+{
+  "schwarzkoerper_200nm_W_per_m2_per_nm": 6.138444381916444e-93,
+  "schwarzkoerper_250nm_W_per_m2_per_nm": 2.8843774105884667e-73,
+  "schwarzkoerper_300nm_W_per_m2_per_nm": 3.175716599308563e-60,
+  "schwarzkoerper_350nm_W_per_m2_per_nm": 5.827227766800872e-51,
+  "schwarzkoerper_400nm_W_per_m2_per_nm": 4.72354340642873e-44,
+  "chemolumineszenz_photons_per_s": 10.0,
+  "flux_1um_photons_per_cm2_per_s": 79577471.54594769,
+  "flux_10um_photons_per_cm2_per_s": 795774.7154594768,
+  "signal": "STRONG",
+  "next_vectors": [
+    "iter-2: UV-Phasen-Synchronisation zwischen Zellen",
+    "iter-3: Radikal-Paar-Magnetorezeption (Schulten)",
+    "iter-4: QuQuint-Beschleunigung der RDME-Ratenberechnung"
+  ]
+}
