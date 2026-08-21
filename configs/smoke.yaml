@@ -1,0 +1,28 @@
+# Smoke-Konfiguration — 60 s sim, single-CPU.
+
+rdme:
+  voxel_nm: 10.0
+  dt_s: 1.0e-3
+  diffusion_bulk_nm2_per_ms: 1.0e3
+  crowding_alpha: 1.0
+
+ode:
+  dt_s: 1.0e-1
+  glucose_initial_mM: 5.0
+  atp_initial_mM: 2.0
+
+membrane:
+  radius_initial_nm: 200.0
+  radius_mature_nm: 400.0
+  growth_rate_per_s: 0.01
+
+chromosome:
+  n_beads: 50            # kleiner für Smoke
+  spring_constant: 1.0
+  excluded_volume_radius_nm: 50.0
+
+driver:
+  sync_interval: 100
+
+seeds:
+  base: 49582

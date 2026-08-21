@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cellsim"
+version = "0.1.0"
+description = "Minimaler JCVI-syn3A-Simulator als L3-Kern der 4-Schichten-Architektur"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Cellsim contributors" },
+]
+keywords = ["systems-biology", "rdme", "whole-cell-model", "jcvi-syn3a"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "biopython>=1.81",
+  "requests>=2.31",
+  "pyyaml>=6.0",
+  "typer>=0.9",
+  "tqdm>=4.66",
+  "matplotlib>=3.8",
+  "pandas>=2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "pytest-cov>=4.1",
+  "ruff>=0.1",
+  "mypy>=1.7",
+]
+
+[project.scripts]
+cellsim = "cellsim.cli.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cellsim = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --tb=short"
+markers = [
+  "smoke: end-to-end smoke tests (slow, real I/O)",
+  "integration: adapter coupling tests",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM"]
+ignore = ["E501", "B008", "UP042"]   # UP042: str+Enum statt StrEnum; bewusst für Python 3.11-Kompat
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true

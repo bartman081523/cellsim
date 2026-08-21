@@ -1,0 +1,1 @@
+"""Zustandslose Berechnungsmodule."""

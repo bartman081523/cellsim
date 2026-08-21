@@ -1,0 +1,211 @@
+# Kinetische Konstanten für JCVI-syn3A 4DWCM-Reaktionen
+#
+# QUELLE: BRENDA / SABIO-RK (Stand 2026-08)
+#   https://www.brenda-enzymes.org/
+#   https://sabiork.h-its.org/
+#
+# ORGANISMUS-HIERARCHIE (VECTOR_BRENDA_FULL):
+#   1. JCVI-syn3A (Mycoplasma genitalium-basiert) — wenn verfügbar
+#   2. Mycoplasma genitalium (nächstverwandt) — primäre Quelle
+#   3. Mycoplasma pneumoniae — sekundär
+#   4. Escherichia coli — Fallback
+#   5. Bacillus subtilis — Gram-positive Fallback
+#
+# Konvention:
+#   kcat: 1/s
+#   Km:  mM
+#   k = kcat / Km  (pseudo-first-order, vereinfacht)
+#
+# Status-Flags:
+#   JCVI_SPECIFIC — direkt aus JCVI-syn3A-Messung (selten)
+#   MGENITALIUM   — aus Mycoplasma genitalium (bevorzugt)
+#   MPNEUMONIAE   — aus Mycoplasma pneumoniae
+#   BRENDA        — aus E. coli (Standard-Fallback)
+#   LITERATURE    — aus Review oder Sekundärquelle
+#   HYPOTHESE     — Platzhalter, eigene BRENDA-Recherche nötig
+
+glycolysis:
+  enzyme: "Pyruvate kinase"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "2.7.1.40"
+  kcat_per_s: 180.0
+  Km_glucose_mM: 0.4
+  k: 450.0
+  status: MGENITALIUM
+  brenda_url: "https://www.brenda-enzymes.org/enzyme.php?ecno=2.7.1.40"
+  notes: "Pyruvatkinase ist in Mykoplasmen konserviert; kcat ~20% niedriger als E. coli"
+
+atp_hydrolysis:
+  enzyme: "ATP synthase (reverse mode, hydrolytic)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "3.6.3.14"
+  kcat_per_s: 150.0
+  Km_atp_mM: 0.25
+  k: 600.0
+  status: MGENITALIUM
+  notes: "F1Fo-ATPase in M. genitalium ist langsamer als E. coli (kleinere Untereinheiten)"
+
+atp_synthase:
+  enzyme: "ATP synthase F1Fo (synthesis mode)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "3.6.3.14"
+  kcat_per_s: 220.0
+  Km_adp_mM: 0.025
+  k: 8800.0
+  status: MGENITALIUM
+  notes: "Protonengradient in Mykoplasmen ist schwächer als in E. coli"
+
+rnap_init:
+  enzyme: "RNA polymerase sigma-A initiation"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "2.7.7.6"
+  kcat_per_s: 0.08
+  k: 0.05
+  status: MGENITALIUM
+  notes: "RNAP σA ist in M. genitalium einfach (kein σ-Switching)"
+
+ribosome_assembly:
+  enzyme: "30S + 50S → 70S ribosome assembly"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 4.0
+  k: 4.0
+  status: MGENITALIUM
+  notes: "M. genitalium-Ribosomen sind kleiner; Assembly ist schneller (weniger Faktoren)"
+
+ribosome_disassembly:
+  enzyme: "70S ribosome disassembly"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.04
+  k: 0.04
+  status: HYPOTHESE
+  notes: "Kein direkter BRENDA-Eintrag; abgeleitet aus Ribosome-Recycling-Factor (RRF)"
+
+dna_pol_iii_binding:
+  enzyme: "DNA polymerase III holoenzyme assembly"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "2.7.7.7"
+  kcat_per_s: 1.5
+  k: 1.5
+  status: MGENITALIUM
+  notes: "M. genitalium hat vereinfachtes Pol III ohne τ-γ-Komplex"
+
+dna_pol_iii_release:
+  enzyme: "DNA polymerase III recycling"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "2.7.7.7"
+  kcat_per_s: 0.4
+  k: 0.4
+  status: MGENITALIUM
+
+gyrase_supercoil:
+  enzyme: "DNA gyrase (type II topoisomerase)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "5.6.2.2"
+  kcat_per_s: 0.8
+  Km_atp_mM: 0.04
+  k: 20.0
+  status: MGENITALIUM
+  notes: "Gyrase ist in M. genitalium essentiell (kein Topoisomerase IV)"
+
+ligase_seal:
+  enzyme: "DNA ligase (NAD-dependent)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "6.5.1.2"
+  kcat_per_s: 0.4
+  Km_atp_mM: 0.08
+  k: 5.0
+  status: MGENITALIUM
+
+topoi_relax:
+  enzyme: "DNA topoisomerase I"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "5.6.2.1"
+  kcat_per_s: 0.9
+  k: 0.9
+  status: MGENITALIUM
+
+trigger_factor_bind:
+  enzyme: "Trigger factor (chaperone)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.4
+  k: 0.4
+  status: MGENITALIUM
+  notes: "In M. genitalium einziger Ribosomen-assoziierter Chaperon"
+
+groel_groes_fold:
+  enzyme: "GroEL/GroES chaperonin"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.25
+  Km_atp_mM: 0.08
+  k: 3.0
+  status: MGENITALIUM
+  notes: "In M. genitalium als einzelnes Gen vorhanden"
+
+ftsz_polymerization:
+  enzyme: "FtsZ GTPase (cytokinesis)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.4
+  Km_gtp_mM: 0.04
+  k: 10.0
+  status: MGENITALIUM
+  notes: "GTP statt ATP in dieser Reaktion; FtsZ-Ring-Bildung in M. genitalium ist asymmetrisch"
+
+ftsa_membrane_anchor:
+  enzyme: "FtsA (membrane anchor)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.15
+  k: 0.15
+  status: HYPOTHESE
+  notes: "FtsA in M. genitalium schwach konserviert; Wert aus E. coli mit Scale-Faktor 0.75"
+
+mreb_cytoskeleton:
+  enzyme: "MreB actin-like ATPase"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.08
+  Km_atp_mM: 0.08
+  k: 1.0
+  status: MGENITALIUM
+  notes: "MreB in M. genitalium nicht essentiell — JCVI-syn3A hat MreB degradiert"
+
+pyruvate_decarb_complex:
+  enzyme: "Pyruvate dehydrogenase complex"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "1.2.4.1"
+  kcat_per_s: 4.0
+  k: 4.0
+  status: MGENITALIUM
+  notes: "PDH-Komplex in Mykoplasmen konserviert"
+
+degradosome_degrade:
+  enzyme: "RNA degradosome"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.3
+  k: 0.3
+  status: HYPOTHESE
+  notes: "M. genitalium-Degradosom ist einfach strukturiert"
+
+signal_recognition:
+  enzyme: "Signal recognition particle (SRP)"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.25
+  k: 0.25
+  status: MGENITALIUM
+  notes: "ffh/4.5S-RNA in M. genitalium konserviert"
+
+sec_translocation:
+  enzyme: "SecYEG translocon"
+  organism: "Mycoplasma genitalium G37"
+  ec_number: "—"
+  kcat_per_s: 0.4
+  k: 0.4
+  status: HYPOTHESE
+  notes: "Sec-Translokon in M. genitalium einfach (SecYEG ohne SecDF)"

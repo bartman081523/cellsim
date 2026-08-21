@@ -1,0 +1,29 @@
+# cellsim default config
+# RDME/ODE Defaults — werden via dataclass in cellsim.core konsolidiert.
+
+rdme:
+  voxel_nm: 10.0        # Voxel-Kantenlänge
+  dt_s: 1.0e-3          # 1 ms
+  diffusion_bulk_nm2_per_ms: 1.0e3  # 10^3 nm²/ms ≈ 10^(-9) m²/s
+  crowding_alpha: 1.0   # Faktor in exp(-alpha * V_ex_total / V_voxel)
+
+ode:
+  dt_s: 1.0e-1          # 100 ms
+  glucose_initial_mM: 5.0
+  atp_initial_mM: 2.0   # typisch für Bakterien
+
+membrane:
+  radius_initial_nm: 200.0
+  radius_mature_nm: 400.0
+  growth_rate_per_s: 0.01  # 1 % Radius-Wachstum pro Sekunde (linear)
+
+chromosome:
+  n_beads: 200
+  spring_constant: 1.0
+  excluded_volume_radius_nm: 50.0
+
+driver:
+  sync_interval: 100    # alle 100 RDME-Schritte ODE-Sync
+
+seeds:
+  base: 49582           # 0xC1CE
