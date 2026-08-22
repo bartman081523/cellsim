@@ -1,0 +1,215 @@
+{
+  "results": [
+    {
+      "coupling_strength": 1e-06,
+      "distance_nm": 500.0,
+      "r_full": 0.9895838796827269,
+      "r_steady": 0.9999937354979737,
+      "atp_a_final": 0.06518158366257203,
+      "atp_b_final": 0.07401886718971858,
+      "atp_diff_final": 0.00883728352714655,
+      "distance_nm_run": 500.0,
+      "coupling_run": 1e-06
+    },
+    {
+      "coupling_strength": 0.0001,
+      "distance_nm": 500.0,
+      "r_full": 0.989570209751055,
+      "r_steady": 0.9999936939931341,
+      "atp_a_final": 0.07378551967154359,
+      "atp_b_final": 0.08264366627407388,
+      "atp_diff_final": 0.008858146602530287,
+      "distance_nm_run": 500.0,
+      "coupling_run": 0.0001
+    },
+    {
+      "coupling_strength": 0.01,
+      "distance_nm": 500.0,
+      "r_full": 0.9881861788468191,
+      "r_steady": 0.9998423397338241,
+      "atp_a_final": 0.9341791205686917,
+      "atp_b_final": 0.9451235747096035,
+      "atp_diff_final": 0.01094445414091183,
+      "distance_nm_run": 500.0,
+      "coupling_run": 0.01
+    },
+    {
+      "coupling_strength": 1.0,
+      "distance_nm": 500.0,
+      "r_full": 0.9996127357880713,
+      "r_steady": 0.8002428280365692,
+      "atp_a_final": 86.97353921028342,
+      "atp_b_final": 87.19311441826265,
+      "atp_diff_final": 0.2195752079792328,
+      "distance_nm_run": 500.0,
+      "coupling_run": 1.0
+    },
+    {
+      "coupling_strength": 100.0,
+      "distance_nm": 500.0,
+      "r_full": 0.9996287226767214,
+      "r_steady": 0.8899348810415068,
+      "atp_a_final": 8690.909548181766,
+      "atp_b_final": 8711.992198773567,
+      "atp_diff_final": 21.08265059180121,
+      "distance_nm_run": 500.0,
+      "coupling_run": 100.0
+    },
+    {
+      "coupling_strength": 10000.0,
+      "distance_nm": 500.0,
+      "r_full": 0.9996283110204014,
+      "r_steady": 0.8905134731721157,
+      "atp_a_final": 869084.5104453303,
+      "atp_b_final": 871191.9006343039,
+      "atp_diff_final": 2107.39018897363,
+      "distance_nm_run": 500.0,
+      "coupling_run": 10000.0
+    },
+    {
+      "coupling_strength": 1e-06,
+      "distance_nm": 1000.0,
+      "r_full": 0.9895840148906091,
+      "r_steady": 0.9999937357726386,
+      "atp_a_final": 0.06509645868792442,
+      "atp_b_final": 0.07393353580154569,
+      "atp_diff_final": 0.008837077113621264,
+      "distance_nm_run": 1000.0,
+      "coupling_run": 1e-06
+    },
+    {
+      "coupling_strength": 0.0001,
+      "distance_nm": 1000.0,
+      "r_full": 0.9895837344458658,
+      "r_steady": 0.9999937351999705,
+      "atp_a_final": 0.06527302220678868,
+      "atp_b_final": 0.0741105274567883,
+      "atp_diff_final": 0.008837505249999614,
+      "distance_nm_run": 1000.0,
+      "coupling_run": 0.0001
+    },
+    {
+      "coupling_strength": 0.01,
+      "distance_nm": 1000.0,
+      "r_full": 0.9895556735947727,
+      "r_steady": 0.9999936200095788,
+      "atp_a_final": 0.08292937409320185,
+      "atp_b_final": 0.09180969298105598,
+      "atp_diff_final": 0.008880318887854136,
+      "distance_nm_run": 1000.0,
+      "coupling_run": 0.01
+    },
+    {
+      "coupling_strength": 1.0,
+      "distance_nm": 1000.0,
+      "r_full": 0.9868226756673688,
+      "r_steady": 0.9993137900872733,
+      "atp_a_final": 1.8485645627345446,
+      "atp_b_final": 1.8617262454078274,
+      "atp_diff_final": 0.01316168267328277,
+      "distance_nm_run": 1000.0,
+      "coupling_run": 1.0
+    },
+    {
+      "coupling_strength": 100.0,
+      "distance_nm": 1000.0,
+      "r_full": 0.9996354311366973,
+      "r_steady": 0.8559099344969248,
+      "atp_a_final": 178.41208342686878,
+      "atp_b_final": 178.85338148808503,
+      "atp_diff_final": 0.4412980612162585,
+      "distance_nm_run": 1000.0,
+      "coupling_run": 100.0
+    },
+    {
+      "coupling_strength": 10000.0,
+      "distance_nm": 1000.0,
+      "r_full": 0.9996285108355552,
+      "r_steady": 0.8902350685209778,
+      "atp_a_final": 17834.7639698403,
+      "atp_b_final": 17878.018905755776,
+      "atp_diff_final": 43.25493591547638,
+      "distance_nm_run": 1000.0,
+      "coupling_run": 10000.0
+    },
+    {
+      "coupling_strength": 1e-06,
+      "distance_nm": 5000.0,
+      "r_full": 0.9895840177233667,
+      "r_steady": 0.9999937357783646,
+      "atp_a_final": 0.06509467521803702,
+      "atp_b_final": 0.07393174800704841,
+      "atp_diff_final": 0.008837072789011385,
+      "distance_nm_run": 5000.0,
+      "coupling_run": 1e-06
+    },
+    {
+      "coupling_strength": 0.0001,
+      "distance_nm": 5000.0,
+      "r_full": 0.9895840177233666,
+      "r_steady": 0.9999937357783653,
+      "atp_a_final": 0.06509467521805158,
+      "atp_b_final": 0.073931748007063,
+      "atp_diff_final": 0.008837072789011413,
+      "distance_nm_run": 5000.0,
+      "coupling_run": 0.0001
+    },
+    {
+      "coupling_strength": 0.01,
+      "distance_nm": 5000.0,
+      "r_full": 0.9895840177233663,
+      "r_steady": 0.9999937357783643,
+      "atp_a_final": 0.06509467521950713,
+      "atp_b_final": 0.07393174800852231,
+      "atp_diff_final": 0.008837072789015188,
+      "distance_nm_run": 5000.0,
+      "coupling_run": 0.01
+    },
+    {
+      "coupling_strength": 1.0,
+      "distance_nm": 5000.0,
+      "r_full": 0.9895840177231335,
+      "r_steady": 0.9999937357783644,
+      "atp_a_final": 0.06509467536507728,
+      "atp_b_final": 0.0739317481544448,
+      "atp_diff_final": 0.008837072789367517,
+      "distance_nm_run": 5000.0,
+      "coupling_run": 1.0
+    },
+    {
+      "coupling_strength": 100.0,
+      "distance_nm": 5000.0,
+      "r_full": 0.9895840177000133,
+      "r_steady": 0.9999937357783173,
+      "atp_a_final": 0.06509468992205865,
+      "atp_b_final": 0.07393176274672471,
+      "atp_diff_final": 0.008837072824666059,
+      "distance_nm_run": 5000.0,
+      "coupling_run": 100.0
+    },
+    {
+      "coupling_strength": 10000.0,
+      "distance_nm": 5000.0,
+      "r_full": 0.9895840153878674,
+      "r_steady": 0.9999937357736435,
+      "atp_a_final": 0.06509614562020458,
+      "atp_b_final": 0.07393322197468975,
+      "atp_diff_final": 0.008837076354485177,
+      "distance_nm_run": 5000.0,
+      "coupling_run": 10000.0
+    }
+  ],
+  "signal": "CONTRADICTION",
+  "low_coupling_rs": [
+    0.9999937354979737,
+    0.9999937357726386,
+    0.9999937357783646
+  ],
+  "max_r": 0.9999937357783653,
+  "min_r": 0.8002428280365692,
+  "next_vectors": [
+    "iter-3: Radikal-Paar-Magnetorezeption (Cryptochrom)",
+    "iter-4: N=10 Zellen \u2192 populations-Synchronisation",
+    "Falls CONTRADICTION: 2-Zellen-ODE hat zu wenig Freiheitsgrade, echte ATP-Dynamik braucht mehrere Spezies"
+  ]
+}
