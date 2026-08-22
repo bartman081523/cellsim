@@ -1,0 +1,73 @@
+{
+  "results": [
+    {
+      "gamma": 0.01,
+      "eigenvalues": [
+        0.9999000049994168,
+        1.9999999950006668,
+        3.000000000000001,
+        4.0000000049993325,
+        5.000099995000582
+      ],
+      "ground_state": 0.9999000049994168,
+      "matrix_norm": 7.4162524228885305
+    },
+    {
+      "gamma": 0.02,
+      "eigenvalues": [
+        0.9996000799626892,
+        1.9999999200426433,
+        2.9999999999999996,
+        4.000000079957358,
+        5.000399920037309
+      ],
+      "ground_state": 0.9996000799626892,
+      "matrix_norm": 7.4164142279136485
+    },
+    {
+      "gamma": 0.05,
+      "eigenvalues": [
+        0.9975031159197205,
+        1.9999968853804642,
+        3.0000000000000004,
+        4.000003114619536,
+        5.00249688408028
+      ],
+      "ground_state": 0.9975031159197205,
+      "matrix_norm": 7.417546764261079
+    },
+    {
+      "gamma": 0.1,
+      "eigenvalues": [
+        0.9900494253375812,
+        1.9999506575102348,
+        2.999999999999999,
+        4.000049342489765,
+        5.009950574662418
+      ],
+      "ground_state": 0.9900494253375812,
+      "matrix_norm": 7.421590126111789
+    },
+    {
+      "gamma": 0.5,
+      "eigenvalues": [
+        0.7745646675365595,
+        1.976556019596902,
+        3.0000000000000004,
+        4.023443980403099,
+        5.225435332463441
+      ],
+      "ground_state": 0.7745646675365595,
+      "matrix_norm": 7.54983443527075
+    }
+  ],
+  "dimension": 5,
+  "threshold_factor_ququint_vs_qubit": 36.3,
+  "ccz_gate_ratio": 1,
+  "signal": "STRONG",
+  "next_vectors": [
+    "iter-5b: Hamiltonian f\u00fcr ATP-Synthase (echte Enzym-Daten)",
+    "iter-5c: VQE-Circuit-Simulation (CCZ-Gate-Vergleich 4 M vs. 7 T)",
+    "Falls STRONG: \u2192 production-code in src/cellsim/quantum/vqe_circuit.py"
+  ]
+}

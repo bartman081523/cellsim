@@ -9,6 +9,7 @@ Modelliert 2 Zellen A und B mit:
 from __future__ import annotations
 
 import math
+
 import numpy as np
 
 # Konsistente Konstanten

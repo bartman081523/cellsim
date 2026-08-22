@@ -15,13 +15,9 @@ Modell:
 
 from __future__ import annotations
 
-import math
 import json
-
-import numpy as np
-
-from dataclasses import dataclass, field
-
+import math
+from dataclasses import dataclass
 
 MU_B = 9.274_010_0783e-24    # Bohr-Magneton [J/T]
 G_E = -2.002_319_30436256    # freier Elektron g-Faktor
@@ -174,7 +170,7 @@ def run_iter3(
 
 if __name__ == "__main__":
     result = run_iter3()
-    print(f"=== iter-3: Radikal-Paar-Cryptochrom ===")
+    print("=== iter-3: Radikal-Paar-Cryptochrom ===")
     print(f"Signal: {result['signal']}")
     print(f"Yield-Bereich: {result['yield_range']:.4f}")
     print(f"\n{'B [µT]':>10s} {'ω [Hz]':>15s} {'Yield':>8s}")

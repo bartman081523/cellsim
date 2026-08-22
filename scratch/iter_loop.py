@@ -140,7 +140,7 @@ def write_run_summary() -> Path:
         lines.append(f"**Hypothese:** {r.hypothesis}\n")
         lines.append(f"**Result:** {r.result}\n")
         if r.next_vectors:
-            lines.append(f"**Nächste Vektoren:**\n")
+            lines.append("**Nächste Vektoren:**\n")
             for v in r.next_vectors:
                 lines.append(f"- {v}\n")
     target.write_text("\n".join(lines), encoding="utf-8")
