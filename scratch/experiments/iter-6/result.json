@@ -1,0 +1,93 @@
+{
+  "temperature_sweep": [
+    {
+      "temperature_K": 77,
+      "k_classical": 1.880042329921898e-27,
+      "k_quantum": 7.861317156729279e-18,
+      "enhancement_factor": 4181457529.765225
+    },
+    {
+      "temperature_K": 150,
+      "k_classical": 1.5875937562011974e-11,
+      "k_quantum": 7.382816918655376e-10,
+      "enhancement_factor": 46.50318691301116
+    },
+    {
+      "temperature_K": 200,
+      "k_classical": 2.515095827087227e-07,
+      "k_quantum": 3.4243577194769074e-07,
+      "enhancement_factor": 1.3615217689111716
+    },
+    {
+      "temperature_K": 250,
+      "k_classical": 8.326138471369986e-05,
+      "k_quantum": 8.491577237096158e-05,
+      "enhancement_factor": 1.019869807149502
+    },
+    {
+      "temperature_K": 310,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.007451397957643008,
+      "enhancement_factor": 1.0021027430104854
+    },
+    {
+      "temperature_K": 350,
+      "k_classical": 0.06314178834148633,
+      "k_quantum": 0.0631873583446598,
+      "enhancement_factor": 1.0007217090990046
+    },
+    {
+      "temperature_K": 400,
+      "k_classical": 0.5015073107231067,
+      "k_quantum": 0.5016357972483324,
+      "enhancement_factor": 1.0002562007023197
+    }
+  ],
+  "width_sweep": [
+    {
+      "width_angstrom": 0.3,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.015211598670008276,
+      "enhancement_factor": 2.0457348861839244
+    },
+    {
+      "width_angstrom": 0.5,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.007451397957643008,
+      "enhancement_factor": 1.0021027430104854
+    },
+    {
+      "width_angstrom": 0.7,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.007435793899651373,
+      "enhancement_factor": 1.0000042281540251
+    },
+    {
+      "width_angstrom": 1.0,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.007435762462937202,
+      "enhancement_factor": 1.0000000003812393
+    },
+    {
+      "width_angstrom": 1.5,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.007435762460102397,
+      "enhancement_factor": 1.0
+    },
+    {
+      "width_angstrom": 2.0,
+      "k_classical": 0.007435762460102397,
+      "k_quantum": 0.007435762460102397,
+      "enhancement_factor": 1.0
+    }
+  ],
+  "max_enhancement_at_77K": 4181457529.765225,
+  "enhancement_at_310K": 1.0021027430104854,
+  "signal": "STRONG",
+  "next_vectors": [
+    "iter-6b: Kohen & Klinman-Enzym-Sweep (MCF, AARS, SLO)",
+    "iter-6c: Isotop-Effekt (H/D/T) als Validierung",
+    "Falls STRONG: \u2192 production-code in src/cellsim/quantum/tunneling.py",
+    "Falls WEAK: Proton-Tunneling als L3-Modul statt L_new"
+  ]
+}

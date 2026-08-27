@@ -189,8 +189,6 @@ def synthesis_signal(comp: dict[str, dict]) -> str:
     """Bestimmt das Signal aus dem Vergleich."""
     r_iso = comp["isolated"]["r_global_mean"]
     r_uv = comp["uv"]["r_global_mean"]
-    r_crypto = comp["crypto"]["r_global_mean"]
-    r_uv_signal = r_uv - r_iso  # Differenz zur Kontrolle
     if r_uv > 0.7 and r_uv - r_iso > 0.3:
         return "STRONG"
     elif r_uv > 0.3 and r_uv - r_iso > 0.1:
