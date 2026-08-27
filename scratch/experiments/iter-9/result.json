@@ -1,0 +1,18 @@
+{
+  "n_steps": 5000,
+  "atp_min_mM": 2.000439980900399,
+  "atp_max_mM": 3.7690957866911536,
+  "atp_mean_mM": 2.9528194574807,
+  "atp_stable": 1.0,
+  "chromo_yield_mean": 0.5,
+  "chromo_yield_var": 0.5,
+  "em_uv_final": 10.0,
+  "rdme_particles_final": 83200,
+  "n_modules_active": 5,
+  "signal": "STRONG",
+  "next_vectors": [
+    "iter-9b: 10 integrierte Zellen in einer Suspension (UV-Kopplung mit realistischer ODE)",
+    "iter-9c: Vergleich gegen JCVI-syn3A-Wachstumsdaten (biologische Validierung)",
+    "Falls STRONG: \u2192 driver/integration.py in cellsim.core als Standard-Sim"
+  ]
+}

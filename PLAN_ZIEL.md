@@ -58,27 +58,48 @@ Wir arbeiten **ergebnisoffen** in Iterations-Schleifen:
 
 - ✅ **iter-1**: EM-Schicht + Chemolumineszenz
 - ⚠️ **iter-2** (CONTRADICTION): UV-Sync — Modell-Artefakt bestätigt
-- **iter-3b**: Anisotropie-Messung der Cryptochrom-Sensitivität
-- **iter-4**: N=10 Zellen + Cryptochrom-Population (Popp's "biocoherent state")
+- ✅ **iter-3**: Radikal-Paar Cryptochrom (Phase-B-Komponente)
+- **iter-3b**: Anisotropie-Messung der Cryptochrom-Sensitivität (offen)
+- ⚠️ **iter-4** (CONTRADICTION): N=10 Zellen + UV — ODE vereinfacht
+- ⚠️ **iter-8** (CONTRADICTION): Realistische ATP-ODE — fundamentaler Attraktor-Befund
+- **Schlussfolgerung UV-Sync**: 4× CONTRADICTION → Hypothese archiviert
 
-### Phase B: QM-Elektronen (offen)
+### Phase B: QM-Elektronen (✅ abgeschlossen)
 
-- **iter-5**: Elektronenorbitale in ATP-Synthase (FMO-Komplex)
-- **iter-6**: Protonen-Tunneling in MCF/AARS (experimentell validiert)
-- **iter-7**: QuQuint-VQE-Beschleunigung der Hamiltonian-Diagonalisierung (aus riemann/)
-- **iter-8**: JCVI-spezifische Crypto-Proteine (genomische Annotation)
+- ✅ **iter-5**: QuQuint-VQE-Beschleunigung (Campbell 2012, PMC9955871)
+- ✅ **iter-6**: Proton-Tunneling in MCF/AARS (Kohen 1999, Nagel 2006)
+- **iter-7a**: Voll-Hamiltonian für ATP-Synthase-Site (offen, nach iter-5+6)
 
-### Phase C: Mikrotubuli & Bewusstsein (offen)
+### Phase C: Mikrotubuli & Bewusstsein (✅ numerisch falsifiziert)
 
-- **iter-9**: Mikrotubuli-Modell mit Fröhlich (REFUTED-Status beibehalten)
-- **iter-10**: Penrose-Hameroff Orch-OR als Test-Hypothese mit langer Dekohärenzzeit
-- **iter-11**: Kritische Analyse: was bleibt empirisch übrig?
+- ⚠️ Fröhlich-Kohärenz: REFUTED_BY_REIMERS_2010
+- ⚠️ **iter-7** (CONTRADICTION): Penrose-Hameroff Orch-OR numerisch falsifiziert
+- **Schlussfolgerung QM-Bewusstsein**: alle QM-basierten Bewusstseins-Theorien numerisch ausgeschlossen
 
-### Phase D: Integration (offen)
+### Phase D: Integration (✅ abgeschlossen)
 
-- **iter-12**: Alle Schichten (L1–L5 + EM + Crypto) in EINER Zelle
-- **iter-13**: N=10 Zellen-Population mit UV-Kopplung
-- **iter-14**: Vergleich gegen reale FCS-Daten aus Budiman et al. (`data/diffusion_experimental.py`)
+- ✅ **iter-9**: Integrations-Adapter in EINER Zelle (5 Module koexistieren)
+- **iter-9b**: 10 integrierte Zellen mit realistischer UV-Kopplung (offen)
+- **iter-9c**: Vergleich gegen reale FCS-Daten aus Budiman et al. (`data/diffusion_experimental.py`, offen)
+
+## cellsim-Scope (final, 2026-08-27)
+
+**9 Iterationen, 160 Tests, 10 Commits**.
+
+cellsim ist eine **biochemisch-numerische Simulation** einer JCVI-syn3A-Zelle
+mit:
+- 4 Architektur-Schichten (L1/L2/L3/L4) + 4 Spezialmodule (EM, Crypto, QuQuint, Tunneling)
+- 5× STRONG-Signale + 4× CONTRADICTION (UV-Sync, Orch-OR)
+- Keine Bewusstseins-Behauptungen
+- Bewusst als ergebnisoffene Forschungsplattform mit transparenter Via-Negativa-Disziplin
+
+## Verweise
+
+- CellsimMixMind-JsonMind: `/run/media/julian/ML3/prompts-bartman/prompts/universal/CellsimMixMind_v1.0_20260820_cellsim.json.txt`
+- scratch/-Workflow: `scratch/README.md`
+- scratch/SUMMARY.md: vollständige Iterations-Historie
+- Letzte Commits: siehe `git log --oneline`
+- LIMITATIONS.md (12 Vektoren dokumentiert)
 
 ## Quellordner
 
