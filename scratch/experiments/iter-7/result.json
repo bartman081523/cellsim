@@ -1,0 +1,14 @@
+{
+  "tau_collapse_s": 5.655890937522977e-37,
+  "tau_decoherence_s": 2.4639459927669826e-10,
+  "ratio": 2.2954605961843657e-27,
+  "decoherence_cycles_per_cognitive_step": 405853051.5423399,
+  "hameroff_claim_104_cycles": 10000.0,
+  "signal": "CONTRADICTION",
+  "is_viable": false,
+  "next_vectors": [
+    "Falls CONTRADICTION: \u2192 Orch-OR als Theorie verwerfen? Oder Hagan-Antwort pr\u00fcfen (structured water)?",
+    "Falls WEAK: \u2192 iter-7b mit strukturiertem Wasser (Debye-H\u00fcckel-Effekt)",
+    "Falls STRONG: \u2192 iter-7c mit realistischen Tubulin-Daten"
+  ]
+}

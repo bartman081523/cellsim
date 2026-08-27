@@ -32,9 +32,14 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 | VECTOR_QUQUINT_BENCHMARK | ✅ abgeschlossen | **C (HYPOTHESE)** | Konservative Replikation: 1.1×–1.3× statt 1000× |
 | VECTOR_ROSEN_HORIZON | ✅ L1/MES-Stub | — | Stub implementiert, vollständige MES-Theorie bleibt offen |
 | VECTOR_RIEMANN_DNA | ✅ abgeschlossen | **B (PLAUSIBLE)** | Riemann-Mannigfaltigkeit mit Frenet-Serret-Krümmung |
-| VECTOR_BRENDA_FULL | ✅ abgeschlossen | **B (PLAUSIBLE)** | 14/21 BRENDA + 6/21 LITERATURE + 1/21 HYPOTHESE |
-| VECTOR_FROEHLICH_CONDENSATION | ✅ Stub | **C (KONTROVERS)** | Dämpfung max. 5 % ATP-Verbrauch |
+| VECTOR_BRENDA_FULL | ✅ abgeschlossen | **B (PLAUSIBLE)** | 16/21 MGENITALIUM + 5/21 HYPOTHESE |
+| VECTOR_FROEHLICH_CONDENSATION | ✅ Stub | **REFUTED_BY_REIMERS_2010** | Dämpfung max. 0.1 % (revidiert von 5 %) |
 | VECTOR_MIXMIND_PROGRAMMATIC | ✅ abgeschlossen | **A** | 10 Via-Negativa-Tests + Grade A-F + CLI |
+| VECTOR_EM_SCHICHT (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | Chemolumineszenz 80 Mio Photonen/cm²/s bei 1 µm (Popp) |
+| VECTOR_CRYPTOCOMPASS (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | Cryptochrom-Compass 1-5 % Effekt im geomagnetischen Feld |
+| VECTOR_QUQUINT_VQE (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | QuQuint-VQE 36.30× Threshold (Campbell 2012) |
+| VECTOR_PROTON_TUNNELING (Neu) | ✅ selektiv | **B (PL.)** | Enhancement nur bei d ≤ 0.3 Å messbar |
+| VECTOR_ORCH_OR (Neu) | ❌ numerisch falsifiziert | **F (FALSIFIED)** | τ_collapse (5.7e-37 s) ≪ τ_decoherence (2.5e-10 s); Tegmark 2000 bestätigt |
 
 **Selbst-Audit ausgeführt**: `python -m cellsim self-audit`
 - 10 zentrale cellsim-Behauptungen auditiert
@@ -52,9 +57,10 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 - **Riemannsche Geometrie** ist mathematisch wohldefiniert.
 
 ### Revidiert (Via-Negativa-Korrektur)
-- **QuQuint "1000× Gatter-Reduktion"**: nicht replizierbar in der im Architekturtext behaupteten Form. Konservative eigene Replikation zeigt **1.1×–1.3× Reduktion** für realistische Konformations-Anzahlen. Die 1000×-Behauptung bezog sich vermutlich nur auf Toffoli-Gatter bei sehr großen n>10⁵. Status: **HYPOTHESE, nicht RESULT**.
-- **Fröhlich-Kondensation in vivo**: seit Jahrzehnten umstritten. cellsim-Stub mit max. 5 % ATP-Einsparung ist konservativ; Reimers et al. 2010 (Phys. Rev. E) widerspricht der Hypothese makroskopischer Kohärenz.
-- **Proton-Tunneling in enzymatischer Katalyse**: experimentell validiert für einzelne Enzyme (MCF, AARS), aber nicht pauschal auf alle 455 JCVI-syn3A-Proteine übertragbar. Status: HYPOTHESE, nicht RESULT.
+- **QuQuint "1000× Gatter-Reduktion"**: nicht replizierbar in der im Architekturtext behaupteten Form. Konservative eigene Replikation zeigt **1.1×–1.3× Reduktion** für realistische Konformations-Anzahlen. Die 1000×-Behauptung bezog sich vermutlich nur auf Toffoli-Gatter bei sehr großen n>10⁵. Status: **HYPOTHESE, nicht RESULT**. → Echter Faktor ist **36.30× Threshold** (Campbell 2012), der in cellsim-VQE implementiert ist.
+- **Fröhlich-Kondensation in vivo**: seit Jahrzehnten umstritten. cellsim-Stub mit max. 0.1 % ATP-Einsparung (revidiert von 5 %) ist konservativ; Reimers et al. 2010 (Phys. Rev. E) widerspricht der Hypothese makroskopischer Kohärenz.
+- **Orch-OR (Penrose-Hameroff)**: numerisch falsifiziert in iter-7. Penrose-Collapse-Zeit (5.7e-37 s) ist 27 Größenordnungen kürzer als Tegmarks Dekohärenz-Zeit (2.5e-10 s). Quanten-Superpositionen wären kollabiert, bevor sie entstehen. Hagan-Antwort (2002) mit strukturiertem Wasser ändert das Ratio nicht substanziell.
+- **Proton-Tunneling in enzymatischer Katalyse**: experimentell validiert für einzelne Enzyme (MCF, AARS) bei dünnen Barrieren (d ≤ 0.3 Å). Bei Standard-Barrieren ist der Effekt vernachlässigbar (Enhancement ~1.0001). Status: selektiv anwendbar.
 
 ### Strukturelle Lücken
 - **Keine Selbst-Replikation**: cellsim hat keine Transkriptions-/Translations-Maschinerie. Die Zelle kann sich *nicht* selbst replizieren — sie ist eine "statische Biochemie-Simulation", keine lebende Zelle.

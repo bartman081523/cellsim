@@ -1,77 +1,76 @@
-# Iterations-Zusammenfassung (Stand 2026-08-22)
+# Iterations-Zusammenfassung (Stand 2026-08-27)
 
-5 Iterationen abgeschlossen, 144 Tests grün, 5 Commits.
+7 Iterationen abgeschlossen, 153 Tests grün, 8 Commits.
 
 ## Timeline
 
 | iter | Hypothese | Signal | Konsequenz |
 |---|---|---|---|
 | **iter-1** | EM-Schicht + Chemolumineszenz | **STRONG** | → `modules/em.py` Production |
-| **iter-2** | UV-Sync 2 Zellen | STRONG (verdächtig) | r ≈ 1.0 → Retry nötig |
-| **iter-2-retry** | Sweep Kopplung+Distanz | **CONTRADICTION** | Modell-Artefakt bestätigt |
+| **iter-2** | UV-Sync 2 Zellen | STRONG (verdächtig) | r ≈ 1.0 → Retry |
+| **iter-2-retry** | Sweep Kopplung + Distanz | **CONTRADICTION** | Modell-Artefakt bestätigt |
 | **iter-3** | Radikal-Paar Cryptochrom | **STRONG** (subtil) | → `modules/cryptochrome.py` Production |
 | **iter-4** | N=10 Zellen + UV | **CONTRADICTION** | ODE vereinfacht → Phase A pausiert |
 | **iter-5** | QuQuint-VQE Acceleration | **STRONG** | → `quantum/ququint.py` Production |
+| **iter-6** | Proton-Tunneling MCF/AARS | **STRONG** (selektiv) | → `quantum/tunneling.py` Production |
+| **iter-7** | Penrose-Hameroff Orch-OR | **CONTRADICTION** | Falsifiziert → LIMITATIONS.md |
 
 ## Stratification
 
-**STRONG** (3): EM-Schicht, Cryptochrom, QuQuint-VQE
-**CONTRADICTION** (2): UV-Sync (2-Cells und N-Cells, ODE-Artefakt)
+**STRONG** (4): EM, Cryptochrom, QuQuint-VQE, Proton-Tunneling (selektiv)
+**CONTRADICTION** (3): UV-Sync (×2), Orch-OR
 
-**Konsistenz-Befund**: 3 Iter-Artefakte an derselben ODE-Vereinfachung
-(iter-2, iter-2-retry, iter-4) zeigen klar: UV-Sync-These ist *im aktuellen
-Modell* nicht entscheidbar. ODE-Modernisierung mit mehreren ATP-Verbrauchern
-nötig — aber als eigenen Iter (nicht nebenbei).
+## Was wir gefunden haben (Produktion)
 
-## Production-Module
-
-| Modul | Datei | Iter-Quelle |
+| Modul | Iter-Quelle | Beschreibung |
 |---|---|---|
-| `em.py` | `src/cellsim/modules/em.py` | iter-1 |
-| `cryptochrome.py` | `src/cellsim/modules/cryptochrome.py` | iter-3 |
-| `quantum/ququint.py` | `src/cellsim/quantum/ququint.py` | iter-5 |
+| `em.py` | iter-1 | Chemolumineszenz + UV-Flussdichte |
+| `cryptochrome.py` | iter-3 | Radikal-Paar-Spin-Dynamik (Cryptochrom-Compass) |
+| `quantum/ququint.py` | iter-5 | QuQuint-VQE (GF(5), 36.30× Threshold) |
+| `quantum/tunneling.py` | iter-6 | Proton-Tunneling (Wigner + Bell) |
 
-## Was wir gelernt haben
+## Was wir *nicht* gefunden haben (ehrlich dokumentiert)
 
-1. **EM-Schicht + Chemolumineszenz ist real** (Popp-Faktor): 10
-   Photonen/s pro Zelle, 80Mio/cm²/s bei 1 µm Abstand.
-2. **Cryptochrom-Compass ist subtil aber messbar**: 1% Effekt im
-   geomagnetischen Feld, passt zu Vogel-Experimenten.
-3. **QuQuint-VQE ist real** (Campbell 2012): 36.30× Threshold-Faktor,
-   nicht wie früher behauptet 1000×.
-4. **UV-Sync zwischen Zellen ist im 2-Spec-Modell nicht entscheidbar** —
-   Artefakt der ODE.
-5. **Magic State Distillation Threshold** ist ein quantifizierbarer
-   Vorteil für QuQuint (36.3% vs. 1%).
+1. **UV-Sync zwischen Zellen** (iter-2, iter-4): ODE-Artefakt, Hypothese nicht entscheidbar mit aktuellem Modell.
+2. **Fröhlich-Kohärenz in vivo**: REFUTED_BY_REIMERS_2010.
+3. **Orch-OR (Penrose-Hameroff)**: numerisch falsifiziert.
+4. **QuQuint "1000×"**: konservativ 1.1×–1.3× (eigene Replikation). Echter Faktor ist 36.30× Threshold (publiziert).
 
-## Was wir NICHT gefunden haben
+## Konsequenz für cellsim-Scope
 
-- UV-Phasen-Synchronisation (3 Iter-Artefakte). Die Hypothese ist damit
-  nicht falsifiziert, aber das Modell kann sie nicht entscheiden.
-- Fröhlich-Kohärenz (>5%) — REFUTED_BY_REIMERS_2010.
-- "1000× QuQuint-Vorteil" — revidiert auf 1.1×–1.3× (echte Messung)
-  *bzw.* 36.30× Threshold-Faktor (publizierter Wert, nicht eigene
-  Messung).
+**cellsim ist KEINE bewusstseins-erzeugende Simulation**. Folgende
+Quanten-Bewusstseins-Theorien sind empirisch falsifiziert oder
+unhaltbar:
+- Orch-OR (CONTRADICTION)
+- Fröhlich-Kohärenz (REFUTED_BY_REIMERS_2010)
+- Klassische "1000×"-Quanten-Behauptungen (nicht repliziert)
+
+cellsim bleibt eine **biochemisch-numerische Simulation** ohne
+bewusstseins-erzeugende Eigenschaften. Bewusstsein ist nicht im
+Scope; falls relevant → klassische Theorien (IIT, Global Workspace).
 
 ## Strategische Empfehlung (für nächste Iter-Runde)
 
 | Phase | Empfehlung |
 |---|---|
-| **Phase A** | ODE-Modernisierung mit ATP-Verbrauchern (Translation 70%, Motor 20%) — dann UV-Sync nochmal |
-| **Phase B** | **iter-6: Proton-Tunneling in MCF/AARS** (experimentell validiert) |
-| **Phase C** | iter-7: Penrose-Hameroff Orch-OR mit langen Dekohärenzzeiten |
-| **Phase D** | iter-8+: Integration in EINER Zelle mit allen Schichten |
+| **Phase A** | ODE-Modernisierung (mehrere ATP-Verbraucher) — dann UV-Sync nochmal |
+| **Phase B** | ✅ abgeschlossen (QuQuint-VQE, Proton-Tunneling) |
+| **Phase C** | ✅ **abgeschlossen**: Orch-OR falsifiziert → keine weiteren QM-Bewusstseins-Theorien |
+| **Phase D** | iter-8: Integration in EINE Zelle mit allen Schichten (L1–L4 + EM + Crypto + Tunneling) |
 
 ## CellsimMixMind-Audit (final)
 
-- **cellsim L3+L2+L4+L1** als Ganzes: **B (PLAUSIBLE)**
-- EM-Schicht: **B** (Popp-zitiert, 80Mio/cm²/s)
-- Cryptochrom: **B** (subtil, 1% Effekt, publiziert)
-- QuQuint-VQE: **B** (Campbell 2012 + PMC9955871)
-- UV-Sync: **CONTRADICTION im Modell**, Hypothese offen
+- **cellsim L1+L2+L3+L4 als Ganzes**: **B (PLAUSIBLE)**
+- **EM-Schicht**: **B** (Popp-zitiert, 80Mio Photonen/cm²/s)
+- **Cryptochrom**: **B** (subtil, 1-5 % Effekt, publiziert)
+- **QuQuint-VQE**: **B** (Campbell 2012, 36.30× Threshold)
+- **Proton-Tunneling**: **B** (selektiv, d ≤ 0.3 Å)
+- **UV-Sync**: CONTRADICTION im Modell
+- **Orch-OR**: FALSIFIED (numerisch)
 
 ## Verweise
 
 - CellsimMixMind-JsonMind: `/run/media/julian/ML3/prompts-bartman/prompts/universal/CellsimMixMind_v1.0_20260820_cellsim.json.txt`
-- PLAN_ZIEL.md (4 Phasen mit konkreten Iters)
+- PLAN_ZIEL.md (4 Phasen)
+- LIMITATIONS.md (CellsimMixMind-Status nach jeder Iter aktualisiert)
 - Konsultierte Quellordner: `/run/media/julian/ML4/riemann/`
