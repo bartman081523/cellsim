@@ -1,0 +1,85 @@
+{
+  "turnover_exogen": 0.001,
+  "turnover_endogen": 4.826617631502697e-09,
+  "endogenous_flux_estimate": 4826617631.502696,
+  "arms": {
+    "uvc_lokal_exogen": {
+      "temporal_mi_mean": 0.12425596566447708,
+      "temporal_mi_first": 0.0010689448665891972,
+      "temporal_mi_last": 0.17740728809404152,
+      "spatial_mi_mean": 0.011996834391694165,
+      "lz_first": 0.26953125,
+      "lz_last": 1.1455078125,
+      "lz_growth": 0.8759765625,
+      "n_snapshots": 60.0,
+      "events_total": 588.0,
+      "light_memory_mi_mean": 0.008850024606039234,
+      "product_in_light": 0.4298245614035088,
+      "product_in_dark": 0.13951473136915077,
+      "light_contrast": 0.290309830034358
+    },
+    "thermal_uniform_exogen": {
+      "temporal_mi_mean": 0.10866406931250591,
+      "temporal_mi_first": 0.00206234031633637,
+      "temporal_mi_last": 0.16925927079583947,
+      "spatial_mi_mean": 0.0001614423807920885,
+      "lz_first": 0.26953125,
+      "lz_last": 1.2216796875,
+      "lz_growth": 0.9521484375,
+      "n_snapshots": 60.0,
+      "events_total": 595.5,
+      "light_memory_mi_mean": 0.00015514518449608557,
+      "product_in_light": 0.14912280701754385,
+      "product_in_dark": 0.14533300321861847,
+      "light_contrast": 0.0037898037989253786
+    },
+    "uvc_lokal_endogen": {
+      "temporal_mi_mean": 0.0,
+      "temporal_mi_first": 0.0,
+      "temporal_mi_last": 0.0,
+      "spatial_mi_mean": 0.0,
+      "lz_first": 0.2666015625,
+      "lz_last": 0.2666015625,
+      "lz_growth": 0.0,
+      "n_snapshots": 60.0,
+      "events_total": 0.0,
+      "light_memory_mi_mean": 0.0,
+      "product_in_light": 0.0,
+      "product_in_dark": 0.0,
+      "light_contrast": 0.0
+    },
+    "dark_control": {
+      "temporal_mi_mean": 0.0,
+      "temporal_mi_first": 0.0,
+      "temporal_mi_last": 0.0,
+      "spatial_mi_mean": 0.0,
+      "lz_first": 0.2666015625,
+      "lz_last": 0.2666015625,
+      "lz_growth": 0.0,
+      "n_snapshots": 60.0,
+      "events_total": 0.0,
+      "light_memory_mi_mean": 0.0,
+      "product_in_light": 0.0,
+      "product_in_dark": 0.0,
+      "light_contrast": 0.0
+    }
+  },
+  "exogen_lokal_vs_thermal": true,
+  "licht_gedaechtnis": true,
+  "permutation_light_memory": {
+    "observed_contrast": 0.29,
+    "h0_mean_contrast": -0.00019480243068677595,
+    "h0_p99_contrast": 0.12079592395199434,
+    "p_value": 0.0,
+    "n_light_voxels": 57.0,
+    "expected_events_in_light_h0": 8.21044921875
+  },
+  "endogen_null_best\u00e4tigt": true,
+  "signal": "BRIDGE_VISIBLE",
+  "next_vectors": [
+    "Falls BRIDGE_VISIBLE: UVC-Photoreaktion als HYPOTHESE-Quelle in EM\u2192RDME-Kopplung dokumentieren",
+    "Falls PARTIAL: Ortsaufl\u00f6sung pr\u00fcfen (Gittersch\u00e4rfe vs. Absorptionsl\u00e4nge)",
+    "Falls NULL: Fluss-/Querschnitt-Annahmen revidieren (\u03c3, QY sind HYPOTHESE)",
+    "VECTOR_SATURATION_MARGIN aus iter-11 mit Photoreaktion kombinieren"
+  ]
+}
