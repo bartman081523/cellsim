@@ -1,0 +1,30 @@
+{
+  "reactive": {
+    "temporal_mi_mean": 0.7386524246065036,
+    "temporal_mi_first": 0.6618573560672265,
+    "temporal_mi_last": 0.6967284519214013,
+    "spatial_mi_mean": 0.4737735592481809,
+    "lz_first": 0.73828125,
+    "lz_last": 0.7353515625,
+    "lz_growth": -0.0029296875,
+    "n_snapshots": 400.0
+  },
+  "diffusive": {
+    "temporal_mi_mean": 0.8090256523123194,
+    "temporal_mi_first": 0.6618573560672265,
+    "temporal_mi_last": 0.8101151981148251,
+    "spatial_mi_mean": 0.5080142668666384,
+    "lz_first": 0.73828125,
+    "lz_last": 0.8056640625,
+    "lz_growth": 0.0673828125,
+    "n_snapshots": 400.0
+  },
+  "mi_difference_reactive_minus_diffusive": -0.07037322770581578,
+  "signal": "CONTRADICTION",
+  "next_vectors": [
+    "Falls STRONG: \u2192 vektorisierte Diffusion als Tau-Leap in Production (OptimizedRDME)",
+    "Falls CONTRADICTION: Reaktions-Raten im Hybrid zu schwach \u2192 Rate-Sweep",
+    "Querverbindung: Origin_Ruliad Phase 6/7 nutzt dasselbe Laplacian-Schema in 2D",
+    "Querverbindung: Genesis.md UVC 232 nm \u2192 EM-Schicht als Photonik-Quelle"
+  ]
+}

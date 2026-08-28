@@ -1,0 +1,39 @@
+{
+  "results": {
+    "reactive": {
+      "temporal_mi_mean": 0.616748259826391,
+      "temporal_mi_max": 0.616748259826391,
+      "spatial_mi_mean": 0.16473084689211026,
+      "lz_mean": 1.4719925351328806,
+      "lz_first": 1.4719925351328806,
+      "lz_last": 1.4719925351328806,
+      "lz_growth": 0.0,
+      "n_snapshots": 300
+    },
+    "diffusive": {
+      "temporal_mi_mean": 0.616748259826391,
+      "temporal_mi_max": 0.616748259826391,
+      "spatial_mi_mean": 0.16473084689211026,
+      "lz_mean": 1.4719925351328806,
+      "lz_first": 1.4719925351328806,
+      "lz_last": 1.4719925351328806,
+      "lz_growth": 0.0,
+      "n_snapshots": 300
+    }
+  },
+  "mi_difference_reactive_minus_diffusive": 0.0,
+  "signal": "CONTRADICTION",
+  "grid_shape": [
+    6,
+    6,
+    6
+  ],
+  "n_steps": 3000,
+  "next_vectors": [
+    "Falls STRONG: \u2192 production module src/cellsim/modules/emergence.py",
+    "Falls WEAK: \u2192 iter-10-retry mit gr\u00f6\u00dferem Gitter (10\u00b3) und l\u00e4ngerer Laufzeit",
+    "Falls NULL: RDME-Raten zu schwach f\u00fcr Emergenz \u2192 Rate-Scaling n\u00f6tig",
+    "Falls CONTRADICTION: Diffusion erzeugt mehr Struktur als Reaktion \u2192 Registry pr\u00fcfen",
+    "Querverbindung: Genesis.md UVC 232 nm \u2192 EM-Schicht (iter-1) als Photonik-Input"
+  ]
+}
