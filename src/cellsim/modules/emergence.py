@@ -82,6 +82,8 @@ def laplacian_3d(z: np.ndarray) -> np.ndarray:
     """3D diskreter Laplace-Operator (Origin_Ruliad Phase 6, 2D→3D).
 
     6-Nachbar-Summe minus 6·Z, periodische Randbedingungen.
+    Spektrum λ ∈ [−12, 0] (Summe dreier 1D-[−4, 0]) → explizite
+    Schemata brauchen Substepping d ≤ 1/6 (iter-11-Numerik-Lektion).
     """
     z = z.astype(np.float64)
     out = -6.0 * z
@@ -89,6 +91,90 @@ def laplacian_3d(z: np.ndarray) -> np.ndarray:
         out += np.roll(z, 1, axis=axis)
         out += np.roll(z, -1, axis=axis)
     return out
+
+
+def stochastic_jump_diffusion(
+    fields: dict[str, np.ndarray],
+    diff_coeff: float,
+    rng: np.random.Generator,
+) -> None:
+    """Stochastische Sprung-Diffusion (iter-12, VECTOR_STOCHASTIC_-
+    DIFFUSION_PRODUCTION).
+
+    Pro Teilchen und Richtung springt ein Binomial-Anteil
+    (p = diff_coeff/6 pro Richtung/Schritt), Empfänger-Voxel erhalten
+    ihn. Massenerhalt exakt; Counts O(1) überleben — anders als bei
+    einer gerundeten Feld-Diffusion, die O(1)-Perturbationen weg-
+    rundet (iter-12-Befund: isolierte 7 in 8er-Background → rint → 8).
+
+    Für dichte Felder (Counts ≳ 10 pro Voxel) ist `laplacian_3d`-
+    Diffusion äquivalent und schneller; für spärliche Einzelteilchen-
+    Chemie ist diese Variante erforderlich.
+
+    Modifies fields in place. Fields müssen nicht-negative Integer-
+    Werte enthalten.
+    """
+    p_dir = min(diff_coeff / 6.0, 0.5)
+    if p_dir == 0.0:
+        return
+    for axis in range(3):
+        for s_id, f in fields.items():
+            f_int = f.astype(np.int64)
+            moves = rng.binomial(f_int, p_dir)
+            if not moves.any():
+                continue
+            fields[s_id] = (f_int - moves + np.roll(moves, 1, axis=axis)).astype(
+                f.dtype
+            )
+
+
+def permutation_contrast_test(
+    n_events: int,
+    n_total_sites: int,
+    n_zone_sites: int,
+    n_in_zone_observed: int,
+    n_permutations: int = 2000,
+    seed: int = 0,
+) -> dict[str, float]:
+    """Permutations-Statistik für spärliche Event-Felder (iter-12,
+    VECTOR_SPARSE_METRICS).
+
+    H0: Events sind ortsfrei gleichverteilt über alle Sites. Geprüft
+    wird, ob die beobachtete Anzahl im untersuchten Bereich ein
+    Ausreißer nach oben ist. Der Ersatz für dichte-kalibrierte
+    MI/LZ-Schwellwerte: iter-12 zeigte MI 0.009 trotz p<5e-4-Signal.
+
+    Args:
+        n_events: Gesamtzahl beobachteter Events.
+        n_total_sites: Anzahl Sites (Voxel) insgesamt.
+        n_zone_sites: Anzahl Sites im untersuchten Bereich.
+        n_in_zone_observed: Beobachtete Events im Bereich.
+        n_permutations: Anzahl H0-Permutationen (p-Auflösung 1/N).
+        seed: RNG-Seed (deterministisch).
+
+    Returns: p_value, expected_in_zone_h0, h0_p99.
+    """
+    if not 0 <= n_zone_sites <= n_total_sites:
+        raise ValueError("n_zone_sites muss in [0, n_total_sites] liegen")
+    if not 0 <= n_in_zone_observed <= n_events:
+        raise ValueError("n_in_zone_observed muss in [0, n_events] liegen")
+    if n_permutations < 1:
+        raise ValueError("n_permutations muss >= 1 sein")
+
+    rng = np.random.default_rng(seed)
+    expected = n_events * n_zone_sites / n_total_sites
+    if n_events == 0:
+        perm_counts = np.zeros(n_permutations)
+    else:
+        places = rng.integers(0, n_total_sites, size=(n_permutations, n_events))
+        perm_counts = (places < n_zone_sites).sum(axis=1)
+    p_value = float(np.mean(perm_counts >= n_in_zone_observed))
+    return {
+        "p_value": p_value,
+        "observed_in_zone": float(n_in_zone_observed),
+        "expected_in_zone_h0": float(expected),
+        "h0_p99": float(np.quantile(perm_counts, 0.99)),
+    }
 
 
 def emergence_metrics(

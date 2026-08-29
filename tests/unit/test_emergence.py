@@ -3,12 +3,16 @@
 from __future__ import annotations
 
 import numpy as np
+import pytest
 
+from cellsim.core.rng import make_rng
 from cellsim.modules.emergence import (
     binarize,
     laplacian_3d,
     lz_complexity_binary,
     mutual_information_binary,
+    permutation_contrast_test,
+    stochastic_jump_diffusion,
 )
 
 
@@ -72,3 +76,104 @@ def test_laplacian_3d_flux_direction() -> None:
     lap = laplacian_3d(z)
     assert lap[2, 2, 2] < 0
     assert lap[1, 2, 2] > 0
+
+
+# --- Stochastische Sprung-Diffusion (iter-12) ------------------------
+
+
+def test_jump_diffusion_mass_conserved_exactly() -> None:
+    """Massenerhalt exakt über alle Achsen (Sprung-Teilchen, kein rint)."""
+    rng = make_rng(1, 0, 0)
+    fields = {
+        f"s{i}": rng.integers(0, 50, size=(6, 6, 6)).astype(np.int64)
+        for i in range(3)
+    }
+    before = sum(int(f.sum()) for f in fields.values())
+    for _ in range(20):
+        stochastic_jump_diffusion(fields, 0.30, rng)
+    after = sum(int(f.sum()) for f in fields.values())
+    assert before == after
+
+
+def test_jump_diffusion_single_particle_survives() -> None:
+    """O(1)-Counts überleben — delta-Funktion diffundiert statt zu
+    verschwinden (iter-12 Diskretheits-Boden der rint-Variante)."""
+    rng = make_rng(2, 0, 0)
+    fields = {"a": np.zeros((8, 8, 8), dtype=np.int64)}
+    fields["a"][3, 3, 3] = 1
+    for _ in range(50):
+        stochastic_jump_diffusion(fields, 0.20, rng)
+        assert int(fields["a"].sum()) == 1
+    # Bei p_step=6·(0.20/6)=0.20/Schritt: nach 50 Schritten ist Gehen
+    # sicher; das Teilchen verlässt Startpunkt (Determinismus via Seed).
+    assert fields["a"][3, 3, 3] == 0
+
+
+def test_jump_diffusion_deterministic() -> None:
+    """Gleicher Seed → identisches Feld; Counts bleiben nicht-negativ."""
+    runs = []
+    for _ in range(2):
+        rng = make_rng(7, 0, 0)
+        fields = {
+            "a": rng.integers(0, 30, size=(5, 5, 5)).astype(np.int64)
+        }
+        for _ in range(30):
+            stochastic_jump_diffusion(fields, 0.45, rng)
+        runs.append(fields["a"].copy())
+    assert np.array_equal(runs[0], runs[1])
+    assert int(runs[0].min()) >= 0
+
+
+def test_jump_diffusion_dense_field_no_mean_drift() -> None:
+    """Dichtes Feld: Mittelwert bleibt exakt (Summen-Erhalt)."""
+    rng = make_rng(11, 0, 0)
+    fields = {"a": (rng.poisson(50, size=(8, 8, 8))).astype(np.int64)}
+    mean_before = float(fields["a"].mean())
+    for _ in range(10):
+        stochastic_jump_diffusion(fields, 0.15, rng)
+    assert abs(float(fields["a"].mean()) - mean_before) < 1e-9
+
+
+# --- Permutations-Statistik für spärliche Felder (iter-12) -----------
+
+
+def test_permutation_test_uniform_observation_high_p() -> None:
+    """Beobachtung ≈ H0-Erwartung → hoher p-Wert (keine Signifikanz)."""
+    r = permutation_contrast_test(
+        n_events=100, n_total_sites=1000, n_zone_sites=100,
+        n_in_zone_observed=10, n_permutations=2000, seed=3,
+    )
+    assert r["expected_in_zone_h0"] == 10.0
+    assert r["p_value"] > 0.3
+
+
+def test_permutation_test_localized_events_low_p() -> None:
+    """Alle Events in kleinem Bereich → p klein (starke Lokalisierung)."""
+    r = permutation_contrast_test(
+        n_events=50, n_total_sites=1000, n_zone_sites=5,
+        n_in_zone_observed=50, n_permutations=2000, seed=3,
+    )
+    assert r["expected_in_zone_h0"] == 0.25
+    assert r["p_value"] < 0.001
+
+
+def test_permutation_test_deterministic() -> None:
+    a = permutation_contrast_test(30, 500, 10, 15, n_permutations=500, seed=9)
+    b = permutation_contrast_test(30, 500, 10, 15, n_permutations=500, seed=9)
+    assert a["p_value"] == b["p_value"]
+    assert a["h0_p99"] == b["h0_p99"]
+
+
+def test_permutation_test_zero_events() -> None:
+    r = permutation_contrast_test(0, 100, 10, 0, n_permutations=100, seed=1)
+    assert r["p_value"] == 1.0
+    assert r["expected_in_zone_h0"] == 0.0
+
+
+def test_permutation_test_validates_inputs() -> None:
+    with pytest.raises(ValueError):
+        permutation_contrast_test(10, 100, 200, 5)
+    with pytest.raises(ValueError):
+        permutation_contrast_test(10, 100, 10, 11)
+    with pytest.raises(ValueError):
+        permutation_contrast_test(10, 100, 10, 5, n_permutations=0)

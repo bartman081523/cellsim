@@ -28,10 +28,27 @@ class RDMEState:
     species_ids: tuple[str, ...] = ()
     total_particles: int = 0
     step_count: int = 0
+    tau_leap_events: int = 0
 
 
 class RDMEAdapter:
-    """Sehr einfacher Gillespie-SSA-Solver."""
+    """Sehr einfacher Gillespie-SSA-Solver.
+
+    Zwei Reaktions-Modi:
+    - **Gillespie-SSA** (default): 1 Reaktions-Event pro Schritt, Voxel
+      zufällig. Quasi-statisch auf großen Gittern (iter-10-Befund).
+    - **Lokales Tau-Leaping** (`use_tau_leap=True`, VECTOR_TAULEAP_
+      PRODUCTION aus iter-11): Propensität pro Voxel
+      ``λ = k · dt · n_reaktant(voxel)``, Poisson-Firings, begrenzt
+      durch Feasibility über ALLE negativen Stöchiometrien (hartes
+      chemisches Potenzial-Wand — kein Runaway, 0/12 in iter-11).
+
+      Damköhler-Fenster (iter-11, empirisch): Reaktionen sind in den
+      Emergenz-Metriken sichtbar bei Turnover ``k·dt`` zwischen
+      ~1e-4 und ~0.1 pro Molekül und Schritt. Unterhalb: unsichtbar
+      (statisch); oberhalb: Sättigungs-Kollaps (Substrat instant
+      erschöpft → uniformer Absorbing-State).
+    """
 
     name = "rdme"
 
@@ -41,10 +58,12 @@ class RDMEAdapter:
         grid_shape: tuple[int, int, int] = (8, 8, 8),
         initial_particles_per_species: int = 50,
         use_local_diffusion: bool = False,
+        use_tau_leap: bool = False,
     ) -> None:
         self.registry = registry
         self.grid_shape = grid_shape
         self.use_local_diffusion = use_local_diffusion
+        self.use_tau_leap = use_tau_leap
 
         # Voxel-Belegung: species_id -> np.ndarray[grid_shape] (counts)
         species_ids = tuple(registry.species_ids)
@@ -68,8 +87,11 @@ class RDMEAdapter:
         return self.state.total_particles
 
     def step(self, dt_s: float, rng: np.random.Generator) -> dict[str, float]:
-        """Ein RDME-Schritt: Gillespie-SSA mit dt_s als maximale Wartezeit."""
+        """Ein RDME-Schritt: Gillespie-SSA oder lokales Tau-Leaping."""
         self.state.step_count += 1
+        if self.use_tau_leap:
+            self._step_tau_leap(dt_s, rng)
+            return self._telemetry()
 
         # Reaktions-Raten aus Registry (sehr einfach: k * Produkt der Konz.)
         rates = self._compute_rates()
@@ -101,6 +123,49 @@ class RDMEAdapter:
         self.state.total_particles = sum(int(v.sum()) for v in self.state.voxels.values())
 
         return self._telemetry()
+
+    def _step_tau_leap(self, dt_s: float, rng: np.random.Generator) -> None:
+        """Lokales Tau-Leaping (iter-11, VECTOR_TAULEAP_PRODUCTION).
+
+        Pro Reaktion und Voxel: λ = k · dt_s · n_reaktant(voxel)
+        (first-order in dem ersten Reaktanten — Registry-k ist
+        ODE-skaliert, dt_s skaliert das Operator-Splitting),
+        Poisson-Firings, Feasibility-Cap über alle negativen
+        Stöchiometrien. Reaktionen wirken dort, wo das Substrat ist.
+        """
+        for rxn in self.registry.reactions:
+            reactant = next(
+                (s for s, d in rxn.species_change.items() if d < 0), None
+            )
+            if reactant is None:
+                continue  # Null-Stöchiometrie (z.B. rnap_init): no-op
+            v = self.state.voxels.get(reactant)
+            if v is None:
+                continue
+            lam = rxn.k * dt_s * v.astype(np.float64)
+            lam = np.minimum(np.maximum(lam, 0.0), 1e6)
+            fire = rng.poisson(lam).astype(np.int64)
+
+            # Feasibility: alle negativen Stöchiometrien begrenzen
+            for s_id, delta in rxn.species_change.items():
+                if delta < 0:
+                    fire = np.minimum(fire, self.state.voxels[s_id] // (-delta))
+            if not fire.any():
+                continue
+
+            for s_id, delta in rxn.species_change.items():
+                target = self.state.voxels.get(s_id)
+                if target is None:
+                    continue
+                if delta < 0:
+                    target -= fire * (-delta)
+                else:
+                    target += fire * delta
+                np.maximum(target, 0, out=target)
+            self.state.tau_leap_events += int(fire.sum())
+        self.state.total_particles = sum(
+            int(v.sum()) for v in self.state.voxels.values()
+        )
 
     def _apply_local_diffusion(
         self,
@@ -203,6 +268,7 @@ class RDMEAdapter:
         snap = {
             "step_count": self.state.step_count,
             "total_particles": self.state.total_particles,
+            "tau_leap_events": self.state.tau_leap_events,
             "voxels": {k: v.tolist() for k, v in self.state.voxels.items()},
             "species_ids": list(self.state.species_ids),
         }
@@ -212,10 +278,11 @@ class RDMEAdapter:
         snap = json.loads(blob.decode("utf-8"))
         self.state.step_count = snap["step_count"]
         self.state.total_particles = snap["total_particles"]
+        self.state.tau_leap_events = snap.get("tau_leap_events", 0)
         species_ids = tuple(snap["species_ids"])
         voxels: dict[str, np.ndarray] = {}
         for k, v in snap["voxels"].items():
-            voxels[str(k)] = np.asarray(v, dtype=np.int64)
+            voxels[k] = np.asarray(v, dtype=np.int64)
         self.state.voxels = voxels
         self.state.species_ids = species_ids
 
