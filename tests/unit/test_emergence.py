@@ -104,8 +104,9 @@ def test_jump_diffusion_single_particle_survives() -> None:
     for _ in range(50):
         stochastic_jump_diffusion(fields, 0.20, rng)
         assert int(fields["a"].sum()) == 1
-    # Bei p_step=6·(0.20/6)=0.20/Schritt: nach 50 Schritten ist Gehen
-    # sicher; das Teilchen verlässt Startpunkt (Determinismus via Seed).
+    # Bewegungs-Wahrscheinlichkeit ~1−(1−p)⁶ ≈ 0.74/Schritt: nach 50
+    # Schritten ist Gehen sicher; Teilchen verlässt Startpunkt
+    # (Determinismus via Seed).
     assert fields["a"][3, 3, 3] == 0
 
 

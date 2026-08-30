@@ -101,20 +101,23 @@ def stochastic_jump_diffusion(
     """Stochastische Sprung-Diffusion (iter-12, VECTOR_STOCHASTIC_-
     DIFFUSION_PRODUCTION).
 
-    Pro Teilchen und Richtung springt ein Binomial-Anteil
-    (p = diff_coeff/6 pro Richtung/Schritt), Empfänger-Voxel erhalten
-    ihn. Massenerhalt exakt; Counts O(1) überleben — anders als bei
-    einer gerundeten Feld-Diffusion, die O(1)-Perturbationen weg-
-    rundet (iter-12-Befund: isolierte 7 in 8er-Background → rint → 8).
+    Physikalische Kalibrierung (iter-14-Korrektur): ``diff_coeff`` ist
+    die physikalische Diffusivität 𝒟 mit Δt=Δx=1 — Sprungwahrschein-
+    lichkeit pro Richtung p = 𝒟 (Varianzwachstum 6·𝒟 pro Schritt,
+    identisch zum Laplacian-Schema u ← u + 𝒟·L·u). Die frühere
+    p = 𝒟/6-Konvention unter-mischte um Faktor 6.
 
-    Für dichte Felder (Counts ≳ 10 pro Voxel) ist `laplacian_3d`-
+    Massenerhalt exakt; Counts O(1) überleben — anders als bei einer
+    gerundeten Feld-Diffusion, die O(1)-Perturbationen wegrandet
+    (iter-12-Befund: isolierte 7 in 8er-Background → rint → 8). Für
+    dichte Felder (Counts ≳ 10 pro Voxel) ist `laplacian_3d`-
     Diffusion äquivalent und schneller; für spärliche Einzelteilchen-
     Chemie ist diese Variante erforderlich.
 
     Modifies fields in place. Fields müssen nicht-negative Integer-
     Werte enthalten.
     """
-    p_dir = min(diff_coeff / 6.0, 0.5)
+    p_dir = min(diff_coeff, 0.5)
     if p_dir == 0.0:
         return
     for axis in range(3):
