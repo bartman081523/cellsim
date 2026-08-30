@@ -63,3 +63,16 @@ Kollaps sie glättet. Testbar:registry-K k-Faktor-Sweep Richtung Sättigung.
 - Origin_Ruliad Phase 6/7 (Laplacian-Schema, Runaway-Problem)
 - Damköhler 1936; Turing 1952 (Reaktions-Diffusions-Muster als
   Klassiker des Fensters)
+---
+
+## Vorbehalt (iter-14, nachträglich)
+
+Die corr-Magnituden dieser Datei sind **operator-kalibriert, nicht
+physikalisch**: die rint-Laplace-Diffusion aktualisiert beide Spezies-
+Felder deterministisch identisch → Kontrollen bleiben ewig bei
+corr ≡ 1.000. Unter stochastischer Migration (physikalisch korrekt)
+dekoreliert die Kontrolle selbst (iter-14-Befund B). Die
+Fenster-STRUKTUR (Ordnung, Sättigungs-Rückkehr, U-Form) replizierte
+unter Gitter-/Seed-/Numerikwechsel; die absoluten Drops sind als
+geteilter Determinismus + Chemie zu lesen, nicht als reine Chemie.
+Siehe scratch/strategic_vectors/iter-14.md.
