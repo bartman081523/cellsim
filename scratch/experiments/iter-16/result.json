@@ -1,0 +1,31 @@
+{
+  "e_g_artifact_j": 186.5845529085472,
+  "tau_collapse_artifact_s": 5.651978154466459e-37,
+  "dimension_of_iter7_formula": "J\u00b7s/m (invalid \u2014 korrekt w\u00e4re J)",
+  "e_g_corrected_dimer_j": 2.7939454087499995e-46,
+  "tau_or_corrected_dimer_s": 377448970082.70874,
+  "tau_or_N1e9_proton_s": 1411.9355602878188,
+  "tau_or_N1e10_proton_s": 14.119355602878189,
+  "hagan_claim_s": 0.0001,
+  "tau_dec_bulk_s": 2.4639459927669826e-10,
+  "viable_bulk_unshielded": 0,
+  "viable_physiological": 7,
+  "best_ratio": 0.6127552652383228,
+  "best_cfg": {
+    "f_frac": 0.05,
+    "a_nm": 8.0,
+    "N": 1000000000.0,
+    "S": 1000000.0,
+    "correlated": true,
+    "tau_or_s": 0.0001509795880330835,
+    "tau_dec_s": 0.00024639459927669824,
+    "ratio": 0.6127552652383228
+  },
+  "signal": "OPEN_SUBSTRATE",
+  "interpretation": "Eine viable (f, a, N, S)-Region existiert. Orch-OR's Substrat ist numerisch OFFEN unter Hagan-Parametrisierung + Shielding \u2014 iter-7s 27-Dekaden-CONTRADICTION war ein Formel-Artefakt. Tegmarks bulk-Befund bleibt ohne Shielding konsistent.",
+  "next_vectors": [
+    "Falls OPEN_SUBSTRATE: S\u22481e5\u20131e6 als HYPOTHESE-Region markieren; empirischer Pr\u00fcfstein: gemessene Burst-Raten (Kurian-Typ) + UV-Chemie in Trp-reichen Zellen",
+    "Falls OPEN: UV-Sync re-opened mit Limit-Cycle-Basis (iter-2-Artefakt vermeiden)",
+    "Falls FALSIFIED: LIMITATIONS.md-Status bleibt; iter-7-Begr\u00fcndung korrigiert"
+  ]
+}

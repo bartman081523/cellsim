@@ -99,13 +99,16 @@ def stochastic_jump_diffusion(
     rng: np.random.Generator,
 ) -> None:
     """Stochastische Sprung-Diffusion (iter-12, VECTOR_STOCHASTIC_-
-    DIFFUSION_PRODUCTION).
+    DIFFUSION_PRODUCTION; iter-15-Fix: beidseitige Sprünge).
 
-    Physikalische Kalibrierung (iter-14-Korrektur): ``diff_coeff`` ist
-    die physikalische Diffusivität 𝒟 mit Δt=Δx=1 — Sprungwahrschein-
-    lichkeit pro Richtung p = 𝒟 (Varianzwachstum 6·𝒟 pro Schritt,
-    identisch zum Laplacian-Schema u ← u + 𝒟·L·u). Die frühere
-    p = 𝒟/6-Konvention unter-mischte um Faktor 6.
+    Physikalische Kalibrierung: ``diff_coeff`` ist die physikalische
+    Diffusivität 𝒟 mit Δt=Δx=1. Pro Achse springt ein Binomial-Anteil
+    p = 𝒟 in +Richtung und p = 𝒟 in −Richtung (Varianzwachstum 2𝒟 pro
+    Achse, 6𝒟 total — identisch zum Laplacian-Schema u ← u + 𝒟·L·u).
+
+    iter-15-Fix: die frühere Version sprang nur in +Richtung (upwind)
+    — das ist Advektion mit Drift p·t, keine Diffusion. Delta-Funktionen
+    wanderten diagonal statt sich symmetrisch auszubreiten.
 
     Massenerhalt exakt; Counts O(1) überleben — anders als bei einer
     gerundeten Feld-Diffusion, die O(1)-Perturbationen wegrandet
@@ -123,12 +126,21 @@ def stochastic_jump_diffusion(
     for axis in range(3):
         for s_id, f in fields.items():
             f_int = f.astype(np.int64)
-            moves = rng.binomial(f_int, p_dir)
-            if not moves.any():
+            # Gesamtabfluss sampeln, dann 50/50 in beide Richtungen —
+            # pro Teilchen: P(+1) = P(−1) = p_dir, P(stay) = 1−2·p_dir.
+            # Varianzwachstum exakt 2·p_dir pro Achse (= Laplacian-𝒟).
+            n_out = rng.binomial(f_int, 2 * p_dir)
+            plus = rng.binomial(n_out, 0.5)
+            minus = n_out - plus
+            if not (plus.any() or minus.any()):
                 continue
-            fields[s_id] = (f_int - moves + np.roll(moves, 1, axis=axis)).astype(
-                f.dtype
-            )
+            fields[s_id] = (
+                f_int
+                - plus
+                - minus
+                + np.roll(plus, 1, axis=axis)
+                + np.roll(minus, -1, axis=axis)
+            ).astype(f.dtype)
 
 
 def permutation_contrast_test(

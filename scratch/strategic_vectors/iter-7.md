@@ -58,3 +58,14 @@ Phase C (Mikrotubuli + Bewusstsein) wird **drastisch reduziert**:
 - Baars, B. (1988): "A Cognitive Theory of Consciousness"
 - Tononi, G. (2004): BMC Neurosci. 5, 42
 - Friston, K. (2010): "The free-energy principle"
+---
+
+## Korrektur (iter-16, nachträglich)
+
+Diese Datei basiert auf einer **dimensional invaliden E_G-Formel**
+(ħ²/(G·m²·τ) hat Einheit J·s/m, nicht J) und einem **invertierten
+Kriterium** (Orch-OR braucht τ_OR < τ_dec, nicht >). Die 27-Dekaden-
+CONTRADICTION ist ein Formel-Artefakt und wurde zurückgezogen.
+Korrekte Nachrechnung: scratch/experiments/iter-16/ (OPEN_SUBSTRATE
+in generöser Parameter-Ecke, 0 viable ohne Shielding). Siehe
+scratch/strategic_vectors/iter-16.md.

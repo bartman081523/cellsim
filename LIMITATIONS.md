@@ -39,7 +39,7 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 | VECTOR_CRYPTOCOMPASS (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | Cryptochrom-Compass 1-5 % Effekt im geomagnetischen Feld |
 | VECTOR_QUQUINT_VQE (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | QuQuint-VQE 36.30× Threshold (Campbell 2012) |
 | VECTOR_PROTON_TUNNELING (Neu) | ✅ selektiv | **B (PL.)** | Enhancement nur bei d ≤ 0.3 Å messbar |
-| VECTOR_ORCH_OR (Neu) | ❌ numerisch falsifiziert | **F (FALSIFIED)** | τ_collapse (5.7e-37 s) ≪ τ_decoherence (2.5e-10 s); Tegmark 2000 bestätigt |
+| VECTOR_ORCH_OR (Neu) | ⚠️ **revidiert (iter-16)** | **C (OPEN)** | iter-7s E_G-Formel war dimensional invalid + Kriterium invertiert; korrekte Penrose-Rechnung (E_G = G·(ΔM)²/a) + Hagan-Shielding: viable Region in großzügiger Parameter-Ecke (f=5 %, a=8nm, N=1e9, S=1e6); OHNE Shielding nichts viable (Tegmark-bulk konsistent) — siehe scratch/experiments/iter-16 |
 
 **Selbst-Audit ausgeführt**: `python -m cellsim self-audit`
 - 10 zentrale cellsim-Behauptungen auditiert
@@ -59,7 +59,7 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 ### Revidiert (Via-Negativa-Korrektur)
 - **QuQuint "1000× Gatter-Reduktion"**: nicht replizierbar in der im Architekturtext behaupteten Form. Konservative eigene Replikation zeigt **1.1×–1.3× Reduktion** für realistische Konformations-Anzahlen. Die 1000×-Behauptung bezog sich vermutlich nur auf Toffoli-Gatter bei sehr großen n>10⁵. Status: **HYPOTHESE, nicht RESULT**. → Echter Faktor ist **36.30× Threshold** (Campbell 2012), der in cellsim-VQE implementiert ist.
 - **Fröhlich-Kondensation in vivo**: seit Jahrzehnten umstritten. cellsim-Stub mit max. 0.1 % ATP-Einsparung (revidiert von 5 %) ist konservativ; Reimers et al. 2010 (Phys. Rev. E) widerspricht der Hypothese makroskopischer Kohärenz.
-- **Orch-OR (Penrose-Hameroff)**: numerisch falsifiziert in iter-7. Penrose-Collapse-Zeit (5.7e-37 s) ist 27 Größenordnungen kürzer als Tegmarks Dekohärenz-Zeit (2.5e-10 s). Quanten-Superpositionen wären kollabiert, bevor sie entstehen. Hagan-Antwort (2002) mit strukturiertem Wasser ändert das Ratio nicht substanziell.
+- **Orch-OR (Penrose-Hameroff)**: **iter-16-Korrektur** — iter-7s Formel E_G = ħ²/(G·m²·τ) war dimensional invalid (Einheit J·s/m) und das Kriterium invertiert; die 27-Dekaden-CONTRADICTION war ein Formel-Artefakt. Korrekte Penrose-Rechnung (E_G = G·(ΔM)²/a): Dimer-Massen-Superposition kollabiert nie (τ_OR ≈ 3.8e11 s); Hagan-Parametrisierung (kollektive Konformations-Superposition + Shielding S) lässt eine NARRE viable Region zu (f=5 %, a=8nm, N=1e9, S=1e6 → τ_OR/τ_dec = 0.61). **OHNE Shielding nichts viable** — Tegmarks bulk-Befund bleibt konsistent. Status: **C (OPEN)**, Substrat numerisch offen in begrenzter Parameter-Region, keine Evidenz für die Bewusstseins-Behauptung. Siehe scratch/experiments/iter-16/.
 - **Proton-Tunneling in enzymatischer Katalyse**: experimentell validiert für einzelne Enzyme (MCF, AARS) bei dünnen Barrieren (d ≤ 0.3 Å). Bei Standard-Barrieren ist der Effekt vernachlässigbar (Enhancement ~1.0001). Status: selektiv anwendbar.
 
 ### Strukturelle Lücken

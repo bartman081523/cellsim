@@ -1,0 +1,28 @@
+{
+  "phi_star": [
+    207184425.27394998,
+    207184425273.94998
+  ],
+  "n_in_window": 9,
+  "syn3a_in_window": false,
+  "neuron_in_window": true,
+  "monte_carlo": {
+    "analytic_per_burst": 4.826617631502697e-08,
+    "mc_per_burst": 4.7800000000000005e-08,
+    "relative_error": 0.009658447190519007
+  },
+  "dynamic_check": {
+    "events_total": 9.0,
+    "products_total": 9.0,
+    "p_value_light_memory": 0.0,
+    "h0_p99": 2.0,
+    "in_zone": 7.0,
+    "expected_h0": 0.2021484375
+  },
+  "signal": "BRIDGE_OPEN",
+  "next_vectors": [
+    "Falls BRIDGE_OPEN: photischer Kanal als EM\u2192RDME-Kopplung im Produktionstack dokumentieren",
+    "Falls FALSIFIED_BRIDGE: \u03c3/QY revidieren oder Br\u00fccke verwerfen",
+    "iter-16: Hagan-Parametrisierung E_G (scratch/experiments/iter-16)"
+  ]
+}

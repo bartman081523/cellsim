@@ -104,10 +104,31 @@ def test_jump_diffusion_single_particle_survives() -> None:
     for _ in range(50):
         stochastic_jump_diffusion(fields, 0.20, rng)
         assert int(fields["a"].sum()) == 1
-    # Bewegungs-Wahrscheinlichkeit ~1−(1−p)⁶ ≈ 0.74/Schritt: nach 50
+    # Bewegungs-Wahrscheinlichkeit ~1−(1−p)¹² ≈ 0.93/Schritt: nach 50
     # Schritten ist Gehen sicher; Teilchen verlässt Startpunkt
     # (Determinismus via Seed).
     assert fields["a"][3, 3, 3] == 0
+
+
+def test_jump_diffusion_no_drift() -> None:
+    """iter-15-Fix: beidseitige Sprünge — Delta-Funktion breitet sich
+    symmetrisch aus (Erwartungswert bleibt am Startort), kein
+    upwind-Advektions-Drift mehr."""
+    n_runs = 400
+    displacement: list[float] = []
+    for run in range(n_runs):
+        rng = make_rng(1000 + run, 0, 0)
+        fields = {"a": np.zeros((9, 9, 9), dtype=np.int64)}
+        fields["a"][4, 4, 4] = 1
+        for _ in range(100):
+            stochastic_jump_diffusion(fields, 0.30, rng)
+        coords = np.argwhere(fields["a"] == 1)
+        assert coords.shape[0] == 1
+        displacement.append(float(np.abs(coords[0] - 4).max()))
+    mean_displacement = float(np.mean(displacement))
+    # Unbiased walk: E[|Δ|max nach 100 Schritten, D=0.3] ~ O(√(𝒟t));
+    # der alte upwind-Drift hätte ~30 Voxel erzeugt (p·t = 0.3·100).
+    assert mean_displacement < 10.0
 
 
 def test_jump_diffusion_deterministic() -> None:
