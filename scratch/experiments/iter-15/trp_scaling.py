@@ -71,7 +71,7 @@ def classify_turnover(per_step: float, window: tuple[float, float]) -> str:
 
 
 def analytic_phase_table() -> tuple[list[dict[str, float]], float, float]:
-    """N\*-Sweep: (N_total, f_burst) → Turnover/Schritt vs. Fenster."""
+    r"""N\*-Sweep: (N_total, f_burst) → Turnover/Schritt vs. Fenster."""
     window = damkoehler_window_per_step(DT_S)
     phi_lo, phi_hi = threshold_aggregate_rate_per_s(r_nm=R_NM, dt_s=DT_S)
     rows: list[dict[str, float]] = []
