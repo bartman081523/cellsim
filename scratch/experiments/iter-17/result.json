@@ -1,0 +1,290 @@
+{
+  "operating_point": {
+    "u": 0.9997421151620369,
+    "v": 1.2972341579861109,
+    "mean_x": 399.8968460648148,
+    "mean_y": 518.8936631944443,
+    "jacobian": [
+      0.2968996209654784,
+      0.49974214841433173,
+      -1.2968996209654784,
+      -0.49974214841433173
+    ],
+    "deterministic_fp": [
+      1.0,
+      1.3
+    ]
+  },
+  "predictions": {
+    "0.25": {
+      "unstable": false,
+      "band": null,
+      "k_star": null,
+      "sigma_max": 0.0,
+      "margin": 0.0652740253017209,
+      "trace_j": -0.20284252744885334,
+      "det_j": 0.49974214841433173
+    },
+    "1.0": {
+      "unstable": false,
+      "band": null,
+      "k_star": null,
+      "sigma_max": 0.0,
+      "margin": 0.5940035492618766,
+      "trace_j": -0.20284252744885334,
+      "det_j": 0.49974214841433173
+    },
+    "3.0": {
+      "unstable": true,
+      "band": [
+        0.8503756425401443,
+        3.141592653589793
+      ],
+      "k_star": 1.4218691304220932,
+      "sigma_max": 0.08080630626488805,
+      "margin": 2.058920582814535,
+      "trace_j": -0.20284252744885334,
+      "det_j": 0.49974214841433173
+    },
+    "10.0": {
+      "unstable": true,
+      "band": [
+        0.42568782127007215,
+        3.141592653589793
+      ],
+      "k_star": 1.0286396662831374,
+      "sigma_max": 0.17623593644808722,
+      "margin": 7.201872077923892,
+      "trace_j": -0.20284252744885334,
+      "det_j": 0.49974214841433173
+    },
+    "0.06": {
+      "unstable": false,
+      "band": null,
+      "k_star": null,
+      "sigma_max": 0.0,
+      "margin": 0.020583160271947776,
+      "trace_j": -0.20284252744885334,
+      "det_j": 0.49974214841433173
+    }
+  },
+  "runs": {
+    "0.25": {
+      "verdict": "STABLE_AS_PREDICTED",
+      "measured": {
+        "k_peak": 0.453,
+        "peak_excess": 5.514552255419153,
+        "band_ratio": 0.523202840018121,
+        "mean_x": 399.8860677083333,
+        "mean_y": 518.4269024884259,
+        "persistenz": 0.41789542951928604
+      },
+      "predicted_unstable": false,
+      "predicted_band": null,
+      "predicted_sigma": 0.0,
+      "per_seed": [
+        {
+          "k_peak": 0.37,
+          "peak_excess": 5.627384929528375,
+          "band_ratio": 0.5284477642467882,
+          "band_amp": 31160.69096390226,
+          "mean_x": 400.10499855324076,
+          "mean_y": 518.3029513888889,
+          "persistenz": 0.618819698762356
+        },
+        {
+          "k_peak": 0.48850000000000005,
+          "peak_excess": 5.514552255419153,
+          "band_ratio": 0.516683188176668,
+          "band_amp": 30359.797628117427,
+          "mean_x": 399.8860677083333,
+          "mean_y": 518.9768880208333,
+          "persistenz": 0.40474173431046356
+        },
+        {
+          "k_peak": 0.453,
+          "peak_excess": 5.268637899629762,
+          "band_ratio": 0.523202840018121,
+          "band_amp": 30534.60268576202,
+          "mean_x": 399.8718894675926,
+          "mean_y": 518.4269024884259,
+          "persistenz": 0.41789542951928604
+        }
+      ]
+    },
+    "1.0": {
+      "verdict": "STABLE_AS_PREDICTED",
+      "measured": {
+        "k_peak": 0.4115,
+        "peak_excess": 24.21611712405837,
+        "band_ratio": 0.5369258218770203,
+        "mean_x": 400.2038483796296,
+        "mean_y": 518.6059389467594,
+        "persistenz": 0.10104794012475223
+      },
+      "predicted_unstable": false,
+      "predicted_band": null,
+      "predicted_sigma": 0.0,
+      "per_seed": [
+        {
+          "k_peak": 0.4115,
+          "peak_excess": 24.21611712405837,
+          "band_ratio": 0.5369258218770203,
+          "band_amp": 33080.8611222999,
+          "mean_x": 400.2038483796296,
+          "mean_y": 518.1334273726852,
+          "persistenz": 0.10085054678007294
+        },
+        {
+          "k_peak": 0.524,
+          "peak_excess": 24.71310634963184,
+          "band_ratio": 0.5659435847818856,
+          "band_amp": 35486.05684711696,
+          "mean_x": 400.3734085648148,
+          "mean_y": 518.6059389467594,
+          "persistenz": 0.10104794012475223
+        },
+        {
+          "k_peak": 0.262,
+          "peak_excess": 17.060173784785036,
+          "band_ratio": 0.5182152206986028,
+          "band_amp": 32464.89649907351,
+          "mean_x": 399.90733506944446,
+          "mean_y": 518.6424334490741,
+          "persistenz": 0.3156695651199003
+        }
+      ]
+    },
+    "3.0": {
+      "verdict": "FALSIFIED_NO_PATTERN",
+      "measured": {
+        "k_peak": 0.262,
+        "peak_excess": 23349.7118833272,
+        "band_ratio": 0.009981463989755843,
+        "mean_x": 404.8693214699074,
+        "mean_y": 502.9309172453704,
+        "persistenz": 0.0,
+        "sigma_meas": 7.70415424091109e-05
+      },
+      "predicted_unstable": true,
+      "predicted_band": [
+        0.8503756425401443,
+        3.141592653589793
+      ],
+      "predicted_sigma": 0.08080630626488805,
+      "per_seed": [
+        {
+          "k_peak": 0.262,
+          "peak_excess": 70071.16940088256,
+          "band_ratio": 0.008632849603840555,
+          "band_amp": 93226.75971419472,
+          "mean_x": 408.9670500578703,
+          "mean_y": 477.53273292824076,
+          "persistenz": 0.0,
+          "sigma_meas": 7.70415424091109e-05
+        },
+        {
+          "k_peak": 0.37,
+          "peak_excess": 8711.399228323264,
+          "band_ratio": 0.012978324575760185,
+          "band_amp": 29968.571140175372,
+          "mean_x": 401.77332899305554,
+          "mean_y": 508.29286024305554,
+          "persistenz": 0.0,
+          "sigma_meas": NaN
+        },
+        {
+          "k_peak": 0.262,
+          "peak_excess": 23349.7118833272,
+          "band_ratio": 0.009981463989755843,
+          "band_amp": 47161.53046002933,
+          "mean_x": 404.8693214699074,
+          "mean_y": 502.9309172453704,
+          "persistenz": 0.0,
+          "sigma_meas": NaN
+        }
+      ]
+    },
+    "10.0": {
+      "verdict": "FALSIFIED_NO_PATTERN",
+      "measured": {
+        "k_peak": 0.262,
+        "peak_excess": 769365.9890654463,
+        "band_ratio": 0.17790670589676327,
+        "mean_x": 400.0380859375,
+        "mean_y": 235.98969184027777,
+        "persistenz": 0.0,
+        "sigma_meas": NaN
+      },
+      "predicted_unstable": true,
+      "predicted_band": [
+        0.42568782127007215,
+        3.141592653589793
+      ],
+      "predicted_sigma": 0.17623593644808722,
+      "per_seed": [
+        {
+          "k_peak": 0.262,
+          "peak_excess": 758671.9997304969,
+          "band_ratio": 0.17752807780848634,
+          "band_amp": 1254122.351934501,
+          "mean_x": 400.0380859375,
+          "mean_y": 235.98969184027777,
+          "persistenz": 0.0,
+          "sigma_meas": NaN
+        },
+        {
+          "k_peak": 0.262,
+          "peak_excess": 770239.1801743782,
+          "band_ratio": 0.17893180402882367,
+          "band_amp": 1257904.3751140293,
+          "mean_x": 399.87666377314815,
+          "mean_y": 236.51403356481484,
+          "persistenz": 0.0,
+          "sigma_meas": NaN
+        },
+        {
+          "k_peak": 0.262,
+          "peak_excess": 769365.9890654463,
+          "band_ratio": 0.17790670589676327,
+          "band_amp": 1255590.4718233275,
+          "mean_x": 400.26045283564815,
+          "mean_y": 235.95041232638889,
+          "persistenz": 0.0,
+          "sigma_meas": NaN
+        }
+      ]
+    }
+  },
+  "nulls": {
+    "matched_dratio1": {
+      "band_ratio": 0.5101519723415793,
+      "peak_excess": 5.639482579595917,
+      "k_peak": 0.262,
+      "artifact": true
+    },
+    "diffusion_only_dv10": {
+      "band_ratio": 0.45400888387012917,
+      "peak_excess": 2.3360175623363
+    },
+    "mean_field": {
+      "u_final": 1.0000000000000009,
+      "v_final": 1.300000000000002,
+      "dev_u": 8.881784197001252e-16,
+      "dev_v": 1.9984014443252818e-15
+    }
+  },
+  "registry_audit": {
+    "n_species": 26,
+    "n_reactions": 20,
+    "feedback_candidates": [
+      "ADP",
+      "ATP",
+      "Pi",
+      "Ribosome_30S",
+      "Ribosome_50S",
+      "Ribosome_70S"
+    ],
+    "note": "Net-St\u00f6chiometrie verdeckt Autokatalyse; Turing-Substrat nicht entscheidbar (VECTOR_REGISTRY_TURING_EXT)"
+  }
+}

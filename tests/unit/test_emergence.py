@@ -12,6 +12,7 @@ from cellsim.modules.emergence import (
     lz_complexity_binary,
     mutual_information_binary,
     permutation_contrast_test,
+    radial_power_spectrum,
     stochastic_jump_diffusion,
 )
 
@@ -199,3 +200,55 @@ def test_permutation_test_validates_inputs() -> None:
         permutation_contrast_test(10, 100, 10, 11)
     with pytest.raises(ValueError):
         permutation_contrast_test(10, 100, 10, 5, n_permutations=0)
+
+
+# --- Radiales Leistungsspektrum (iter-17) -----------------------------
+
+
+def test_spectrum_plane_wave_peak_at_predicted_k() -> None:
+    """Ebene Welle sin(2π·n·x/L) → Peak bei |k| = 2π·n/L.
+
+    Direkt die iter-17-Vorhersage: das Schnakenberg-Muster mit
+    λ* ≈ 8 Voxel auf einem L=24-Gitter entspricht Shell n=3,
+    k = 2π·3/24 ≈ 0.785 rad/Zelle.
+    """
+    n_grid, mode = 24, 3
+    x = np.arange(n_grid)
+    field = np.sin(2.0 * np.pi * mode * x / n_grid) + 3.0
+    field = np.broadcast_to(field, (n_grid, n_grid, n_grid)).copy()
+    k_vals, power = radial_power_spectrum(field)
+    assert k_vals[0] > 0.0  # k=0 ausgeklammert
+    k_peak = float(k_vals[np.argmax(power)])
+    assert abs(k_peak - 2.0 * np.pi * mode / n_grid) < 0.05
+
+
+def test_spectrum_constant_field_no_k0_leakage() -> None:
+    """Konstantes Feld → mittelfrei, Leistung nur bei k=0 (entfernt)."""
+    field = np.full((8, 8, 8), 12.5)
+    k_vals, power = radial_power_spectrum(field)
+    assert k_vals.shape == power.shape
+    assert k_vals[0] > 0.0
+    assert float(power.max()) < 1e-6
+
+
+def test_spectrum_noise_no_dominant_peak() -> None:
+    """Weißes Rauschen: kein Peak dominiert (max/median moderat)."""
+    rng = make_rng(5, 0, 0)
+    field = rng.poisson(3.0, size=(16, 16, 16)).astype(np.float64)
+    k_vals, power = radial_power_spectrum(field)
+    ratio = float(power.max() / max(np.median(power), 1e-12))
+    assert ratio < 10.0
+
+
+def test_spectrum_rejects_1d() -> None:
+    with pytest.raises(ValueError):
+        radial_power_spectrum(np.arange(16.0))
+
+
+def test_spectrum_deterministic() -> None:
+    rng = make_rng(6, 0, 0)
+    field = rng.poisson(5.0, size=(10, 10, 10)).astype(np.float64)
+    a = radial_power_spectrum(field)
+    b = radial_power_spectrum(field)
+    assert np.array_equal(a[0], b[0])
+    assert np.array_equal(a[1], b[1])

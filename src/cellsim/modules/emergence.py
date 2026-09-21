@@ -93,6 +93,38 @@ def laplacian_3d(z: np.ndarray) -> np.ndarray:
     return out
 
 
+def radial_power_spectrum(field: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Radial gemitteltes Leistungsspektrum eines 2D/3D-Feldes.
+
+    Detektor für räumliche Selbstorganisation (iter-17,
+    VECTOR_PATTERN_FORMATION): Turing/Swift-Hohenberg-Muster zeigen
+    einen Peak bei endlichem |k| (selektierte Wellenlänge), während
+    homogene Zustände nur Leistung bei k=0 tragen und diffusion-only-
+    Felder monoton abfallen.
+
+    Der Mittelwert wird abgezogen (k=0 trägt daher keine Leistung und
+    wird nicht zurückgegeben). |k| in rad pro Gitterzelle; Leistung ist
+    |FFT|², gemittelt über alle Fourier-Modi mit gleichem gerundetem
+    |k| (3 Dezimalen).
+
+    Returns: (k_werte, gemittelte_leistung), beide aufsteigend nach k.
+    """
+    z = np.asarray(field, dtype=np.float64)
+    if z.ndim not in (2, 3):
+        raise ValueError("field muss 2D oder 3D sein")
+    spec = np.abs(np.fft.fftn(z - z.mean())) ** 2
+    k_axes = [np.fft.fftfreq(n, d=1.0) * 2.0 * np.pi for n in z.shape]
+    k_grids = np.meshgrid(*k_axes, indexing="ij")
+    k_mag = np.sqrt(sum(g**2 for g in k_grids)).ravel()
+    keys = np.round(k_mag, 3)
+    uniq, inverse = np.unique(keys, return_inverse=True)
+    power = np.bincount(inverse, weights=spec.ravel())
+    counts = np.bincount(inverse)
+    mean_power = power / np.maximum(counts, 1)
+    # k=0 (Mittelwert) ausklammern.
+    return uniq[1:], mean_power[1:]
+
+
 def stochastic_jump_diffusion(
     fields: dict[str, np.ndarray],
     diff_coeff: float,
