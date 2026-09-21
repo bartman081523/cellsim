@@ -1,0 +1,463 @@
+{
+ "part_A_autocatalysis_netform": [],
+ "part_A_verdict": "0/20 \u2014 Autokatalyse im Netto-Schema unerzwingbar (repr\u00e4sentativ)",
+ "part_B_conversion_cycles": [
+  [
+   "glycolysis",
+   "ATP",
+   "atp_hydrolysis",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "atp_hydrolysis",
+   "Pi"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "gyrase_supercoil",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "ligase_seal",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "trigger_factor_bind",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "groel_groes_fold",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "ftsz_polymerization",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "mreb_cytoskeleton",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "degradosome_degrade",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "signal_recognition",
+   "ADP"
+  ],
+  [
+   "glycolysis",
+   "ATP",
+   "sec_translocation",
+   "ADP"
+  ],
+  [
+   "atp_hydrolysis",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "atp_hydrolysis",
+   "Pi",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "atp_hydrolysis",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "atp_hydrolysis",
+   "Pi",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "atp_hydrolysis",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "atp_hydrolysis",
+   "Pi"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "gyrase_supercoil",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "ligase_seal",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "trigger_factor_bind",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "groel_groes_fold",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "ftsz_polymerization",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "mreb_cytoskeleton",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "degradosome_degrade",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "signal_recognition",
+   "ADP"
+  ],
+  [
+   "atp_synthase",
+   "ATP",
+   "sec_translocation",
+   "ADP"
+  ],
+  [
+   "ribosome_assembly",
+   "Ribosome_70S",
+   "ribosome_disassembly",
+   "Ribosome_30S"
+  ],
+  [
+   "ribosome_assembly",
+   "Ribosome_70S",
+   "ribosome_disassembly",
+   "Ribosome_50S"
+  ],
+  [
+   "ribosome_disassembly",
+   "Ribosome_30S",
+   "ribosome_assembly",
+   "Ribosome_70S"
+  ],
+  [
+   "ribosome_disassembly",
+   "Ribosome_50S",
+   "ribosome_assembly",
+   "Ribosome_70S"
+  ],
+  [
+   "gyrase_supercoil",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "gyrase_supercoil",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "ligase_seal",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "ligase_seal",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "trigger_factor_bind",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "trigger_factor_bind",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "groel_groes_fold",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "groel_groes_fold",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "ftsz_polymerization",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "ftsz_polymerization",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "mreb_cytoskeleton",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "mreb_cytoskeleton",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "degradosome_degrade",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "degradosome_degrade",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "signal_recognition",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "signal_recognition",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ],
+  [
+   "sec_translocation",
+   "ADP",
+   "glycolysis",
+   "ATP"
+  ],
+  [
+   "sec_translocation",
+   "ADP",
+   "atp_synthase",
+   "ATP"
+  ]
+ ],
+ "part_B_amplification_cycles": 0,
+ "part_D_placeholders": [
+  {
+   "reaction": "rnap_init",
+   "zero_species": [
+    "RNAP"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "dna_pol_iii_binding",
+   "zero_species": [
+    "DNA_Pol_III"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "dna_pol_iii_release",
+   "zero_species": [
+    "DNA_Pol_III"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "gyrase_supercoil",
+   "zero_species": [
+    "DNA_Gyrase"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "ligase_seal",
+   "zero_species": [
+    "DNA_Ligase"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "topoi_relax",
+   "zero_species": [
+    "DNA_TopoI"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "trigger_factor_bind",
+   "zero_species": [
+    "Trigger_Factor"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "groel_groes_fold",
+   "zero_species": [
+    "GroEL_GroES"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "ftsa_membrane_anchor",
+   "zero_species": [
+    "FtsA"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "mreb_cytoskeleton",
+   "zero_species": [
+    "MreB_actin"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "pyruvate_decarb_complex",
+   "zero_species": [
+    "Pyruvate_decarb"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "degradosome_degrade",
+   "zero_species": [
+    "Degradosome"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "signal_recognition",
+   "zero_species": [
+    "Signal_recog"
+   ],
+   "in_rate": false
+  },
+  {
+   "reaction": "sec_translocation",
+   "zero_species": [
+    "Sec_translocon"
+   ],
+   "in_rate": false
+  }
+ ],
+ "dead_fixpoint": {
+  "ATP": 0.0,
+  "ADP": 100.00000000000112,
+  "Pi": 0.0,
+  "Glucose": 0.00011245725419483864,
+  "Pyruvate": 149.99977508545396,
+  "NADH": 149.99977508545396,
+  "RNAP": 50.0,
+  "Ribosome_30S": 0.9950125009960314,
+  "Ribosome_50S": 0.9950125009960314,
+  "Ribosome_70S": 99.0049874990005,
+  "DNA_Gyrase": 50.0,
+  "DNA_Pol_III": 50.0,
+  "DNA_Ligase": 50.0,
+  "DNA_TopoI": 50.0,
+  "ATP_synthase": 50.0,
+  "ATP_synthase_F1": 50.0,
+  "ATP_synthase_Fo": 50.0,
+  "Degradosome": 50.0,
+  "FtsZ_ring": 54.73149954978505,
+  "FtsA": 50.0,
+  "MreB_actin": 50.0,
+  "Pyruvate_decarb": 50.0,
+  "GroEL_GroES": 50.0,
+  "Trigger_Factor": 50.0,
+  "Signal_recog": 50.0,
+  "Sec_translocon": 50.0
+ },
+ "dead_fixpoint_residual": 8.593489475572369e-09,
+ "part_C_turing": {
+  "R1_dead_fixpoint|S1_uniform": {
+   "max_re_eig": -0.0019999999999995733,
+   "d_star": 0.0001,
+   "pair": null,
+   "homogeneous_max_re": 1.680122068612703e-17
+  },
+  "R1_dead_fixpoint|S2_metab_fast": {
+   "max_re_eig": -0.00011999999999972991,
+   "d_star": 0.0001,
+   "pair": null,
+   "homogeneous_max_re": 1.680122068612703e-17
+  },
+  "R1_dead_fixpoint|S3_metab_slow": {
+   "max_re_eig": -0.00012,
+   "d_star": 0.0001,
+   "pair": null,
+   "homogeneous_max_re": 1.680122068612703e-17
+  },
+  "R2_uniform50_transient|S1_uniform": {
+   "max_re_eig": -0.002,
+   "d_star": 0.0001,
+   "pair": null,
+   "homogeneous_max_re": 3.7417532395069835e-07
+  },
+  "R2_uniform50_transient|S2_metab_fast": {
+   "max_re_eig": -0.00012,
+   "d_star": 0.0001,
+   "pair": null,
+   "homogeneous_max_re": 3.7417532395069835e-07
+  },
+  "R2_uniform50_transient|S3_metab_slow": {
+   "max_re_eig": -0.00012,
+   "d_star": 0.0001,
+   "pair": null,
+   "homogeneous_max_re": 3.7417532395069835e-07
+  }
+ },
+ "verdict": "FALSIFIED_REGISTRY_TURING_INCOMPETENT"
+}

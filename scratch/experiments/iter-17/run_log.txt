@@ -1,0 +1,31 @@
+/run/media/julian/ML3/cellsim/scratch/experiments/iter-17/turing_rdme.py:502: RuntimeWarning: All-NaN slice encountered
+  meas["sigma_meas"] = float(np.nanmedian(sig))
+Deterministischer Fixpunkt: u*=1.000, v*=1.300 (Counts: X*=400, Y*=520.0)
+Arbeitspunkt (gemessen, matched-Null): u=0.9997, v=1.2972 (Counts: 399.9, 518.9)
+Jacobian (am Arbeitspunkt): f_u=0.297, f_v=0.500, g_u=-1.297, g_v=-0.500
+traceJ=-0.203 (<0: homogen stabil), detJ=0.500
+Onset-Schwelle (numerisch, exaktes Gitter-Symbol, am gemessenen Arbeitspunkt): D_v ≈ 1.556
+
+  D_v=  0.06: stabil, k*=—, σ*=0.0000, Margin=0.02
+  D_v=  0.25: stabil, k*=—, σ*=0.0000, Margin=0.07
+  D_v=   1.0: stabil, k*=—, σ*=0.0000, Margin=0.59
+  D_v=   3.0: k∈[0.850,3.142], k*=1.422, σ*=0.0808, Margin=2.06
+  D_v=  10.0: k∈[0.426,3.142], k*=1.029, σ*=0.1762, Margin=7.20
+
+Null (D-Ratio=1): band_ratio=0.5102, peak_excess=5.64 → ARTIFACT_PATTERN
+Null (diffusion-only, D_v=10): band_ratio=0.4540, peak_excess=2.34
+Null (mean-field ODE): dev_u=8.88e-16, dev_v=2.00e-15 (konvergiert homogen)
+
+D_v=  0.25: peak_excess=  5.51, k_peak=0.453, band_ratio=0.5232, mean_x=399.9
+          → STABLE_AS_PREDICTED
+D_v=   1.0: peak_excess= 24.22, k_peak=0.411, band_ratio=0.5369, mean_x=400.2
+          → STABLE_AS_PREDICTED
+D_v=   3.0: peak_excess=23349.71, k_peak=0.262, band_ratio=0.0100, mean_x=404.9, σ_meas=0.0001 (σ_pred=0.0808)
+          → FALSIFIED_NO_PATTERN
+D_v=  10.0: peak_excess=769365.99, k_peak=0.262, band_ratio=0.1779, mean_x=400.0, σ_meas=nan (σ_pred=0.1762)
+          → FALSIFIED_NO_PATTERN
+
+Registry-Audit: 20 Reaktionen, 26 Spezies, Feedback-Kandidaten: ['ADP', 'ATP', 'Pi', 'Ribosome_30S', 'Ribosome_50S', 'Ribosome_70S']
+  (Net-Stöchiometrie verdeckt Autokatalyse; Turing-Substrat nicht entscheidbar (VECTOR_REGISTRY_TURING_EXT))
+
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-17/out/result.json

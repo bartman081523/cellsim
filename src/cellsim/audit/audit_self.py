@@ -50,7 +50,7 @@ CELLSIM_CORE_CLAIMS: tuple[SelfAuditItem, ...] = (
         strategic_vector="VECTOR_BRIDGE_L2_L3",
     ),
     SelfAuditItem(
-        claim="The 21 macromolecular complexes from 4DWCM Table S2 are modeled as reaction species with BRENDA-extracted kinetics.",
+        claim="The 20 macromolecular complexes from 4DWCM Table S2 are modeled as reaction species with kinetics from the 4DWCM/syn3A parameter set (16 MGENITALIUM-labeled) plus 4 HYPOTHESE-labeled entries.",
         layer="L3",
         evidence="src/cellsim/modules/reactions.py:default_registry() + configs/brenda_kinetics.yaml",
         strategic_vector="VECTOR_BRENDA_FULL",
@@ -90,6 +90,18 @@ CELLSIM_CORE_CLAIMS: tuple[SelfAuditItem, ...] = (
         layer="meta",
         evidence="src/cellsim/audit/__init__.py:audit_claim()",
         strategic_vector="VECTOR_MIXMIND_PROGRAMMATIC",
+    ),
+    SelfAuditItem(
+        claim="Turing pattern formation in this cell simulation is demonstrated only on an artificial Schnakenberg two-species core (iter-17/19); the production reaction registry carries no Turing substrate (net stoichiometry cannot express autocatalysis, 6/6 Jacobian-Turing combos negative, ODE attractor is the dead state).",
+        layer="L3",
+        evidence="scratch/experiments/iter-19:turing_prospective.py + scratch/experiments/iter-20:result.json + modules/emergence.py:stochastic_jump_diffusion",
+        strategic_vector="VECTOR_REGISTRY_TURING_EXT",
+    ),
+    SelfAuditItem(
+        claim="Orch-OR collapse kernel is a modeling discrimination (collective cluster kick, C2-cap declared) and fires never in JCVI-syn3A (N_eff=1 gate OFF, programmatically tested).",
+        layer="L4",
+        evidence="src/cellsim/modules/orch_or.py:syn3a_gate_check + scratch/experiments/iter-18",
+        strategic_vector="VECTOR_OR_KERNEL",
     ),
 )
 

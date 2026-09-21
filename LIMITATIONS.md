@@ -23,7 +23,7 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 - Diese Konstante ist in `cellsim/core/constants.py:ROSEN_HORIZON` definiert und wird in jeder CLI-Ausgabe als Warnung geloggt.
 - **L1/MES-Stub ist implementiert** (`cellsim/modules/mes.py`) — vereinfachte Zustandsmaschine HEALTHY/STRESSED/DAMAGED/REPAIRING/DEAD mit exponentiell geglättetem Memory.
 
-## 2. CellsimMixMind-Audit-Status (Stand 2026-08-21)
+## 2. CellsimMixMind-Audit-Status (Stand 2026-09-21)
 
 | Vektor | Status | Evidenzgrad | Bemerkung |
 |---|---|---|---|
@@ -32,7 +32,7 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 | VECTOR_QUQUINT_BENCHMARK | ✅ abgeschlossen | **C (HYPOTHESE)** | Konservative Replikation: 1.1×–1.3× statt 1000× |
 | VECTOR_ROSEN_HORIZON | ✅ L1/MES-Stub | — | Stub implementiert, vollständige MES-Theorie bleibt offen |
 | VECTOR_RIEMANN_DNA | ✅ abgeschlossen | **B (PLAUSIBLE)** | Riemann-Mannigfaltigkeit mit Frenet-Serret-Krümmung |
-| VECTOR_BRENDA_FULL | ✅ abgeschlossen | **B (PLAUSIBLE)** | 16/21 MGENITALIUM + 5/21 HYPOTHESE |
+| VECTOR_BRENDA_FULL | ✅ abgeschlossen | **B (PLAUSIBLE)** | 16/20 MGENITALIUM + 4/20 HYPOTHESE (iter-20-Zensus: 26 Spezies, 20 Reaktionen) |
 | VECTOR_FROEHLICH_CONDENSATION | ✅ Stub | **REFUTED_BY_REIMERS_2010** | Dämpfung max. 0.1 % (revidiert von 5 %) |
 | VECTOR_MIXMIND_PROGRAMMATIC | ✅ abgeschlossen | **A** | 10 Via-Negativa-Tests + Grade A-F + CLI |
 | VECTOR_EM_SCHICHT (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | Chemolumineszenz 80 Mio Photonen/cm²/s bei 1 µm (Popp) |
@@ -40,10 +40,13 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 | VECTOR_QUQUINT_VQE (Neu) | ✅ abgeschlossen | **B (PLAUSIBLE)** | QuQuint-VQE 36.30× Threshold (Campbell 2012) |
 | VECTOR_PROTON_TUNNELING (Neu) | ✅ selektiv | **B (PL.)** | Enhancement nur bei d ≤ 0.3 Å messbar |
 | VECTOR_ORCH_OR (Neu) | ⚠️ **revidiert (iter-16)** | **C (OPEN)** | iter-7s E_G-Formel war dimensional invalid + Kriterium invertiert; korrekte Penrose-Rechnung (E_G = G·(ΔM)²/a) + Hagan-Shielding: viable Region in großzügiger Parameter-Ecke (f=5 %, a=8nm, N=1e9, S=1e6); OHNE Shielding nichts viable (Tegmark-bulk konsistent) — siehe scratch/experiments/iter-16 |
+| VECTOR_OR_KERNEL (iter-18) | ✅ abgeschlossen | **C (SIGNATURE_ROBUST)** | OR-Kern als Modell-Diskrimination (C2-Cap deklariert): S1/S3-Signaturen exakt Formel, überlebt 90 % Readout-Verlust; syn3A-Gate OFF (N_eff=1) — in der Zellsim wirklos; Kick-Kopplung HYPOTHESE — siehe scratch/experiments/iter-18 |
+| VECTOR_REGISTRY_TURING_EXT (iter-20) | ✅ abgeschlossen | **B (FALSIFIED)** | Registry trägt KEIN Turing-Substrat: 0/20 Autokatalyse (Netto-Schema unerzwingbar), 0 Verstärkungs-Zyklen, 6/6 Jacobian-Turing-Kombinationen negativ, ODE-Attraktor = Totzustand (ATP=0) — siehe scratch/experiments/iter-20 |
+| VECTOR_TURING_PROSPECTIVE (iter-19) | 🔄 läuft | — | Prospektiver Re-Test L=48: exakte diskrete Abbildung vs kontinuierliches Symbol (Banden-Diskrimination) — Auswertung folgt |
 
 **Selbst-Audit ausgeführt**: `python -m cellsim self-audit`
-- 10 zentrale cellsim-Behauptungen auditiert
-- Grade-Verteilung: 3× A, 0× B, 7× C, 0× F
+- 12 zentrale cellsim-Behauptungen auditiert
+- Grade-Verteilung (Stand 2026-09-21): 4× A, 0× B, 8× C, 0× F
 - C-Bewertungen resultieren hauptsächlich aus BORDERLINE `unfalsifiable` (kein "if"-Clause in der Aussage)
 
 ## 3. Via-Negativa-Audit der Architekturbehauptungen
@@ -53,7 +56,7 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 - **Asakura-Oosawa-Depletion** ist experimentell validiert für DNA-Crowding.
 - **AlphaFold 2 Database** ist öffentlich.
 - **QuQuint-V-Ladder-Dekomposition** ist publiziert (PMC9955871).
-- **BRENDA-Konstanten** für 14/21 Hauptreaktionen verfügbar (E. coli).
+- **BRENDA-Konstanten** für die Kernreaktionen verfügbar (E. coli als Proxy); Produktionsschiene nutzt 4DWCM/MGENITALIUM-Parameter (16/20).
 - **Riemannsche Geometrie** ist mathematisch wohldefiniert.
 
 ### Revidiert (Via-Negativa-Korrektur)
@@ -64,7 +67,8 @@ cellsim ist eine **AnA-Approximation**: es modelliert die Zelle als einen Satz u
 
 ### Strukturelle Lücken
 - **Keine Selbst-Replikation**: cellsim hat keine Transkriptions-/Translations-Maschinerie. Die Zelle kann sich *nicht* selbst replizieren — sie ist eine "statische Biochemie-Simulation", keine lebende Zelle.
-- **Keine Emergenz**: alle 21 makromolekularen Komplexe sind statisch registriert; sie können nicht de novo entstehen.
+- **Keine Emergenz**: alle 20 makromolekularen Komplexe sind statisch registriert; sie können nicht de novo entstehen.
+- **Registry ohne Turing-Substrat (iter-20)**: Netto-Stöchiometrie kann Autokatalyse nicht ausdrücken; die Registry-ODE zieht in einen Totzustand (ATP=0, Glucose=0) — Musterbildung nur auf dem künstlichen Schnakenberg-Kern (iter-17/19).
 - **L1/MES nur als Stub**: vollständige MES-Theorie (Kolimites, Adjunktionen, Pattern-Komplexe) ist nicht implementiert; der Stub ist eine Zustandsmaschine ohne kategorientheoretische Fundierung.
 - **Asakura-Oosawa nicht experimentell validiert**: nur theoretische Konsistenz, keine Vergleichsmessung gegen Einzel-Molekül-Tracking-Daten.
 - **Fröhlich-Stub ohne experimentelle Validierung**: max. 5 % ATP-Einsparung ist eine *sehr konservative* Schätzung; tatsächliche Effekte könnten null sein.

@@ -64,7 +64,7 @@ src/cellsim/
 
 1. **CLI** → lade YAML + dataclass-Defaults → `SimConfig` → seedable RNG
 2. **Proteom** → `UP000326712` (TSV) → AlphaFold v6→v4→v3 → PDB → `(Rg, Rs, V_ex, pLDDT)`
-3. **Reaktionen** → 21 Komplexe aus 4DWCM-Tabelle S2; kinetische Konstanten teils BRENDA (E. coli), teils HYPOTHESE
+3. **Reaktionen** → 20 Komplexe aus 4DWCM-Tabelle S2; kinetische Konstanten teils 4DWCM/syn3A-Parametersatz (Quellen-Label MGENITALIUM), teils HYPOTHESE
 4. **Solver-Aufbau** → `RDMEAdapter` (Gillespie-SSA, optional crowding-aware), `ODEAdapter` (RK45), `ChromosomeAdapter` (Verlet + optional Riemann-Mannigfaltigkeit)
 5. **Treiber-Loop** → RDME-Schritte + ODE-Sync alle `sync_interval`-Schritte + optional A-O-Brücke
 6. **Analyse** → `run.csv` → `pairs.csv` + `discriminations.csv` + `summary.csv` + 4 PNGs
@@ -75,7 +75,7 @@ src/cellsim/
 - `src/cellsim/adapters/rdme.py` — Gillespie-SSA-Solver; `state.voxels[species_id]` als `np.ndarray[grid_shape]`; `_apply_local_diffusion` für L2-Brücke
 - `src/cellsim/adapters/ode.py` — `scipy.integrate.solve_ivp` mit Glycolyse-Stub (3 Spezies)
 - `src/cellsim/adapters/chromosome.py` — 1D-Bead-Spring-Verlet + optional Riemann-Mannigfaltigkeit
-- `src/cellsim/modules/reactions.py` — `default_registry()` liefert 22 Spezies + 21 Reaktionen (BRENDA+HYPOTHESE-Mix)
+- `src/cellsim/modules/reactions.py` — `default_registry()` liefert 26 Spezies + 20 Reaktionen (MGENITALIUM+HYPOTHESE-Mix)
 - `src/cellsim/modules/crowding.py` — `CrowdingField` mit `D_local = D_bulk · exp(-α · crowding_index)`
 - `src/cellsim/modules/asakura_oosawa.py` — A-O-Depletion-Potenzial + lokal variierender D (L2↔L3-Brücke)
 - `src/cellsim/modules/riemann.py` — Riemann-Mannigfaltigkeit für DNA-Konfigurationsraum (L4)
@@ -101,7 +101,7 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 
 - **Rosen-Horizont** (`core/constants.py:ROSEN_HORIZON`): L3 ist reduktionistisch (`AnA`); für eine vollständige Zellsimulation ist L1/MES erforderlich.
 - **Kein GPU**, keine Lattice-Microbes-Kopplung — eigene Python-Gillespie-SSA.
-- **Kinetische Konstanten**: 6 BRENDA-extrahiert (E. coli), 15 HYPOTHESE — JCVI-syn3A-spezifische Kalibrierung wäre eigenes Forschungsprojekt.
+- **Kinetische Konstanten**: 16/20 aus 4DWCM/syn3A-Parametersatz (Quellen-Label MGENITALIUM), 4/20 HYPOTHESE — JCVI-syn3A-spezifische Kalibrierung wäre eigenes Forschungsprojekt. (CORREKTUR 2026-09-21: ältere Zählungen "6 BRENDA + 15 HYPOTHESE" bezogen sich auf einen früheren Registry-Stand; iter-20-Zensus: 26 Spezies, 20 Reaktionen.)
 - **105-min-Vollzyklus nicht in Scope** — Smoke-Test läuft 60 s.
 - **QuQuint-Vorteil konservativ repliziert** (1.1×–1.3×, nicht die 1000× aus Architekturtext).
 - **mypy-Inkompat** mit numpy-stubs auf Python 3.14 (bekannter Bug); ruff ist die primäre Lint-Schiene.
@@ -128,7 +128,9 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 | Riemann-DNA (L4) | **B** | Frenet-Serret-Krümmung implementiert |
 | Asakura-Oosawa (L2↔L3) | **B** | Crowding-aware Diffusion an/aus per CLI-Flag |
 | QuQuint-Benchmark | **C** | gemessen 1.1×–1.3× statt behaupteter 1000× |
-| BRENDA-Konstanten | **B** | 14/21 BRENDA + 6/21 LITERATURE + 1/21 HYPOTHESE |
+| BRENDA-Konstanten | **B** | 16/20 MGENITALIUM (4DWCM/syn3A) + 4/20 HYPOTHESE |
+| Turing-Muster (iter-17/19) | **B** | nur künstlicher Schnakenberg-Kern; Registry-Turing-Kompetenz FALSIFIZIERT (iter-20) |
+| Orch-OR-Kern (iter-18) | **C** | Signatur robust, C2-Cap deklariert, syn3A-Gate OFF |
 | Fröhlich-Stub | **C** | max. 5 % ATP-Einsparung, kontrovers |
 | MES-Stub (L1) | **C** | Zustandsmaschine, keine echte MES-Theorie |
 | CellsimMixMind programmatisch | **A** | 10 Via-Negativa-Tests, Grade A-F |
@@ -136,7 +138,7 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 
 Ausführen:
 - `python -m cellsim audit --claim "<text>" --layer <L1|L2|L3|L4>` (einzeln)
-- `python -m cellsim self-audit --out-dir ./out/self_audit` (10 Kern-Claims)
+- `python -m cellsim self-audit --out-dir ./out/self_audit` (12 Kern-Claims)
 - `cat ./out/self_audit/self_audit_report.md` (Markdown-Report)
 
-**Letzter Selbst-Audit** (Stand 2026-08-21): 3× A, 0× B, 7× C, 0× F.
+**Letzter Selbst-Audit** (Stand 2026-09-21): 4× A, 0× B, 8× C, 0× F.
