@@ -1,0 +1,83 @@
+{
+ "criteria": {
+  "P1_onset": {
+   "ratio_turing3_vs_null3_at800": 14526.982630243441,
+   "ratio_stable025_self": 1.4387903104294526,
+   "ratio_stable10_self": 1.4864826393076354,
+   "pass": true
+  },
+  "P2_band_out_high": {
+   "ratio_at_800_vs_null3": 3622.2323043221563,
+   "ratio_at_1600_vs_null3_at_800": 6852.144718358417,
+   "shells_out_high_t3_1600": {
+    "0.2927": 155310910647.1751,
+    "0.32064": 227176248203.56592,
+    "0.37024": 324876769270.81433,
+    "0.3927": 1200846210842.5808,
+    "0.41394": 254610386680.07303,
+    "0.43415": 85457003193.11038,
+    "0.45345": 27167624136.887165,
+    "0.47197": 119795898260.35686
+   },
+   "pass": false
+  },
+  "P3_growth": {
+   "band_sigma_per_step": 0.007302394238015162,
+   "window": [
+    0.00113,
+    0.018
+   ],
+   "n_snaps": 8,
+   "step_lo": 75,
+   "shell_fits": {
+    "0.1309": {
+     "measured_per_step": 0.004395668773462386,
+     "registered": 0.003472,
+     "ratio": 1.2660336329096735,
+     "n_snaps": 11,
+     "step_lo": 50
+    },
+    "0.18512": {
+     "measured_per_step": 0.003604432041178775,
+     "registered": 0.004508,
+     "ratio": 0.7995634519030114,
+     "n_snaps": 14,
+     "step_lo": 200
+    },
+    "0.2267": {
+     "measured_per_step": 0.0034306186377934954,
+     "registered": 0.002929,
+     "ratio": 1.1712593505611113,
+     "n_snaps": 15,
+     "step_lo": 100
+    },
+    "0.2618": {
+     "measured_per_step": 0.011170182727935615,
+     "registered": 0.000633,
+     "ratio": 17.64641821158865,
+     "n_snaps": 5,
+     "step_lo": 50
+    }
+   },
+   "shell_0293_growth_factor": 3866.7509670555223,
+   "pass": true
+  },
+  "P4_anchor": {
+   "k_peak": 0.262,
+   "pass": true
+  },
+  "band_extension_Dv10": {
+   "ratio_turing10_vs_null10_at400": 586.3340609607997,
+   "registered_band_Dv10": [
+    0.0535,
+    0.2845
+   ]
+  },
+  "P5_bilanz": {
+   "drift_turing3": 0.0007575757747015838,
+   "drift_anchor": 0.012138612167262655,
+   "pass": true
+  }
+ },
+ "verdict": "BAND_SHIFTED_CONTINUOUS"
+}

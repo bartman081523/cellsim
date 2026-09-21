@@ -129,7 +129,7 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 | Asakura-Oosawa (L2↔L3) | **B** | Crowding-aware Diffusion an/aus per CLI-Flag |
 | QuQuint-Benchmark | **C** | gemessen 1.1×–1.3× statt behaupteter 1000× |
 | BRENDA-Konstanten | **B** | 16/20 MGENITALIUM (4DWCM/syn3A) + 4/20 HYPOTHESE |
-| Turing-Muster (iter-17/19) | **B** | nur künstlicher Schnakenberg-Kern; Registry-Turing-Kompetenz FALSIFIZIERT (iter-20) |
+| Turing-Muster (iter-17/19) | **C** | nur künstlicher Schnakenberg-Kern; Registry-Turing-Kompetenz FALSIFIZIERT (iter-20); iter-19-Diskrimination void (Stencil-Fehler in der Registrierung), korrigierte Bande post-hoc konsistent; Schale-1-Anomalie offen (CORREKTUR-LOG in scratch/experiments/iter-19) |
 | Orch-OR-Kern (iter-18) | **C** | Signatur robust, C2-Cap deklariert, syn3A-Gate OFF |
 | Fröhlich-Stub | **C** | max. 5 % ATP-Einsparung, kontrovers |
 | MES-Stub (L1) | **C** | Zustandsmaschine, keine echte MES-Theorie |
