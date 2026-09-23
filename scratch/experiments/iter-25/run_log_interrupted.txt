@@ -1,0 +1,26 @@
+=== iter-25: SATURATION_MARGIN (k-Sweep Richtung Sättigung, GPU) ===
+Gitter (24, 24, 24), Seeds (200, 201, 202), dt=1e-05, k_f ∈ (1.0, 3.0, 10.0, 30.0, 100.0, 300.0, 1000.0, 3000.0, 10000.0), Operator: GPU (beidseitig).
+
+K1 Operator-Kalibrierung (GPU, iter-24-K1-Schwellen):
+  D=0.05: Sym 0.0101 | Drift ['+0.0007', '+0.0013', '+0.0032'] | Var/Achse ['2.001', '2.015', '2.000'] (erwartet 2.000)
+  D=0.15: Sym 0.0034 | Drift ['+0.0055', '-0.0004', '+0.0042'] | Var/Achse ['6.015', '5.999', '6.025'] (erwartet 6.000)
+  D=0.45: Sym 0.0197 | Drift ['+0.0081', '+0.0097', '-0.0003'] | Var/Achse ['18.049', '18.044', '18.040'] (erwartet 18.000)
+  Masse True, Drift True, Varianz True, Beidseitigkeit True (PASS)
+K2 Determinismus: bit-identisch = True (PASS)
+
+  Kontrolle D=0.05 fertig
+  Kontrolle D=0.15 fertig
+  Kontrolle D=0.45 fertig
+  D=0.05 k_f=1 → DISTINCT
+  D=0.05 k_f=3 → NULL
+  D=0.05 k_f=10 → DISTINCT
+  D=0.05 k_f=30 → NULL
+  D=0.05 k_f=100 → NULL
+  D=0.05 k_f=300 → NULL
+  D=0.05 k_f=1000 → NULL
+  D=0.05 k_f=3000 → NULL
+  D=0.05 k_f=10000 → NULL
+  D=0.15 k_f=1 → DISTINCT
+  D=0.15 k_f=3 → DISTINCT
+  D=0.15 k_f=10 → NULL
+Interrupted system call ; error code 4

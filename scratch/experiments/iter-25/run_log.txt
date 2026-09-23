@@ -1,0 +1,82 @@
+=== iter-25: SATURATION_MARGIN (k-Sweep Richtung Sättigung, GPU) ===
+Gitter (24, 24, 24), Seeds (200, 201, 202), dt=1e-05, k_f ∈ (1.0, 3.0, 10.0, 30.0, 100.0, 300.0, 1000.0, 3000.0, 10000.0), Operator: GPU (beidseitig).
+
+K1 Operator-Kalibrierung (GPU, iter-24-K1-Schwellen):
+  D=0.05: Sym 0.0101 | Drift ['+0.0007', '+0.0013', '+0.0032'] | Var/Achse ['2.001', '2.015', '2.000'] (erwartet 2.000)
+  D=0.15: Sym 0.0034 | Drift ['+0.0055', '-0.0004', '+0.0042'] | Var/Achse ['6.015', '5.999', '6.025'] (erwartet 6.000)
+  D=0.45: Sym 0.0197 | Drift ['+0.0081', '+0.0097', '-0.0003'] | Var/Achse ['18.049', '18.044', '18.040'] (erwartet 18.000)
+  Masse True, Drift True, Varianz True, Beidseitigkeit True (PASS)
+K2 Determinismus: bit-identisch = True (PASS)
+
+  Kontrolle D=0.05 fertig
+  Kontrolle D=0.15 fertig
+  Kontrolle D=0.45 fertig
+  D=0.05 k_f=1 → DISTINCT
+  D=0.05 k_f=3 → NULL
+  D=0.05 k_f=10 → DISTINCT
+  D=0.05 k_f=30 → NULL
+  D=0.05 k_f=100 → NULL
+  D=0.05 k_f=300 → NULL
+  D=0.05 k_f=1000 → NULL
+  D=0.05 k_f=3000 → NULL
+  D=0.05 k_f=10000 → NULL
+  D=0.15 k_f=1 → DISTINCT
+  D=0.15 k_f=3 → DISTINCT
+  D=0.15 k_f=10 → NULL
+  D=0.15 k_f=30 → DISTINCT
+  D=0.15 k_f=100 → DISTINCT
+  D=0.15 k_f=300 → NULL
+  D=0.15 k_f=1000 → NULL
+  D=0.15 k_f=3000 → NULL
+  D=0.15 k_f=10000 → NULL
+  D=0.45 k_f=1 → NULL
+  D=0.45 k_f=3 → NULL
+  D=0.45 k_f=10 → NULL
+  D=0.45 k_f=30 → DISTINCT
+  D=0.45 k_f=100 → DISTINCT
+  D=0.45 k_f=300 → DISTINCT
+  D=0.45 k_f=1000 → DISTINCT
+  D=0.45 k_f=3000 → DISTINCT
+  D=0.45 k_f=10000 → DISTINCT
+
+label                  class        tMI   LZgrw    corr    p11   mass     events
+D=0.05,k=1             DISTINCT   0.003  -0.028   0.038  0.052   1.07    9501598
+D=0.05,k=3             NULL       0.003  +0.055   0.030  0.043   1.08   28638565
+D=0.05,k=10            DISTINCT   0.003  +0.006   0.029  0.039   1.08   98490008
+D=0.05,k=30            NULL       0.003  +0.064   0.039  0.055   0.98  301400118
+D=0.05,k=100           NULL       0.003  +0.039   0.045  0.058   1.01 1003600702
+D=0.05,k=300           NULL       0.003  +0.039   0.048  0.053   1.02 1672503886
+D=0.05,k=1000          NULL       0.003  +0.039   0.048  0.053   1.02 1672503886
+D=0.05,k=3000          NULL       0.003  +0.039   0.048  0.053   1.02 1672503886
+D=0.05,k=10000         NULL       0.003  +0.039   0.048  0.053   1.02 1672503886
+D=0.15,k=1             DISTINCT   0.000  +0.062   0.017  0.051   1.07    9506866
+D=0.15,k=3             DISTINCT   0.000  +0.026   0.015  0.040   1.08   28651961
+D=0.15,k=10            NULL       0.000  +0.007   0.011  0.037   1.08   98481055
+D=0.15,k=30            DISTINCT   0.000  -0.008   0.015  0.058   0.98  301455928
+D=0.15,k=100           DISTINCT   0.000  +0.039   0.016  0.054   1.01 1003806724
+D=0.15,k=300           NULL       0.000  -0.003   0.014  0.057   1.02 1672819694
+D=0.15,k=1000          NULL       0.000  -0.003   0.014  0.057   1.02 1672819695
+D=0.15,k=3000          NULL       0.000  -0.003   0.014  0.057   1.02 1672819695
+D=0.15,k=10000         NULL       0.000  -0.003   0.014  0.057   1.02 1672819695
+D=0.45,k=1             NULL       0.000  +0.025   0.008  0.050   1.07    9508275
+D=0.45,k=3             NULL       0.000  +0.016   0.008  0.040   1.08   28651088
+D=0.45,k=10            NULL       0.000  -0.007   0.004  0.036   1.08   98476307
+D=0.45,k=30            DISTINCT   0.000  +0.087   0.006  0.055   0.98  301462223
+D=0.45,k=100           DISTINCT   0.000  +0.063   0.007  0.053   1.01 1003828291
+D=0.45,k=300           DISTINCT   0.000  +0.053   0.004  0.056   1.02 1672895919
+D=0.45,k=1000          DISTINCT   0.000  +0.052   0.004  0.055   1.02 1672894884
+D=0.45,k=3000          DISTINCT   0.000  +0.052   0.004  0.055   1.02 1672894884
+D=0.45,k=10000         DISTINCT   0.000  +0.052   0.004  0.055   1.02 1672894884
+
+Kanten je Anker: {"0.05": {"k_edge": 10.0, "localized": true, "k1_class": "DISTINCT"}, "0.15": {"k_edge": 100.0, "localized": true, "k1_class": "DISTINCT"}, "0.45": {"k_edge": 10000.0, "localized": true, "k1_class": "NULL"}}
+Globale Kante: 10.0
+  Äquiv (k=10, dt=1e-06 vs 1, 1e-05) bit-identisch=True
+  Äquiv (k=100, dt=1e-07 vs 1, 1e-05) bit-identisch=True
+  Äquiv (k=10, dt=1e-05 vs 1, 0.0001) bit-identisch=True
+  Äquiv (k=100, dt=1e-06 vs 1, 0.0001) bit-identisch=True
+K4 Damköhler-Äquivalenz: EQUIVALENT (PASS)
+K5 Konsistenz (GPU k=1 vs iter-24 R1 CPU): False
+
+VERDICT: SATURATION_MARGIN_MODERATE
+
+→ Wrote /run/media/julian/ML3/cellsim/scratch/experiments/iter-25/result.json

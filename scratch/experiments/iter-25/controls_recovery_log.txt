@@ -1,0 +1,4 @@
+Kontrolle D=0.05: LZ +0.0222 | corr 0.0529 | tMI 0.0038 | p11 0.0510 | mass 1.00
+Kontrolle D=0.15: LZ +0.0249 | corr 0.0186 | tMI 0.0004 | p11 0.0482 | mass 1.00
+Kontrolle D=0.45: LZ -0.0252 | corr 0.0083 | tMI 0.0001 | p11 0.0477 | mass 1.00
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-25/controls_recovery.json
