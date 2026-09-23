@@ -100,7 +100,7 @@ src/cellsim/
 Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 
 - **Rosen-Horizont** (`core/constants.py:ROSEN_HORIZON`): L3 ist reduktionistisch (`AnA`); für eine vollständige Zellsimulation ist L1/MES erforderlich.
-- **Kein GPU**, keine Lattice-Microbes-Kopplung — eigene Python-Gillespie-SSA.
+- **Kein GPU im Produktionstack** (eigene Python-Gillespie-SSA); GPU-Operator-Port (cupy, micromamba-env `cellsim` an `/run/media/julian/ML3/micromamba`) als experimentelle Infrastruktur seit iter-24 validiert (33–34×, G1–G5) — `scratch/experiments/iter-24/gpu_operator.py`.
 - **Kinetische Konstanten**: 16/20 aus 4DWCM/syn3A-Parametersatz (Quellen-Label MGENITALIUM), 4/20 HYPOTHESE — JCVI-syn3A-spezifische Kalibrierung wäre eigenes Forschungsprojekt. (CORREKTUR 2026-09-21: ältere Zählungen "6 BRENDA + 15 HYPOTHESE" bezogen sich auf einen früheren Registry-Stand; iter-20-Zensus: 26 Spezies, 20 Reaktionen.)
 - **105-min-Vollzyklus nicht in Scope** — Smoke-Test läuft 60 s.
 - **QuQuint-Vorteil konservativ repliziert** (1.1×–1.3×, nicht die 1000× aus Architekturtext).
@@ -134,6 +134,7 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 | Orch-OR-Schild (iter-21) | **C** | S=1e6 als ableitbar FALSIFIZIERT (S_max ≈ 9.9e3 vs S_need ≈ 6.1e5); Ecke stirbt bei Δm/m=1e-2 in beiden Bad-Regimen ohne Kohärenz-Kern; Überleben nur in Konfluenz (Δm/m ≲ 1.3e-3 UND ε_res ≲ 1e-6) — `modules/shielding.py` |
 | Orch-OR-Kick (iter-22) | **C** | Kick-Kopplung energetisch entwertet in der Box (N ≤ 1e11): N* = 1.74e11 bei τ_relax = 1 ms (1.74× über Hameroff-Decke); per Event 1.6e-10 k_B·T an der Ecke; Gate braucht Schild, Energie ist bindend — `modules/kick_coupling.py` |
 | Photonische Kopplung (iter-23) | **C** | PHOTONIC_CHANNEL_INERT_FOR_SYN3A: Pump-Cap Φ_cap = P_ATP/E_photon = 1.17e5/s (kollektiv-unabhängig); Burst-Lemma (N kürzt sich); Turnover am Pump-Cap 5.65e-5/s bei r=100 nm = 1.77e3× unter Damköhler-Fenster — INERT; Produktionskopplung: HybridDriver `photonic`, CLI `--superradiance`, run.csv +4 Spalten — `modules/photonic_coupling.py` |
+| Damköhler-Fenster (iter-11→14→24) | **B** | REPLICATED_STRONG_V2: Fenster trägt unter Operator-Wechsel (einseitig drift-behaftet → beidseitig driftfrei), Gitter-Wechsel (16³→24³) und Seed-Wechsel — 8/9 DISTINCT, Ordnung 3/3, Sättigung True; K1-Messung bestätigt die 6𝒟-Kalibrierung erst für den post-iter-15-Operator (alter Operator: 3𝒟 + Drift, scheitert K1 um 20×–180×); Träger ist LZ-Entropie (corr-Kriterium feuert nie), Zellgrenzen an der 0.05-Schranke kippen — `scratch/experiments/iter-24` |
 | Fröhlich-Stub | **C** | max. 5 % ATP-Einsparung, kontrovers |
 | MES-Stub (L1) | **C** | Zustandsmaschine, keine echte MES-Theorie |
 | CellsimMixMind programmatisch | **A** | 10 Via-Negativa-Tests, Grade A-F |

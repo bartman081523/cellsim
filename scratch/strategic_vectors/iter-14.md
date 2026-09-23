@@ -57,3 +57,14 @@ Registry-k-Sweep Richtung Sättigung, jetzt auf Produktionstack.
 - scratch/experiments/iter-14/{window_replication.py,result.json,experiment.md}
 - iter-11 (Fenster-Erstsichtung), iter-13 (Produktionstack)
 - Kalibrier-Korrektur in `modules/emergence.py` (p_dir = 𝒟)
+
+## CORREKTUR (iter-24, 2026-09-23)
+
+Die Zeile „Kalibrierung Sprung-Diffusion ✅ p=𝒟 (Varianzwachstum
+6𝒟/Schritt)" traf die ITER-14-Implementation NICHT: git 3fa5753 sprang
+EINSEITIG (upwind) — Varianz ≈ 3𝒟 + Drift +𝒟 je Achse. Erst der
+iter-15-Fix (beidseitig) erfüllt die 6𝒟-Kalibrierung. iter-24 (V2)
+hat das Fenster unter dem korrigierten Operator re-repliziert
+(REPLICATED_STRONG_V2, 8/9, Ordnung 3/3, Sättigung True) und die
+Kalibrierung als unabhängige K1-Messung gebucht — siehe
+scratch/strategic_vectors/iter-24.md + scratch/experiments/iter-24.

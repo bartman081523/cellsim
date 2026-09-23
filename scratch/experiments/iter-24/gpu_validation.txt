@@ -1,0 +1,7 @@
+D=0.05: Sym 0.0101 | Drift ['+0.0007', '+0.0013', '+0.0032'] | Var/Achse ['2.001', '2.015', '2.000'] (erwartet 2.000, rel ['4.5e-04', '7.4e-03', '1.4e-04'])
+D=0.15: Sym 0.0034 | Drift ['+0.0055', '-0.0004', '+0.0042'] | Var/Achse ['6.015', '5.999', '6.025'] (erwartet 6.000, rel ['2.6e-03', '9.4e-05', '4.1e-03'])
+D=0.45: Sym 0.0197 | Drift ['+0.0081', '+0.0097', '-0.0003'] | Var/Achse ['18.049', '18.044', '18.040'] (erwartet 18.000, rel ['2.7e-03', '2.5e-03', '2.2e-03'])
+Massenerhalt True, Drift True, Varianz True, Beidseitigkeit True (PASS)
+
+GPU: 7.98 ms/Schritt (26 Spezies, 24³) vs CPU 263.9 ms → Faktor 33×
+{"pass": true, "gpu_ms_per_step": 7.980734552256763}
