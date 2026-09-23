@@ -1,0 +1,67 @@
+{
+ "registration": {
+  "gamma_bulk_identity": true,
+  "tau_or_matches_iter18": 0.0001509795880330835,
+  "tau_dec_bulk_matches_iter18": 2.4639459927669826e-10,
+  "s_needed_corner": 612755.2652383228
+ },
+ "dual_derivation": {
+  "mc_mean": 2001586453.2228024,
+  "analytic": 2001548286.5603516,
+  "rel_err": 1.9068569420515745e-05,
+  "n": 4000000,
+  "seed": 2100,
+  "pass": true
+ },
+ "s_max_box": 9900.990099009901,
+ "s_needed_corner": 612755.2652383228,
+ "corner_rows": {
+  "pessimistic": {
+   "ratio": 6188.215423641822,
+   "S_eff": 99.01970492127933,
+   "core_radius_nm": 0.0,
+   "required_phi_free": -0.009998368027079114
+  },
+  "optimistic": {
+   "ratio": 61.888220513544084,
+   "S_eff": 9900.9999019801,
+   "core_radius_nm": 0.0,
+   "required_phi_free": 6.319729208872057e-07
+  }
+ },
+ "survival_by_regime_phi": {
+  "pessimistic_phi1e-04": {
+   "n_surviving": 2,
+   "max_dm_surviving": 0.00012115276586285888
+  },
+  "pessimistic_phi1e-03": {
+   "n_surviving": 2,
+   "max_dm_surviving": 0.00012115276586285888
+  },
+  "pessimistic_phi1e-02": {
+   "n_surviving": 0,
+   "max_dm_surviving": null
+  },
+  "optimistic_phi1e-04": {
+   "n_surviving": 14,
+   "max_dm_surviving": 0.0012115276586285877
+  },
+  "optimistic_phi1e-03": {
+   "n_surviving": 8,
+   "max_dm_surviving": 0.00038311868495572853
+  },
+  "optimistic_phi1e-02": {
+   "n_surviving": 2,
+   "max_dm_surviving": 0.00012115276586285888
+  }
+ },
+ "boundaries": {
+  "0.01_1e-04": 0.00012712099632467073,
+  "0.01_1e-03": 0.00012185900506131365,
+  "0.01_1e-02": 9.055864922348355e-05,
+  "1e-06_1e-04": 0.0012711476597838036,
+  "1e-06_1e-03": 0.00040377521060911954,
+  "1e-06_1e-02": 0.00012774237243614277
+ },
+ "verdict": "SHIELD_UNDERIVABLE_CONFLUENCE_ONLY"
+}

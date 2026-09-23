@@ -131,6 +131,7 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 | BRENDA-Konstanten | **B** | 16/20 MGENITALIUM (4DWCM/syn3A) + 4/20 HYPOTHESE |
 | Turing-Muster (iter-17/19) | **C** | nur künstlicher Schnakenberg-Kern; Registry-Turing-Kompetenz FALSIFIZIERT (iter-20); iter-19-Diskrimination void (Stencil-Fehler in der Registrierung), korrigierte Bande post-hoc konsistent; Schale-1-Anomalie offen (CORREKTUR-LOG in scratch/experiments/iter-19) |
 | Orch-OR-Kern (iter-18) | **C** | Signatur robust, C2-Cap deklariert, syn3A-Gate OFF |
+| Orch-OR-Schild (iter-21) | **C** | S=1e6 als ableitbar FALSIFIZIERT (S_max ≈ 9.9e3 vs S_need ≈ 6.1e5); Ecke stirbt bei Δm/m=1e-2 in beiden Bad-Regimen ohne Kohärenz-Kern; Überleben nur in Konfluenz (Δm/m ≲ 1.3e-3 UND ε_res ≲ 1e-6) — `modules/shielding.py` |
 | Fröhlich-Stub | **C** | max. 5 % ATP-Einsparung, kontrovers |
 | MES-Stub (L1) | **C** | Zustandsmaschine, keine echte MES-Theorie |
 | CellsimMixMind programmatisch | **A** | 10 Via-Negativa-Tests, Grade A-F |
