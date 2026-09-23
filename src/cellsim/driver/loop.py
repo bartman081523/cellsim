@@ -36,6 +36,11 @@ class DriverResult:
     rdme_steps: list[int] = field(default_factory=list)
     sync_count: list[int] = field(default_factory=list)
     rg_nm: list[float] = field(default_factory=list)
+    # Photonische Kopplung (iter-23): Nullen wenn keine Quelle konfiguriert
+    photon_rate_per_s: list[float] = field(default_factory=list)
+    photon_flux_cm2_s: list[float] = field(default_factory=list)
+    photochem_turnover_per_s: list[float] = field(default_factory=list)
+    photon_pump_capped: list[float] = field(default_factory=list)
     seed: int = 0
     walltime_s: float = 0.0
 
@@ -54,6 +59,7 @@ class HybridDriver:
         seed: int = 49582,
         volumes_angstrom3: dict[str, float] | None = None,
         mes: object | None = None,
+        photonic: object | None = None,
     ) -> None:
         self.time_axis = time_axis
         self.rdme = rdme
@@ -67,6 +73,8 @@ class HybridDriver:
         self.volumes_angstrom3 = volumes_angstrom3 or {}
         # L1/MES-Stub (VECTOR_ROSEN_HORIZON)
         self.mes = mes
+        # Photonische Kopplung (iter-23): Superradianz-Quelle (default OFF)
+        self.photonic = photonic
 
     def run(self) -> DriverResult:
         """Führt die Simulation durch und sammelt Telemetrie."""
@@ -82,6 +90,11 @@ class HybridDriver:
         result.rdme_steps.append(self.rdme.state.step_count)
         result.sync_count.append(0)
         result.rg_nm.append(self.chromosome.radius_of_gyration_nm)
+        ph_rate, ph_flux, ph_turn, ph_cap = self._photonic_row()
+        result.photon_rate_per_s.append(ph_rate)
+        result.photon_flux_cm2_s.append(ph_flux)
+        result.photochem_turnover_per_s.append(ph_turn)
+        result.photon_pump_capped.append(ph_cap)
 
         n_steps = self.time_axis.n_rdme_steps
         for step in range(n_steps):
@@ -116,6 +129,11 @@ class HybridDriver:
                 result.rdme_steps.append(self.rdme.state.step_count)
                 result.sync_count.append(self._sync_count)
                 result.rg_nm.append(self.chromosome.radius_of_gyration_nm)
+                ph_rate, ph_flux, ph_turn, ph_cap = self._photonic_row()
+                result.photon_rate_per_s.append(ph_rate)
+                result.photon_flux_cm2_s.append(ph_flux)
+                result.photochem_turnover_per_s.append(ph_turn)
+                result.photon_pump_capped.append(ph_cap)
 
         result.walltime_s = time.monotonic() - t0
         logger.info(
@@ -125,6 +143,24 @@ class HybridDriver:
             result.walltime_s,
         )
         return result
+
+
+    def _photonic_row(self) -> tuple[float, float, float, float]:
+        """Photonische Telemetrie (iter-23); Nullen ohne Quelle.
+
+        Die Quelle liefert eine stationäre Rate (Energie-Cap-Konvention,
+        min(declared, pump_cap)); schritt-integrierte Photochemie ist
+        burst-invariant (Lemma in modules/photonic_coupling.py).
+        """
+        if self.photonic is None:
+            return (0.0, 0.0, 0.0, 0.0)
+        rates = self.photonic.rates()
+        return (
+            float(rates["photon_rate_per_s"]),
+            float(rates["photon_flux_cm2_s"]),
+            float(rates["photochem_turnover_per_s"]),
+            float(rates["photon_pump_capped"]),
+        )
 
 
     def _compute_crowding_index(self) -> float:
@@ -162,6 +198,10 @@ def write_run_csv(result: DriverResult, out_path: Path) -> Path:
                 "rdme_steps",
                 "sync_count",
                 "rg_nm",
+                "photon_rate_per_s",
+                "photon_flux_cm2_s",
+                "photochem_turnover_per_s",
+                "photon_pump_capped",
             ]
         )
         for i in range(len(result.time_s)):
@@ -175,6 +215,10 @@ def write_run_csv(result: DriverResult, out_path: Path) -> Path:
                     result.rdme_steps[i],
                     result.sync_count[i],
                     f"{result.rg_nm[i]:.3f}",
+                    f"{result.photon_rate_per_s[i]:.6e}",
+                    f"{result.photon_flux_cm2_s[i]:.6e}",
+                    f"{result.photochem_turnover_per_s[i]:.6e}",
+                    f"{result.photon_pump_capped[i]:.0f}",
                 ]
             )
     logger.info("Wrote run.csv → %s", out_path)

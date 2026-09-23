@@ -218,6 +218,10 @@ def simulate(
         False, "--local-diffusion/--global-diffusion",
         help="L2↔L3-Brücke: crowding-aware Diffusion an/aus",
     ),
+    use_superradiance: bool = typer.Option(
+        False, "--superradiance/--no-superradiance",
+        help="Photonische Kopplung (iter-23): Superradianz-Quelle an/aus",
+    ),
     analyze: bool = typer.Option(
         True, "--analyze/--no-analyze", help="Analyse-Pipeline nach Sim ausführen"
     ),
@@ -257,6 +261,11 @@ def simulate(
     ode = default_ode()
     chrom = default_chromosome(seed=seed)
     membrane = default_membrane()
+    photonic = None
+    if use_superradiance:
+        from cellsim.modules.photonic_coupling import PhotonicSource
+
+        photonic = PhotonicSource()
 
     driver = HybridDriver(
         time_axis=time_axis,
@@ -266,6 +275,7 @@ def simulate(
         membrane=membrane,
         sync_interval=sync_interval,
         seed=seed,
+        photonic=photonic,
     )
     result = driver.run()
 

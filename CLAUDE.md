@@ -133,6 +133,7 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 | Orch-OR-Kern (iter-18) | **C** | Signatur robust, C2-Cap deklariert, syn3A-Gate OFF |
 | Orch-OR-Schild (iter-21) | **C** | S=1e6 als ableitbar FALSIFIZIERT (S_max ≈ 9.9e3 vs S_need ≈ 6.1e5); Ecke stirbt bei Δm/m=1e-2 in beiden Bad-Regimen ohne Kohärenz-Kern; Überleben nur in Konfluenz (Δm/m ≲ 1.3e-3 UND ε_res ≲ 1e-6) — `modules/shielding.py` |
 | Orch-OR-Kick (iter-22) | **C** | Kick-Kopplung energetisch entwertet in der Box (N ≤ 1e11): N* = 1.74e11 bei τ_relax = 1 ms (1.74× über Hameroff-Decke); per Event 1.6e-10 k_B·T an der Ecke; Gate braucht Schild, Energie ist bindend — `modules/kick_coupling.py` |
+| Photonische Kopplung (iter-23) | **C** | PHOTONIC_CHANNEL_INERT_FOR_SYN3A: Pump-Cap Φ_cap = P_ATP/E_photon = 1.17e5/s (kollektiv-unabhängig); Burst-Lemma (N kürzt sich); Turnover am Pump-Cap 5.65e-5/s bei r=100 nm = 1.77e3× unter Damköhler-Fenster — INERT; Produktionskopplung: HybridDriver `photonic`, CLI `--superradiance`, run.csv +4 Spalten — `modules/photonic_coupling.py` |
 | Fröhlich-Stub | **C** | max. 5 % ATP-Einsparung, kontrovers |
 | MES-Stub (L1) | **C** | Zustandsmaschine, keine echte MES-Theorie |
 | CellsimMixMind programmatisch | **A** | 10 Via-Negativa-Tests, Grade A-F |
