@@ -1,0 +1,34 @@
+=== iter-29: T_RULE_CANDIDATES (t-H0 + frische Replikation, GPU) ===
+
+Gates:
+  K1 D=0.05 k=1: recomputed -3.4226 == iter-28 -3.4226 -> True
+  K1 D=0.15 k=14: recomputed -3.8088 == iter-28 -3.8088 -> True
+  K1 D=0.25 k=1: recomputed 4.5974 == iter-28 4.5974 -> True
+  K2 Determinismus: bit-identisch = True
+
+Teil 1 — H0 der Welch-t-Regel (Buchhaltung):
+  D=0.05: 5/5 0/126 (0.0 %) | 3/3 141/2100 (6.7 %)
+  D=0.1: 5/5 5/126 (4.0 %) | 3/3 166/2100 (7.9 %)
+  D=0.15: 5/5 6/126 (4.8 %) | 3/3 163/2100 (7.8 %)
+  D=0.25: 5/5 0/126 (0.0 %) | 3/3 99/2100 (4.7 %)
+  D=0.3: 5/5 7/126 (5.6 %) | 3/3 142/2100 (6.8 %)
+
+Teil 2 — frische Replikation (Seeds 300-309, GPU):
+  Kontrolle D=0.05: LZ +0.0597 (σ 0.0125) vs iter-27 +0.0391 (σ 0.0626) | z = +1.02
+  Kontrolle D=0.1: LZ -0.0448 (σ 0.0424) vs iter-27 -0.0493 (σ 0.0375) | z = +0.25
+  Kontrolle D=0.15: LZ -0.0018 (σ 0.0113) vs iter-27 +0.0153 (σ 0.0404) | z = -1.29
+  Kontrolle D=0.25: LZ -0.0320 (σ 0.0101) vs iter-27 -0.0262 (σ 0.0305) | z = -0.58
+
+  Kandidat D=0.05 k=1: LZ -0.0111 (σ 0.0389) |t_fresh| = 5.48 (Vorzeichen match) → REPLIZIERT (strict)
+  Kandidat D=0.15 k=14: LZ -0.0377 (σ 0.0070) |t_fresh| = 8.57 (Vorzeichen match) → REPLIZIERT (strict)
+  Kandidat D=0.25 k=1: LZ +0.0268 (σ 0.0116) |t_fresh| = 12.06 (Vorzeichen match) → REPLIZIERT (strict)
+  Explorativ D=0.1 k=30: LZ -0.0294 |t| = 1.01 → EXPL_NOT_REPLICATED
+
+V1 (H0 der t-Regel): T_H0_CALIBRATED
+V2 (Kandidaten, STRICT): CAND_REPLICATED_ALL
+V3 (Kandidaten, ABS): CAND_ABS_ALL
+V4 (explorativ): EXPL_NOT_REPLICATED
+
+VERDICT: T_H0_CALIBRATED | CAND_REPLICATED_ALL | CAND_ABS_ALL | EXPL_NOT_REPLICATED
+
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-29/result.json
