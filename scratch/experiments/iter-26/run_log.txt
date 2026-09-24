@@ -1,0 +1,128 @@
+=== iter-26: EDGE_FINE_SWEEP (feine Kante + D-Abhängigkeit, GPU) ===
+
+K1 Operator-Kalibrierung:
+  PASS=True (Masse True, Drift True, Varianz True, Beidseitigkeit True)
+K2 Determinismus: bit-identisch = True
+
+K4a Äquiv (k=7, dt=1.42857e-06 vs 1, 1e-05): bit-identisch=True
+K4a Äquiv (k=14, dt=7.14286e-07 vs 1, 1e-05): bit-identisch=True
+K5 Übergang (D=0.05, k=1): bit-identisch=True
+K5 Übergang (D=0.05, k=3): bit-identisch=True
+K5 Übergang (D=0.05, k=10): bit-identisch=True
+K5 Übergang (D=0.05, k=30): bit-identisch=True
+K5 Übergang (D=0.15, k=1): bit-identisch=True
+K5 Übergang (D=0.15, k=3): bit-identisch=True
+K5 Übergang (D=0.15, k=10): bit-identisch=True
+K5 Übergang (D=0.15, k=30): bit-identisch=True
+K5 Übergang (D=0.15, k=100): bit-identisch=True
+
+Feine Anker:
+  D=0.05 k_f=1 → DISTINCT
+  D=0.05 k_f=2 → DISTINCT
+  D=0.05 k_f=3 → NULL
+  D=0.05 k_f=5 → NULL
+  D=0.05 k_f=7 → NULL
+  D=0.05 k_f=10 → DISTINCT
+  D=0.05 k_f=14 → NULL
+  D=0.05 k_f=20 → NULL
+  D=0.05 k_f=30 → NULL
+  D=0.15 k_f=1 → DISTINCT
+  D=0.15 k_f=3 → DISTINCT
+  D=0.15 k_f=5 → DISTINCT
+  D=0.15 k_f=7 → DISTINCT
+  D=0.15 k_f=10 → NULL
+  D=0.15 k_f=14 → NULL
+  D=0.15 k_f=20 → DISTINCT
+  D=0.15 k_f=30 → DISTINCT
+  D=0.15 k_f=45 → NULL
+  D=0.15 k_f=70 → DISTINCT
+  D=0.15 k_f=100 → DISTINCT
+  D=0.15 k_f=140 → NULL
+  D=0.15 k_f=200 → DISTINCT
+
+Neue D-Anker (Kanten-Verlauf):
+  D=0.1 k_f=1 → DISTINCT
+  D=0.1 k_f=3 → DISTINCT
+  D=0.1 k_f=10 → NULL
+  D=0.1 k_f=30 → NULL
+  D=0.1 k_f=100 → NULL
+  D=0.1 k_f=300 → NULL
+  D=0.1 k_f=1000 → NULL
+  D=0.25 k_f=1 → NULL
+  D=0.25 k_f=3 → DISTINCT
+  D=0.25 k_f=10 → NULL
+  D=0.25 k_f=30 → DISTINCT
+  D=0.25 k_f=100 → NULL
+  D=0.25 k_f=300 → NULL
+  D=0.25 k_f=1000 → NULL
+  D=0.3 k_f=1 → DISTINCT
+  D=0.3 k_f=3 → DISTINCT
+  D=0.3 k_f=10 → NULL
+  D=0.3 k_f=30 → DISTINCT
+  D=0.3 k_f=100 → DISTINCT
+  D=0.3 k_f=300 → DISTINCT
+  D=0.3 k_f=1000 → DISTINCT
+
+label                class       LZgrw    corr    tMI     events
+D=0.05,k=1           DISTINCT   -0.028   0.038  0.003    9501598
+D=0.05,k=2           DISTINCT   -0.003   0.034  0.003   18999882
+D=0.05,k=3           NULL       +0.055   0.030  0.003   28638565
+D=0.05,k=5           NULL       +0.077   0.027  0.003   48205837
+D=0.05,k=7           NULL       +0.055   0.026  0.003   68132342
+D=0.05,k=10          DISTINCT   +0.006   0.029  0.003   98490008
+D=0.05,k=14          NULL       +0.041   0.040  0.003  139478367
+D=0.05,k=20          NULL       +0.075   0.040  0.003  200846508
+D=0.05,k=30          NULL       +0.064   0.039  0.003  301400118
+D=0.15,k=1           DISTINCT   +0.062   0.017  0.000    9506866
+D=0.15,k=3           DISTINCT   +0.026   0.015  0.000   28651961
+D=0.15,k=5           DISTINCT   +0.081   0.011  0.000   48217177
+D=0.15,k=7           DISTINCT   +0.051   0.012  0.000   68128825
+D=0.15,k=10          NULL       +0.007   0.011  0.000   98481055
+D=0.15,k=14          NULL       -0.036   0.013  0.000  139563833
+D=0.15,k=20          DISTINCT   +0.012   0.015  0.000  200867522
+D=0.15,k=30          DISTINCT   -0.008   0.015  0.000  301455928
+D=0.15,k=45          NULL       -0.004   0.014  0.000  451902200
+D=0.15,k=70          DISTINCT   -0.007   0.016  0.000  702722897
+D=0.15,k=100         DISTINCT   +0.039   0.016  0.000 1003806724
+D=0.15,k=140         NULL       -0.033   0.016  0.000 1402303434
+D=0.15,k=200         DISTINCT   +0.019   0.015  0.000 1670765351
+D=0.1,k=1            DISTINCT   -0.007   0.022  0.000    9507160
+D=0.1,k=3            DISTINCT   +0.053   0.019  0.000   28646110
+D=0.1,k=10           NULL       -0.049   0.017  0.000   98485724
+D=0.1,k=30           NULL       -0.012   0.020  0.000  301440150
+D=0.1,k=100          NULL       -0.014   0.023  0.000 1003679329
+D=0.1,k=300          NULL       -0.012   0.023  0.000 1672734065
+D=0.1,k=1000         NULL       -0.012   0.023  0.000 1672734065
+D=0.25,k=1           NULL       +0.015   0.011  0.000    9508543
+D=0.25,k=3           DISTINCT   +0.018   0.010  0.000   28647324
+D=0.25,k=10          NULL       -0.008   0.006  0.000   98482950
+D=0.25,k=30          DISTINCT   +0.011   0.011  0.000  301449323
+D=0.25,k=100         NULL       -0.009   0.009  0.000 1003852666
+D=0.25,k=300         NULL       -0.008   0.009  0.000 1672886089
+D=0.25,k=1000        NULL       -0.008   0.009  0.000 1672886089
+D=0.3,k=1            DISTINCT   +0.015   0.009  0.000    9507488
+D=0.3,k=3            DISTINCT   +0.010   0.008  0.000   28651758
+D=0.3,k=10           NULL       +0.012   0.006  0.000   98480168
+D=0.3,k=30           DISTINCT   +0.053   0.008  0.000  301478282
+D=0.3,k=100          DISTINCT   +0.013   0.009  0.000 1003841613
+D=0.3,k=300          DISTINCT   +0.063   0.008  0.000 1672902645
+D=0.3,k=1000         DISTINCT   +0.058   0.006  0.000 1672902429
+
+Anker D=0.05: {"k_edge": 10.0, "localized": true, "k1_class": "DISTINCT", "upper_clear": true, "band_connected": false, "internal_nulls": [3.0, 5.0, 7.0]} → EDGE_UPPER_CONFIRMED
+
+Anker D=0.15: {"k_edge": 200.0, "localized": false, "k1_class": "DISTINCT", "upper_clear": null, "band_connected": false, "internal_nulls": [10.0, 14.0, 45.0, 140.0]} → EDGE_NOT_LOCALIZED
+Anker D=0.1: {"k_edge": 3.0, "localized": true, "k1_class": "DISTINCT", "upper_clear": true, "band_connected": true, "internal_nulls": []}
+Anker D=0.25: {"k_edge": 30.0, "localized": true, "k1_class": "NULL", "upper_clear": true, "band_connected": false, "internal_nulls": [10.0]}
+Anker D=0.3: {"k_edge": 1000.0, "localized": false, "k1_class": "DISTINCT", "upper_clear": null, "band_connected": false, "internal_nulls": [10.0]}
+
+D-Abhängigkeit: EDGE_D_NONMONOTONE
+  D=0.05: lb 10 ub 10 (lokalisiert=True)
+  D=0.1: lb 3 ub 3 (lokalisiert=True)
+  D=0.15: lb 200 ub inf (lokalisiert=False)
+  D=0.25: lb 30 ub 30 (lokalisiert=True)
+  D=0.3: lb 1000 ub inf (lokalisiert=False)
+  D=0.45: lb 10000 ub inf (lokalisiert=False)
+
+VERDICT: EDGE_UPPER_CONFIRMED|EDGE_NOT_LOCALIZED|EDGE_D_NONMONOTONE
+
+→ Wrote /run/media/julian/ML3/cellsim/scratch/experiments/iter-26/result.json
