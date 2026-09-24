@@ -1,0 +1,139 @@
+[
+  {
+    "slide": 1,
+    "title": "Titel",
+    "claim_ids": [],
+    "captions": []
+  },
+  {
+    "slide": 2,
+    "title": "Methode",
+    "claim_ids": [],
+    "captions": [
+      "4× A · 0× B · 8× C · 0× F"
+    ]
+  },
+  {
+    "slide": 3,
+    "title": "Hook",
+    "claim_ids": [],
+    "captions": []
+  },
+  {
+    "slide": 4,
+    "title": "Replikationskette",
+    "claim_ids": [
+      "C01"
+    ],
+    "captions": [
+      "9/12 · 7/12 · 8/12",
+      "3/3",
+      "True"
+    ]
+  },
+  {
+    "slide": 5,
+    "title": "Operator-Archäologie",
+    "claim_ids": [
+      "C02"
+    ],
+    "captions": [
+      "2.00–2.01 / 5.98–6.02 / 17.99–18.05 (erwartet 2/6/18)",
+      "5.8e-03 (Schranke 3 %)",
+      "0.0107 (Schranke 0.05)",
+      "0.0141 (Schranke 0.1)",
+      "Drift +1.0/+3.0/+9.0 Voxel = 20×/60×/180× über der Schranke; Varianz −50 %; Symmetrie-Ratio 1.0 (analytisch)"
+    ]
+  },
+  {
+    "slide": 6,
+    "title": "k·dt-Äquivalenz",
+    "claim_ids": [
+      "C03"
+    ],
+    "captions": [
+      "4/4 Paare bit-identisch"
+    ]
+  },
+  {
+    "slide": 7,
+    "title": "Sättigungs-Marge",
+    "claim_ids": [
+      "C04"
+    ],
+    "captions": [
+      "D=0.05 → 10 · D=0.15 → 100 · D=0.45 → nicht lokalisiert (>1e4)",
+      "globale Kante 10 → SATURATION_MARGIN_MODERATE",
+      "Events k-invariant ab k_f ≈ 300 (D≤0.15) / 1000 (D=0.45)"
+    ]
+  },
+  {
+    "slide": 8,
+    "title": "LZ-Trägerschaft",
+    "claim_ids": [
+      "C05"
+    ],
+    "captions": [
+      "0/39 Zellen (iter-24 + iter-25)",
+      "0.025 · 0.024 vs Schranke 0.3"
+    ]
+  },
+  {
+    "slide": 9,
+    "title": "Orch-OR-Beweislast",
+    "claim_ids": [
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "captions": [
+      "S_max 9.9e+03 vs S_need 6.1e+05 (Faktor 62 zu wenig)",
+      "N* 1.74e+11 vs Box-Decke 1e11",
+      "1.6e-10 k_B·T pro Event",
+      "5.65e-05/s bei r = 100 nm — 1771× unter Fenster-Unterkante (0.1/s)",
+      "Burst-Invarianz: |ΔNorm| = 2.8e-16 (rel)"
+    ]
+  },
+  {
+    "slide": 10,
+    "title": "Registry-Turing",
+    "claim_ids": [
+      "C11"
+    ],
+    "captions": [
+      "0/20 Netto-Reaktionen",
+      "0 Verstärkungs-Zyklen (48 Conversion-Zyklen)",
+      "max Re(λ) = -1.2e-04 < 0",
+      "Attraktor ATP = 0 (Residual 8.6e-9)"
+    ]
+  },
+  {
+    "slide": 11,
+    "title": "Gesamtbild",
+    "claim_ids": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C11",
+      "C12"
+    ],
+    "captions": []
+  },
+  {
+    "slide": 12,
+    "title": "Frische Falsifikation + offene Fragen",
+    "claim_ids": [
+      "C12"
+    ],
+    "captions": [
+      "D=0.05 → 10 · D=0.1 → 3 · D=0.15 → ≥200 (n.lok.) · D=0.25 → 30 · D=0.3 → ≥1000 (n.lok.) (D=0.45 iter-25, rechtszensiert)",
+      "4/5 Anker mit internen NULLs — Zellflips zwischen benachbarten k_f",
+      "LZgrw -0.049…+0.081 straddelt die ±0.05-Schwelle",
+      "K1 PASS · K2 bit-identisch · K4a 2/2 · K5 9/9 bit-identisch zu iter-25"
+    ]
+  }
+]
