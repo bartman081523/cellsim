@@ -1,0 +1,70 @@
+=== iter-27: STOCH_CONTROL_METRIC (Seed-Budget + Rausch-Floor, GPU) ===
+
+K1 Operator-Kalibrierung:
+  PASS=True (Masse True, Drift True, Varianz True, Beidseitigkeit True)
+K2 Determinismus: bit-identisch = True
+
+Kontrolle D=0.05: LZ-Mittel +0.0391 | per-seed ['+0.067', '-0.070', '+0.070', '-0.089', '+0.072', '+0.076', '+0.059', '+0.069', '+0.066', '+0.073'] | σ 0.0594
+Kontrolle D=0.1: LZ-Mittel -0.0493 | per-seed ['-0.087', '-0.064', '-0.065', '-0.056', '-0.060', '+0.026', '-0.069', '+0.014', '-0.071', '-0.063'] | σ 0.0356
+Kontrolle D=0.15: LZ-Mittel +0.0153 | per-seed ['-0.017', '-0.001', '+0.093', '+0.008', '-0.008', '+0.088', '-0.009', '-0.014', '+0.010', '+0.004'] | σ 0.0383
+Kontrolle D=0.25: LZ-Mittel -0.0262 | per-seed ['-0.034', '-0.021', '-0.052', '+0.057', '-0.033', '-0.046', '-0.043', '-0.029', '-0.031', '-0.031'] | σ 0.0289
+Kontrolle D=0.3: LZ-Mittel -0.0263 | per-seed ['-0.053', '-0.042', '-0.046', '-0.026', '-0.041', '-0.047', '-0.046', '+0.046', '-0.057', '+0.048'] | σ 0.0373
+
+Zelle D=0.05 k=1: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+Zelle D=0.05 k=2: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.05 k=3: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.05 k=5: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.05 k=7: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.05 k=10: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+Zelle D=0.05 k=14: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.05 k=20: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.05 k=30: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.1 k=30: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.1 k=100: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.1 k=300: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.1 k=1000: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.15 k=1: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.15 k=3: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.15 k=5: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+Zelle D=0.15 k=7: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.15 k=10: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.15 k=14: n3=NULL n10=DISTINCT (iter-26: NULL)
+Zelle D=0.15 k=20: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.15 k=30: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+Zelle D=0.15 k=45: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.15 k=70: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+Zelle D=0.15 k=100: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+Zelle D=0.15 k=140: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.15 k=200: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.25 k=1: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.25 k=30: n3=DISTINCT n10=NULL (iter-26: DISTINCT)
+Zelle D=0.3 k=10: n3=NULL n10=NULL (iter-26: NULL)
+Zelle D=0.3 k=30: n3=DISTINCT n10=DISTINCT (iter-26: DISTINCT)
+
+K5' (3-Seed-Submittel vs iter-26): 30 Zellen, bit-identisch = True
+K5'' (cls_n3 vs iter-26-Klassifikation): übereinstimmend = True
+
+H0 D=0.05: DISTINCT 520/2100 (24.8 %) | |ΔLZ| q95 0.1598 | σ 0.0594
+H0 D=0.1: DISTINCT 550/2100 (26.2 %) | |ΔLZ| q95 0.0961 | σ 0.0356
+H0 D=0.15: DISTINCT 559/2100 (26.6 %) | |ΔLZ| q95 0.1039 | σ 0.0383
+H0 D=0.25: DISTINCT 0/2100 (0.0 %) | |ΔLZ| q95 0.0977 | σ 0.0289
+H0 D=0.3: DISTINCT 385/2100 (18.3 %) | |ΔLZ| q95 0.1001 | σ 0.0373
+
+Kante D=0.05: n3 (k_edge 10.0, lokalisiert True) vs n10 (k_edge 10.0, lokalisiert True, Band zusammenhängend True, interne NULLs [])
+
+Kante D=0.15: n3 (k_edge 200.0, lokalisiert False) vs n10 (k_edge 100.0, lokalisiert True, Band zusammenhängend False, interne NULLs [7.0, 10.0, 20.0, 45.0])
+Spread D=0.05: Median-Ratio σ_zelle/σ_kontrolle = 0.13 (9 Zellen)
+Spread D=0.1: Median-Ratio σ_zelle/σ_kontrolle = 0.79 (4 Zellen)
+Spread D=0.15: Median-Ratio σ_zelle/σ_kontrolle = 0.90 (13 Zellen)
+Spread D=0.25: Median-Ratio σ_zelle/σ_kontrolle = 0.89 (2 Zellen)
+Spread D=0.3: Median-Ratio σ_zelle/σ_kontrolle = 0.72 (2 Zellen)
+
+Signal-Tiefe: 17/22 gebuchte DISTINCT-Zellen innerhalb 2 SE des Kontroll-Rauschens
+
+V1 (Seed-Budget): EDGE_STATUS_CHANGED_N10
+V2 (H0-Rate): H0_DOMINANT
+V3 (Spread): SPREAD_SYMMETRIC
+
+VERDICT: EDGE_STATUS_CHANGED_N10 | H0_DOMINANT | SPREAD_SYMMETRIC
+
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-27/result.json
