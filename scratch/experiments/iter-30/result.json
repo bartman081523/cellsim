@@ -1,0 +1,123 @@
+{
+  "vector": "VECTOR_FRESH_SURVIVOR_CENSUS",
+  "seeds_fresh2": [
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319
+  ],
+  "anchors": [
+    0.05,
+    0.1,
+    0.15,
+    0.3
+  ],
+  "gates": {
+    "k1_artifact_consistency": true,
+    "k2_determinism": true
+  },
+  "control_consistency": {
+    "0.05": {
+      "z": 0.8365472749842555,
+      "mean_fresh": 0.061093033321241094,
+      "sigma_fresh": 0.054660064989627076,
+      "mean_i27": 0.039103521327765026,
+      "sigma_i27": 0.06262455039110572
+    },
+    "0.1": {
+      "z": -0.09176059222655601,
+      "mean_fresh": -0.050844527731521504,
+      "sigma_fresh": 0.04007120285817243,
+      "mean_i27": -0.04925252686321557,
+      "sigma_i27": 0.03747468471404852
+    },
+    "0.15": {
+      "z": -0.7902668069140876,
+      "mean_fresh": 0.002985001628073669,
+      "sigma_fresh": 0.02838804729254981,
+      "mean_i27": 0.015323008357444823,
+      "sigma_i27": 0.04039315512467814
+    },
+    "0.3": {
+      "z": -0.304263245128118,
+      "mean_fresh": -0.03094451687769706,
+      "sigma_fresh": 0.028540505561715664,
+      "mean_i27": -0.026268014327048304,
+      "sigma_i27": 0.0393418958976736
+    }
+  },
+  "survivors": {
+    "criterion": "|t|>=2 AND t>0",
+    "n_replicated": 4,
+    "rows": [
+      {
+        "diff_coeff": 0.15,
+        "k_factor": 5.0,
+        "se_units_iter28": 2.096741772599961,
+        "t_fresh": 3.166827250859744,
+        "lz_mean_fresh": 0.05631703071632321,
+        "sigma_fresh_ddof1": 0.045058378604374935,
+        "replicated": true
+      },
+      {
+        "diff_coeff": 0.3,
+        "k_factor": 30.0,
+        "se_units_iter28": 2.6142321775135224,
+        "t_fresh": 5.548931577655729,
+        "lz_mean_fresh": 0.0462675252351419,
+        "sigma_fresh_ddof1": 0.03349096217102559,
+        "replicated": true
+      },
+      {
+        "diff_coeff": 0.3,
+        "k_factor": 300.0,
+        "se_units_iter28": 2.9407391105918133,
+        "t_fresh": 4.695033319793597,
+        "lz_mean_fresh": 0.03482501899419284,
+        "sigma_fresh_ddof1": 0.03387875787808822,
+        "replicated": true
+      },
+      {
+        "diff_coeff": 0.3,
+        "k_factor": 1000.0,
+        "se_units_iter28": 2.7774856440526667,
+        "t_fresh": 4.8372787662705035,
+        "lz_mean_fresh": 0.0355215193740767,
+        "sigma_fresh_ddof1": 0.03276307794999489,
+        "replicated": true
+      }
+    ]
+  },
+  "deep3": {
+    "cell": {
+      "diff_coeff": 0.1,
+      "k_factor": 3.0
+    },
+    "welch_t": 6.975931015063188,
+    "lz_mean_fresh": 0.0578095315303601,
+    "sigma_fresh_ddof1": 0.028640541342693088,
+    "replicated": true
+  },
+  "edge": {
+    "cell": {
+      "diff_coeff": 0.05,
+      "k_factor": 10.0
+    },
+    "welch_t": -4.205906689219921,
+    "lz_mean_fresh": -0.0157210085745213,
+    "sigma_fresh_ddof1": 0.018648998943608403,
+    "signal": true
+  },
+  "verdicts": {
+    "v1_survivors": "SURV_ALL",
+    "v2_deep3": "DEEP3_FRESH_REPLICATED",
+    "v3_edge": "EDGE_SIGNALS",
+    "final": "SURV_ALL | DEEP3_FRESH_REPLICATED | EDGE_SIGNALS"
+  }
+}

@@ -1,0 +1,35 @@
+=== iter-30: FRESH_SURVIVOR_CENSUS (dritter Block, GPU) ===
+
+Gates:
+  K1 se_units D=0.15 k=5: 2.0967 == iter-28 2.0967 -> True
+  K1 se_units D=0.3 k=30: 2.6142 == iter-28 2.6142 -> True
+  K1 se_units D=0.3 k=300: 2.9407 == iter-28 2.9407 -> True
+  K1 se_units D=0.3 k=1000: 2.7775 == iter-28 2.7775 -> True
+  K1 welch_t D=0.1 k=3: 7.9064 == iter-28 7.9064 -> True
+  K1 iter-29-Determinismus D=0.05 k=1 (seed 300): bit-identisch = True
+  K1 iter-29-Determinismus D=0.15 k=14 (seed 300): bit-identisch = True
+  K1 iter-29-Determinismus D=0.25 k=1 (seed 300): bit-identisch = True
+  K2 Determinismus: bit-identisch = True
+
+Frische Kontrollen (Seeds 310-319):
+  D=0.05: LZ +0.0611 (σ 0.0547) vs iter-27 +0.0391 (σ 0.0626) | z = +0.84
+  D=0.1: LZ -0.0508 (σ 0.0401) vs iter-27 -0.0493 (σ 0.0375) | z = -0.09
+  D=0.15: LZ +0.0030 (σ 0.0284) vs iter-27 +0.0153 (σ 0.0404) | z = -0.79
+  D=0.3: LZ -0.0309 (σ 0.0285) vs iter-27 -0.0263 (σ 0.0393) | z = -0.30
+
+V1 — SE-Ueberlebende (STRICT: |t|>=2 UND positiv):
+  D=0.15 k=5 (SE 2.10): LZ +0.0563 |t_fresh| = 3.17 → REPLIZIERT
+  D=0.3 k=30 (SE 2.61): LZ +0.0463 |t_fresh| = 5.55 → REPLIZIERT
+  D=0.3 k=300 (SE 2.94): LZ +0.0348 |t_fresh| = 4.70 → REPLIZIERT
+  D=0.3 k=1000 (SE 2.78): LZ +0.0355 |t_fresh| = 4.84 → REPLIZIERT
+
+V2 — D=0.10 k=3 (frische Kontrolle): LZ +0.0578 (σ 0.0286) |t| = 6.98 → DEEP3_FRESH_REPLICATED
+V3 — Kante D=0.05 k=10: LZ -0.0157 (σ 0.0186) |t| = 4.21 → EDGE_SIGNALS
+
+V1 (SE-Ueberlebende, 4): SURV_ALL (4/4)
+V2 (D=0.10 k=3, frisch): DEEP3_FRESH_REPLICATED
+V3 (Kante k_edge=10): EDGE_SIGNALS
+
+VERDICT: SURV_ALL | DEEP3_FRESH_REPLICATED | EDGE_SIGNALS
+
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-30/result.json
