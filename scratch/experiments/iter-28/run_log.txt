@@ -1,0 +1,47 @@
+=== iter-28: SIGNAL_RELATIVE_RECLASS + DEEP_CELL_REPLICATION ===
+
+Gates (Artefakt-Konsistenz):
+  K1 Recompute DISTINCT-Tiefe: 22 Zellen, bit-identisch = True
+  K2 cls_n3-Verankerung (Tier A): uebereinstimmend = True
+
+SE-Reclass: 17/22 gebuchte DISTINCT kippen auf NULL; 0/21 gebuchte NULL steigen auf DISTINCT
+  Flip D=0.05 k=1 (A): iter-26 DISTINCT -> NULL (se_units 1.37)
+  Flip D=0.05 k=2 (A): iter-26 DISTINCT -> NULL (se_units 0.86)
+  Flip D=0.05 k=10 (A): iter-26 DISTINCT -> NULL (se_units 0.69)
+  Flip D=0.1 k=1 (B): iter-26 DISTINCT -> NULL (se_units 1.47)
+  Flip D=0.15 k=1 (A): iter-26 DISTINCT -> NULL (se_units 1.49)
+  Flip D=0.15 k=3 (A): iter-26 DISTINCT -> NULL (se_units 0.34)
+  Flip D=0.15 k=7 (A): iter-26 DISTINCT -> NULL (se_units 1.14)
+  Flip D=0.15 k=20 (A): iter-26 DISTINCT -> NULL (se_units 0.11)
+  Flip D=0.15 k=30 (A): iter-26 DISTINCT -> NULL (se_units 0.73)
+  Flip D=0.15 k=70 (A): iter-26 DISTINCT -> NULL (se_units 0.71)
+  Flip D=0.15 k=100 (A): iter-26 DISTINCT -> NULL (se_units 0.75)
+  Flip D=0.15 k=200 (A): iter-26 DISTINCT -> NULL (se_units 0.11)
+  Flip D=0.25 k=3 (B): iter-26 DISTINCT -> NULL (se_units 1.85)
+  Flip D=0.25 k=30 (A): iter-26 DISTINCT -> NULL (se_units 1.59)
+  Flip D=0.3 k=1 (B): iter-26 DISTINCT -> NULL (se_units 1.34)
+  Flip D=0.3 k=3 (B): iter-26 DISTINCT -> NULL (se_units 1.18)
+  Flip D=0.3 k=100 (B): iter-26 DISTINCT -> NULL (se_units 1.29)
+H0(SE) D=0.05: DISTINCT 182/2100 (8.7 %)
+H0(SE) D=0.1: DISTINCT 138/2100 (6.6 %)
+H0(SE) D=0.15: DISTINCT 136/2100 (6.5 %)
+H0(SE) D=0.25: DISTINCT 5/2100 (0.2 %)
+H0(SE) D=0.3: DISTINCT 135/2100 (6.4 %)
+
+Regel-Kongruenz Tier A: 16/30 (53 %)
+corr/tmi-Inertie: max corr_drop 0.0005 (Schwelle 0.3), max tmi_diff 0.0013 (Schwelle 0.05)
+
+Teil 2 — Deep-Cell-Replikation (n=10, GPU):
+  D=0.1 k=3: LZ-Mittel +0.0582 (σ 0.0210) |t| = 7.91 → REPLIZIERT
+  D=0.3 k=300: LZ-Mittel +0.0404 (σ 0.0341) |t| = 4.05 → REPLIZIERT
+  D=0.3 k=1000: LZ-Mittel +0.0389 (σ 0.0340) |t| = 3.96 → REPLIZIERT
+
+V1 (Reclass): RECLASS_SEVERE
+V2 (H0 des SE-Kriteriums): SE_H0_MARGINAL
+V3 (NULL-Seite): SE_RECOVERS_NONE
+V4 (Regel-Kongruenz): SE_RULES_DIVERGE
+V5 (Deep-Replikation): DEEP_REPLICATED
+
+VERDICT: RECLASS_SEVERE | SE_H0_MARGINAL | SE_RECOVERS_NONE | SE_RULES_DIVERGE | DEEP_REPLICATED
+
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-28/result.json
