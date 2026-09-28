@@ -267,7 +267,7 @@ tci_xu_data). Die Verbindung wird in DREI Ebenen gebucht:
   Einzelwirbel-Lesart nicht; sie zeigen ein **Multi-Wirbel-Meer mit
   Task-abhängiger Rekonfiguration**.
 
-### Ebene C — HYPOTHESE (klar gelabelt; ungetestet, testbar)
+### Ebene C — HYPOTHESE (klar gelabelt; im FHN-Medium getestet — tci_v2, 2026-09-28)
 
 - **Die „Vorhersagemaschine"-Verbindung** (neuro_vortices.txt, Zeilen
   50/196: kortikale traveling waves als predictiv/generative
@@ -290,8 +290,25 @@ tci_xu_data). Die Verbindung wird in DREI Ebenen gebucht:
   Phase, ±1-Ladungen, cw/acw, Annihilation, Task-Dekodierbarkeit) —
   und scheitert auf der **Schutz-/Ego-Identitäts-Ebene**, wie in §0–§6
   gebucht.
-- **Vektor-Status**: ein sauberer nächster Test der Ebene C wäre ein
-  registrierter v2-Vektor (excitables Korpus-Update + Xu-Toolbox-Metriken
-  count/duration/speed/radius/direction je Frame + Dekodier-Analogie aus
-  Spiralzentren-Ladung + Richtungs-Reversal je Task). Bis dahin: keine
-  Vorabaussagen.
+- **Vektor-Status — getestet (tci_v2, 2026-09-28)**: der registrierte
+  v2-Vektor (FitzHugh-Nagumo-Gitter als excitable Medium + Xu-Toolbox-
+  Metriken + Dekodier-Analogie + Richtungs-Rekonfiguration + Ladungs-
+  Informations-Test) ist **vollständig gelaufen und als registriert
+  FALSIFIZIERT** — Gates G1/G2 PASS (Determinismus bit-identisch,
+  Metriken finit), aber Q1 SPIRAL_PROPAGATION **ABSENT** (0/30 Seeds:
+  median 0–2 transiente Kerne/Frame statt ≥ 5 tragender, Dauer 1–2
+  Frames statt ≥ 3), Q2 DECODE **WEAK** (0.325 vs Chance 0.25,
+  p_perm 0.126), Q3 DIRECTION_RECONFIG **ABSENT** (0/10, |Δp_cw| ≤ 0.09
+  vs 2·SE ≥ 0.094), Q4 INTERACTION **NOT_DOMINANT** (16.3 % vs ≥ 80 %),
+  Q5 CHARGE_INFO **NOT_BEYOND_POSITION** (gain exakt 0.0, p = 1.0).
+  Zwei offen gebuchte Korrekturen VOR dem Hauptlauf (Aktivitäts-Domäne:
+  ein erregbares Medium in Ruhe trägt KEINE Phase; Per-Schritt-Rauschen
+  0.02 → 0.1: darunter laufen die Wellen planar und brechen nicht) —
+  Kriterien, Seeds, Verdicts unverändert. Buchung:
+  `scratch/experiments/tci_v2/experiment.md`. Via-Negativa-Residuum:
+  die Dekodier-Analogie scheitert im FHN-Medium bereits an der ersten
+  Stufe (keine persistierenden quantisierten Spiralen); ein anderes
+  Regime, das Q1–Q5 erfüllen könnte, wäre eine NEUE Hypothese mit NEUER
+  Registrierung. Die Xu-Daten bleiben der einzige Träger der Ebene-C-
+  Struktur — dort gemessen (X2–X5), hier im Analog-Medium nicht
+  reproduziert.

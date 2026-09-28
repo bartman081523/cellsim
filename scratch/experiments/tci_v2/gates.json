@@ -1,0 +1,6 @@
+{
+  "G1_DETERMINISM": {
+    "pass": true,
+    "max_abs_diff": 0.0
+  }
+}
