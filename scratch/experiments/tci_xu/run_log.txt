@@ -1,0 +1,7 @@
+TCI<->Xu Agreement-Test (pre-registriert) — Start
+G1 Determinismus (E1 alt seed 1000 x2): PASS
+E1/H1: mean_ratio null=0.000 alt=0.000 p=nan verdict=SPIRAL_EDGE_ABSENT
+E2/H2: flip ctrl=0.000 alt=0.000 delta=0.000 p=nan verdict=RECONFIG_ABSENT
+E3/H3: quantized_frac=0.000 verdict=CHARGE_DEGRADED
+Ergebnis persistiert: /run/media/julian/ML3/cellsim/scratch/experiments/tci_xu/result.json
+Runtime: 103.4 s

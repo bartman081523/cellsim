@@ -1,0 +1,13 @@
+Diagnose (post-hoc, nicht Teil der Registrierung) — Start
+A seed=1000 uniform : n_cores je Snapshot [1913, 308, 62, 0, 0, 0, 0, 0, 0, 0, 0], max|vort| t=1499 0.000
+A seed=1000 counter : n_cores je Snapshot [1915, 298, 34, 10, 6, 0, 2, 0, 0, 0, 0], max|vort| t=1499 0.000
+A seed=1001 uniform : n_cores je Snapshot [1928, 272, 71, 0, 0, 0, 0, 0, 0, 0, 0], max|vort| t=1499 0.000
+A seed=1001 counter : n_cores je Snapshot [1928, 253, 56, 18, 32, 58, 39, 64, 77, 50, 114], max|vort| t=1499 1.000
+A seed=1002 uniform : n_cores je Snapshot [1878, 340, 152, 28, 16, 20, 128, 169, 80, 116, 243], max|vort| t=1499 1.000
+A seed=1002 counter : n_cores je Snapshot [1880, 330, 91, 48, 26, 28, 86, 77, 86, 114, 74], max|vort| t=1499 1.000
+B delta0=0.1: mean_ratio null=0.0000 alt=0.0000 n_ge_2=0 n_ge_13=0 p=nan verdict=SPIRAL_EDGE_ABSENT(sweep)
+B delta0=0.2: mean_ratio null=0.0000 alt=0.0000 n_ge_2=0 n_ge_13=0 p=nan verdict=SPIRAL_EDGE_ABSENT(sweep)
+B delta0=0.5: mean_ratio null=0.0000 alt=0.0000 n_ge_2=0 n_ge_13=0 p=nan verdict=SPIRAL_EDGE_ABSENT(sweep)
+B null-spotcheck delta0=0.5: max|vort_e1| je Seed [1.1308638867425835e-17, 1.201542879663995e-17, 1.1308638867425835e-17]
+Ergebnis persistiert: /run/media/julian/ML3/cellsim/scratch/experiments/tci_xu/probe_result.json
+Runtime: 169.3 s

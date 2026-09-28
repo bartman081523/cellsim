@@ -1,0 +1,145 @@
+{
+  "registration": "siehe Docstring (Kriterien vor dem Lauf fixiert)",
+  "parameters": {
+    "N": 100,
+    "steps": 1500,
+    "noise_sigma": 0.05,
+    "relax": 0.9,
+    "delta0": 0.05,
+    "swap_step": 750,
+    "vort_threshold": 0.3,
+    "track_dist": 6.0,
+    "seeds_e1": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009
+    ],
+    "seeds_e2": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009
+    ]
+  },
+  "gates": {
+    "G1_determinism": true
+  },
+  "e1": {
+    "ratios_null": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ratios_alt": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mean_ratio_null": 0.0,
+    "mean_ratio_alt": 0.0,
+    "n_seeds_ratio_ge_2": 0,
+    "n_seeds_ratio_ge_1_3": 0,
+    "welch_p": NaN,
+    "verdict": "SPIRAL_EDGE_ABSENT"
+  },
+  "e2": {
+    "flip_rate_ctrl": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "flip_rate_alt": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "n_cores_wa_ctrl": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "n_cores_wa_alt": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "mean_flip_ctrl": 0.0,
+    "mean_flip_alt": 0.0,
+    "delta_flip": 0.0,
+    "mean_persistence_alt": 0.0,
+    "welch_p": NaN,
+    "verdict": "RECONFIG_ABSENT"
+  },
+  "e3": {
+    "per_seed_quant_fraction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pooled_quant_fraction": 0.0,
+    "verdict": "CHARGE_DEGRADED"
+  },
+  "runtime_s": 103.4202070236206
+}
