@@ -1,0 +1,76 @@
+{
+  "status": "PILOT_SCAN \u2014 keine Verdict-Promotion (Labels PILOT_*)",
+  "selection_rule": "registriert (Docstring v3_model.py): n_cores>=5 & dur>=3 & quant>=0.9@80%; dann hoechste Dauer, dann kleinste sigma_n",
+  "rows": [
+    {
+      "d_par": 0.3,
+      "noise_step": 0.02,
+      "median_n_cores": 29.5,
+      "median_duration_frames": 3.0,
+      "frac_frames_quant_ge_09": 0.447
+    },
+    {
+      "d_par": 0.3,
+      "noise_step": 0.05,
+      "median_n_cores": 132.25,
+      "median_duration_frames": 3.0,
+      "frac_frames_quant_ge_09": 0.0125
+    },
+    {
+      "d_par": 0.3,
+      "noise_step": 0.1,
+      "median_n_cores": 1337.5,
+      "median_duration_frames": 4.0,
+      "frac_frames_quant_ge_09": 0.0
+    },
+    {
+      "d_par": 0.6,
+      "noise_step": 0.02,
+      "median_n_cores": 8.0,
+      "median_duration_frames": 2.0,
+      "frac_frames_quant_ge_09": 0.5692001522295196
+    },
+    {
+      "d_par": 0.6,
+      "noise_step": 0.05,
+      "median_n_cores": 41.5,
+      "median_duration_frames": 2.0,
+      "frac_frames_quant_ge_09": 0.184
+    },
+    {
+      "d_par": 0.6,
+      "noise_step": 0.1,
+      "median_n_cores": 524.25,
+      "median_duration_frames": 3.0,
+      "frac_frames_quant_ge_09": 0.0
+    },
+    {
+      "d_par": 1.0,
+      "noise_step": 0.02,
+      "median_n_cores": 2.0,
+      "median_duration_frames": 2.0,
+      "frac_frames_quant_ge_09": 0.45041094282024186
+    },
+    {
+      "d_par": 1.0,
+      "noise_step": 0.05,
+      "median_n_cores": 16.5,
+      "median_duration_frames": 2.0,
+      "frac_frames_quant_ge_09": 0.33814138346804806
+    },
+    {
+      "d_par": 1.0,
+      "noise_step": 0.1,
+      "median_n_cores": 228.0,
+      "median_duration_frames": 2.0,
+      "frac_frames_quant_ge_09": 0.0005
+    }
+  ],
+  "selection": {
+    "d_par": 0.6,
+    "noise_step": 0.1,
+    "note": "keine Ecke erfuellt die Kriterien \u2014 Default haelt"
+  },
+  "korrektur_log": [],
+  "runtime_s": 1453.9
+}

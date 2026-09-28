@@ -312,3 +312,56 @@ tci_xu_data). Die Verbindung wird in DREI Ebenen gebucht:
   Registrierung. Die Xu-Daten bleiben der einzige Träger der Ebene-C-
   Struktur — dort gemessen (X2–X5), hier im Analog-Medium nicht
   reproduziert.
+
+## 8. tci_v3 (2026-09-28): Träger-Theorie konstruiert und getestet — Grenzzyklus ist notwendig, nicht hinreichend
+
+Anlass: „schaue wie wir diese vortices in cellsim bekommen, du musst
+die theorie konstruieren". Die Theorie wurde VOR der Registrierung
+konstruiert (`scratch/notes/tci_vortices_theory.md`, vier Felder je
+Stufe TH1–TH4), dann die Batterie registriert, dann gemessen. Denkmodus:
+`GroundedMechanismMixMind` (neu komponiert: ExtraordinaryFalsifier ×
+NeuroEmergence; Plan `~/.claude/plans/tci-vortices-cellsim.md`).
+
+**Theorie (Konstruktion vor Messung):**
+- **TH1 Träger**: ein Medium trägt ein Phasenfeld genau dann, wenn die
+  lokale Dynamik ein Grenzzyklus ist (am Ruhepunkt ist die Phase
+  undefiniert — v2/K1 gemessen).
+- **TH2 Normalform**: CGLE nahe Hopf; Xu's annihilations-dominierte
+  Statistik gehört ins Defekt-Turbulenz-Fenster (Benjamin–Feir),
+  Quantelung (topologisch) und Persistenz (dynamisch) getrennt
+  registriert.
+- **TH3 Einbettung**: Brusselator pro Voxel (Grenzzyklus analytisch:
+  B > 1 + A²), **D lokal moduliert durch das echte cellsim-Modul
+  `crowding.compute_crowding`** (d = D·exp(−α·crowding)) — der
+  cellsim-Bezug ist die Crowding-Brücke als Nukleationsquelle.
+- **TH4 Dekodierung**: nur interpretierbar bei Q1 REALIZED.
+
+**Registrierte Messung** (`scratch/experiments/tci_v3/`, 160 Trials):
+Gates **G0/G1/G2 alle PASS** (Grenzyklus: 100 % aktive Frames,
+median max-Act 2.85; Determinismus 0.0; Metriken finit).
+- **Q1 ABSENT (0/30)** — die 130 Haupt-Trials zeigen ~480–640 Kerne/
+  Frame mit Dauer exakt 3.0 Frames, aber **quant@0.9 = 0.00 überall**:
+  das registrierte Q1-Kriterium (v2-wörtlich) scheitert allein an der
+  Quantisierungs-Bande. Im Pilot-Raster erreichte keine Ecke 0.8
+  (Maximum 0.64 in der leisesten) → registrierte Fallback-Regel:
+  Default (D=0.6, σ_n=0.1).
+- Q2 WEAK (0.275 vs 0.25, p_perm 0.43), Q3 REALIZED (10/10 —
+  **in Q1-ABSENT-Regime**, nicht promotet: schedule-gekoppelte
+  Asymmetrie des rauschdominierten Felds), Q4 NOT_DOMINANT (36.1 %),
+  Q5 NOT_BEYOND_POSITION (gain 0.0).
+- **R1 SHIFTED** (TH3-Falsifikator feuert NICHT): Crowding 555 vs
+  uniform 524 Kerne (median), Welch p = 0.0013, Δ > 2·pooled SE —
+  die echte Crowding-Brücke ist eine schwache (+5.9 %), aber
+  systematische Nukleationsquelle.
+
+**Faire Lesart (drei Schichten):** die v2-Lektion wird als
+*Notwendigkeit* bestätigt — der Grenzzyklus trägt Phase überall (G0),
+der Ruhepunkt tat es nicht (v2/K1). Die *Hinlänglichkeit* ist
+falsifiziert: der Grenzzyklus erzeugt dichte, kurzlebige,
+unquantisierte Kern-Populationen (Rausch-Turbulenz), keine persistenten
+unit-charge-Spiralen. Ebene B bleibt unberührt (keine Identitäts-
+Claims); die Xu-Ebene-C-Struktur bleibt am Original getragen (X2–X5),
+in beiden Analog-Medien (FHN, Brusselator) nicht reproduziert.
+Buchung: `scratch/experiments/tci_v3/experiment.md`. Via-Negativa-
+Residuum: das Q1-Window liegt — falls existent — außerhalb des
+registrierten (D × σ_n)-Gitters; neue Regime = neue Registrierung.
