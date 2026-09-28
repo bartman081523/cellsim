@@ -1,0 +1,63 @@
+=== iter-31: EFFECT_BLOCK_STABILITY (2 neue Bloecke, GPU) ===
+
+Gates:
+  K1a se_units D=0.1 k=3: 3.5249 == iter-28 3.5249 -> True
+  K1a se_units D=0.15 k=5: 2.0967 == iter-28 2.0967 -> True
+  K1a se_units D=0.3 k=30: 2.6142 == iter-28 2.6142 -> True
+  K1a se_units D=0.3 k=300: 2.9407 == iter-28 2.9407 -> True
+  K1a se_units D=0.3 k=1000: 2.7775 == iter-28 2.7775 -> True
+  K1b welch_t D=0.1 k=3: 7.9064 == iter-28 7.9064 -> True
+  K1c iter-29-Determinismus D=0.05 k=1 (seed 300): bit-identisch = True
+  K1c iter-29-Determinismus D=0.15 k=14 (seed 300): bit-identisch = True
+  K1c iter-29-Determinismus D=0.25 k=1 (seed 300): bit-identisch = True
+  K1d iter-28-Determinismus D=0.1 k=3 (seed 200): bit-identisch = True
+  K2 Determinismus: bit-identisch = True
+
+--- Block 4 (Seeds 320-329) ---
+  Ktrl D=0.05: LZ +0.0502 (σ 0.0693)
+  Ktrl D=0.1: LZ -0.0442 (σ 0.0342)
+  Ktrl D=0.15: LZ +0.0205 (σ 0.0363)
+  Ktrl D=0.25: LZ -0.0258 (σ 0.0301)
+  Ktrl D=0.3: LZ -0.0305 (σ 0.0291)
+  Zelle D=0.1 k=3: LZ +0.0574 (σ 0.0264) gap +0.1016 |t| = 7.44
+  Zelle D=0.15 k=5: LZ +0.0378 (σ 0.0314) gap +0.0173 |t| = 1.14
+  Zelle D=0.3 k=30: LZ +0.0448 (σ 0.0295) gap +0.0753 |t| = 5.75
+  Zelle D=0.3 k=300: LZ +0.0387 (σ 0.0338) gap +0.0693 |t| = 4.90
+  Zelle D=0.3 k=1000: LZ +0.0327 (σ 0.0286) gap +0.0633 |t| = 4.90
+  Zelle D=0.05 k=1: LZ -0.0243 (σ 0.0082) gap -0.0745 |t| = 3.38
+  Zelle D=0.15 k=14: LZ -0.0255 (σ 0.0234) gap -0.0460 |t| = 3.37
+  Zelle D=0.25 k=1: LZ +0.0241 (σ 0.0104) gap +0.0498 |t| = 4.95
+  Zelle D=0.05 k=10: LZ -0.0070 (σ 0.0160) gap -0.0572 |t| = 2.54
+--- Block 5 (Seeds 330-339) ---
+  Ktrl D=0.05: LZ +0.0645 (σ 0.0099)
+  Ktrl D=0.1: LZ -0.0603 (σ 0.0284)
+  Ktrl D=0.15: LZ +0.0068 (σ 0.0288)
+  Ktrl D=0.25: LZ -0.0074 (σ 0.0424)
+  Ktrl D=0.3: LZ -0.0221 (σ 0.0370)
+  Zelle D=0.1 k=3: LZ +0.0627 (σ 0.0253) gap +0.1230 |t| = 10.22
+  Zelle D=0.15 k=5: LZ +0.0474 (σ 0.0353) gap +0.0406 |t| = 2.82
+  Zelle D=0.3 k=30: LZ +0.0491 (σ 0.0329) gap +0.0711 |t| = 4.54
+  Zelle D=0.3 k=300: LZ +0.0344 (σ 0.0312) gap +0.0565 |t| = 3.69
+  Zelle D=0.3 k=1000: LZ +0.0221 (σ 0.0237) gap +0.0442 |t| = 3.18
+  Zelle D=0.05 k=1: LZ -0.0090 (σ 0.0357) gap -0.0734 |t| = 6.27
+  Zelle D=0.15 k=14: LZ -0.0223 (σ 0.0254) gap -0.0291 |t| = 2.39
+  Zelle D=0.25 k=1: LZ +0.0279 (σ 0.0128) gap +0.0352 |t| = 2.51
+  Zelle D=0.05 k=10: LZ -0.0086 (σ 0.0272) gap -0.0730 |t| = 7.97
+
+  0.1|3: mean_g +0.1102 σ_g 0.0091 CV 0.08242962586850154 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+  0.15|5: mean_g +0.0442 σ_g 0.0206 CV 0.466737247510715 | f_block 0.28 → sampling-dominiert | Vorzeichen-stabil
+  0.3|30: mean_g +0.0758 σ_g 0.0036 CV 0.04745798035034085 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+  0.3|300: mean_g +0.0646 σ_g 0.0056 CV 0.08607521073599028 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+  0.3|1000: mean_g +0.0598 σ_g 0.0105 CV 0.17531904477994406 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+  0.05|1: mean_g -0.0714 σ_g 0.0035 CV 0.049169194930872524 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+  0.15|14: mean_g -0.0406 σ_g 0.0100 CV 0.2472223321418185 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+  0.25|1: mean_g +0.0462 σ_g 0.0104 CV 0.22453055495063015 | f_block 0.24 → sampling-dominiert | Vorzeichen-stabil
+  0.05|10: mean_g -0.0601 σ_g 0.0197 CV 0.3276309704762705 | f_block 0.00 → sampling-dominiert | Vorzeichen-stabil
+
+V1 (Dekomposition): SAMPLING_DOMINANT (0/9 BLOCK_REAL)
+V2 (Deskriptiv, CV<=0.5): DEPTHS_STABLE_MAJORITY (9/9 STABLE_DEPTH)
+V3 (Vorzeichen ueber 4 Bloecke): 9/9 VORZEICHEN_STABIL
+
+VERDICT: SAMPLING_DOMINANT | DEPTHS_STABLE_MAJORITY | 9/9 VORZEICHEN_STABIL
+
+→ /run/media/julian/ML3/cellsim/scratch/experiments/iter-31/result.json
