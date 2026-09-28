@@ -1,0 +1,359 @@
+{
+  "status": "EXPLORATORY_REANALYSIS der publizierten Source Data",
+  "not_part_of": "pre-registrierte Korpus-Registrierung (result.json)",
+  "criteria": "vor dem Lauf fixiert (Docstring), Labels X*_*",
+  "correction_log": [
+    "A(1) X2 Datenzeilen 2-101 statt 3+ (Summary-Zeilen raus, Iteration 1 drin); Cross-Check gegen gespeicherte Mean/SEM-Zeilen",
+    "A(2) Header-Labels via Text-Grid statt numerischem Array",
+    "A(3) X3 Subject-Filter (100 Subject-Zeilen, 93 mit allen 3 Spalten, Zeilensumme 1.0) — Label 'n = 93' bestätigt",
+    "A(4) X5 Subject-Filter (5a/5c hatten je 1 Summary-Zeile)",
+    "B Fig_6c Chancen PER-SPALTE wie registriert (erster Lauf nutzte 0.25 für alle 3 Spalten — Code-vs-Registrierung-Bug, vor Buchung korrigiert)"
+  ],
+  "x1_direction_flip": {
+    "n_trials_listen": 733,
+    "n_trials_answer": 726,
+    "circ_mean_listen_rad": -0.7041930965029908,
+    "circ_mean_answer_rad": 2.531785377705807,
+    "resultant_listen": 0.33783459924608594,
+    "resultant_answer": 0.16158270520019694,
+    "flip_rad": 3.0472068329707884,
+    "flip_deg": 174.59209083265216,
+    "permutation_p": 0.0,
+    "consistency_within_trial_listen": 0.7544338335607094,
+    "consistency_within_trial_answer": 0.7300275482093664,
+    "step_props_pos": {
+      "listening": [
+        0.33560709413369716,
+        0.3383356070941337,
+        0.34106412005457026,
+        0.3601637107776262,
+        0.3860845839017735
+      ],
+      "answering": [
+        0.5550964187327824,
+        0.571625344352617,
+        0.5661157024793388,
+        0.5674931129476584,
+        0.5413223140495868
+      ]
+    },
+    "verdict": "X1_FLIP_WEAK"
+  },
+  "x2_classification": {
+    "Fig_6b": {
+      "layout": {
+        "mean_row_index": 102,
+        "sem_row_index": 103,
+        "n_rows_total": 104
+      },
+      "spiral centre-based (original 100 subjects)": {
+        "column_label": "spiral centre-based (original 100 subjects)",
+        "chance": 0.5,
+        "mean": 0.48333333333333334,
+        "sem": 0.0027080905097049846,
+        "n_iterations": 100,
+        "iteration_1_value": 0.479166666666667,
+        "t_vs_chance": -6.154397944580628,
+        "p_vs_chance": 1.6108152399662626e-08,
+        "label": "X2_BELOW_CHANCE",
+        "stored_iteration_mean": 0.4833333333333335,
+        "stored_sem": 0.00308374900157232,
+        "stored_mean_matches": true,
+        "stored_sem_ratio": 1.1387171110127554
+      },
+      "spiral centre-based (additional 100 subjects)": {
+        "column_label": "spiral centre-based (additional 100 subjects)",
+        "chance": 0.5,
+        "mean": 0.5035169491525425,
+        "sem": 0.0029841181253261974,
+        "n_iterations": 100,
+        "iteration_1_value": 0.5,
+        "t_vs_chance": 1.1785556083367457,
+        "p_vs_chance": 0.24140013505607794,
+        "label": "X2_AT_CHANCE",
+        "stored_iteration_mean": 0.5035169491525427,
+        "stored_sem": 0.00408063354900849,
+        "stored_mean_matches": true,
+        "stored_sem_ratio": 1.3674504083387888
+      },
+      "Unfiltered fMRI Amplitude-based (original 100 subjects)": {
+        "column_label": "Unfiltered fMRI Amplitude-based (original 100 subjects)",
+        "chance": 0.5,
+        "mean": 0.3019583333333334,
+        "sem": 0.002774906976125576,
+        "n_iterations": 100,
+        "iteration_1_value": 0.316666666666667,
+        "t_vs_chance": -71.36875879824247,
+        "p_vs_chance": 6.0246049330686005e-87,
+        "label": "X2_BELOW_CHANCE",
+        "stored_iteration_mean": 0.30195833333333333,
+        "stored_sem": 0.00290637031730078,
+        "stored_mean_matches": true,
+        "stored_sem_ratio": 1.0473757651360112
+      },
+      "post_hoc_chance_alt_0_25": {
+        "note": "POST-HOC, kein registriertes Kriterium: Alternative-Chance 0.25 (4-Bedingungen Story/Math x Listen/Answer), registrierte Chance bleibt 0.5",
+        "columns": {
+          "spiral centre-based (original 100 subjects)": {
+            "mean": 0.48333333333333334,
+            "t_vs_0_25": 86.16157122412882,
+            "p_vs_0_25": 6.441016820106362e-95
+          },
+          "spiral centre-based (additional 100 subjects)": {
+            "mean": 0.5035169491525425,
+            "t_vs_0_25": 84.95540005636684,
+            "p_vs_0_25": 2.553202025740468e-94
+          },
+          "Unfiltered fMRI Amplitude-based (original 100 subjects)": {
+            "mean": 0.3019583333333334,
+            "t_vs_0_25": 18.72435140362055,
+            "p_vs_0_25": 2.6595189529081053e-34
+          }
+        }
+      }
+    },
+    "Fig_6c": {
+      "layout": {
+        "mean_row_index": 102,
+        "sem_row_index": 103,
+        "n_rows_total": 104
+      },
+      "4 stimulus types (face, place, tool, body)": {
+        "column_label": "4 stimulus types (face, place, tool, body)",
+        "chance": 0.25,
+        "mean": 0.43725,
+        "sem": 0.005318100879984976,
+        "n_iterations": 100,
+        "iteration_1_value": 0.3375,
+        "t_vs_chance": 35.20993757465711,
+        "p_vs_chance": 8.547692658570347e-58,
+        "label": "X2_ABOVE_CHANCE",
+        "stored_iteration_mean": 0.4372499999999999,
+        "stored_sem": 0.00536225408240053,
+        "stored_mean_matches": true,
+        "stored_sem_ratio": 1.0083024379213505
+      },
+      "Memory Load (2-back vs. 0-back)": {
+        "column_label": "Memory Load (2-back vs. 0-back)",
+        "chance": 0.5,
+        "mean": 0.6671250000000001,
+        "sem": 0.005875537263205224,
+        "n_iterations": 100,
+        "iteration_1_value": 0.675,
+        "t_vs_chance": 28.444207314724782,
+        "p_vs_chance": 1.925456622384262e-49,
+        "label": "X2_ABOVE_CHANCE",
+        "stored_iteration_mean": 0.667125,
+        "stored_sem": 0.0268573535717571,
+        "stored_mean_matches": true,
+        "stored_sem_ratio": 4.571046419864908
+      },
+      "Memory Performance (correct vs. incorrect)": {
+        "column_label": "Memory Performance (correct vs. incorrect)",
+        "chance": 0.5,
+        "mean": 0.5896250000000001,
+        "sem": 0.005496368750770316,
+        "n_iterations": 100,
+        "iteration_1_value": 0.475,
+        "t_vs_chance": 16.306220354563933,
+        "p_vs_chance": 8.45136903114649e-30,
+        "label": "X2_ABOVE_CHANCE",
+        "stored_iteration_mean": 0.5896249999999998,
+        "stored_sem": 0.00608215104311884,
+        "stored_mean_matches": true,
+        "stored_sem_ratio": 1.106576235858707
+      }
+    },
+    "language_spiral_vs_amplitude": {
+      "mean_spiral_original": 0.48333333333333334,
+      "mean_amplitude": 0.3019583333333334,
+      "n_spiral": 100,
+      "n_amplitude": 100,
+      "welch_p": 6.152329339571232e-109
+    }
+  },
+  "x3_interaction_types": {
+    "sheet_sublabel": "(single-subject, n = 93)",
+    "n_subject_rows_numeric_col0": 100,
+    "columns": {
+      "Full Annihilation": {
+        "mean": 0.5104359995497411,
+        "n": 93
+      },
+      "Partial Annihilation": {
+        "mean": 0.46402617067959273,
+        "n": 93
+      },
+      "Repulsion": {
+        "mean": 0.025537829770666206,
+        "n": 93
+      }
+    },
+    "mean_row_sum": 1.0,
+    "n_rows_all_three_columns": 93
+  },
+  "x4_formula_on_real_phase": [
+    {
+      "sheet": "Fig_6c_left",
+      "n_valid_plaquettes": 22260,
+      "n_cores": 50,
+      "n_pos": 25,
+      "n_neg": 25,
+      "quant_fraction": 1.0,
+      "max_abs_vort": 1.0000000000000002,
+      "p99_abs_vort": 1.4135798584282297e-16
+    },
+    {
+      "sheet": "Fig_6c_mid",
+      "n_valid_plaquettes": 22260,
+      "n_cores": 1297,
+      "n_pos": 650,
+      "n_neg": 647,
+      "quant_fraction": 1.0,
+      "max_abs_vort": 1.0000000000000002,
+      "p99_abs_vort": 1.0
+    },
+    {
+      "sheet": "Fig_6c_right",
+      "n_valid_plaquettes": 22219,
+      "n_cores": 2121,
+      "n_pos": 1057,
+      "n_neg": 1064,
+      "quant_fraction": 1.0,
+      "max_abs_vort": 1.0000000000000002,
+      "p99_abs_vort": 1.0
+    }
+  ],
+  "x5_direction_proportions": {
+    "Fig_5a_4th": {
+      "header": [
+        "Subject No.",
+        "Story Listen (clockwise)",
+        "Story Listen (anticlockwise)",
+        "Math Listen (clockwise)",
+        "Math Listen (anticlockwise)"
+      ],
+      "columns": {
+        "Story Listen (clockwise)": {
+          "mean": 0.020202020202020193,
+          "n": 99,
+          "n_subject_rows": 100
+        },
+        "Story Listen (anticlockwise)": {
+          "mean": 0.32659932659932656,
+          "n": 99,
+          "n_subject_rows": 100
+        },
+        "Math Listen (clockwise)": {
+          "mean": 0.18401875901875908,
+          "n": 99,
+          "n_subject_rows": 100
+        },
+        "Math Listen (anticlockwise)": {
+          "mean": 0.07675200781261388,
+          "n": 99,
+          "n_subject_rows": 100
+        }
+      }
+    },
+    "Fig_5b_4th": {
+      "header": [
+        "Subject No.",
+        "Story Listen (clockwise)",
+        "Story Listen (anticlockwise)",
+        "Math Listen (clockwise)",
+        "Math Listen (anticlockwise)"
+      ],
+      "columns": {
+        "Story Listen (clockwise)": {
+          "mean": 0.32653061224489793,
+          "n": 98,
+          "n_subject_rows": 100
+        },
+        "Story Listen (anticlockwise)": {
+          "mean": 0.03401360544217685,
+          "n": 98,
+          "n_subject_rows": 100
+        },
+        "Math Listen (clockwise)": {
+          "mean": 0.04555835321141444,
+          "n": 98,
+          "n_subject_rows": 100
+        },
+        "Math Listen (anticlockwise)": {
+          "mean": 0.1668407839326207,
+          "n": 98,
+          "n_subject_rows": 100
+        }
+      }
+    },
+    "Fig_5c_4th": {
+      "header": [
+        "Subject No.",
+        "Story Answer (clockwise)",
+        "Story Answer (anticlockwise)",
+        "Math Answer (clockwise)",
+        "Math Answer (anticlockwise)"
+      ],
+      "columns": {
+        "Story Answer (clockwise)": {
+          "mean": 0.2297979797979798,
+          "n": 99,
+          "n_subject_rows": 100
+        },
+        "Story Answer (anticlockwise)": {
+          "mean": 0.030303030303030304,
+          "n": 99,
+          "n_subject_rows": 100
+        },
+        "Math Answer (clockwise)": {
+          "mean": 0.046236171236171256,
+          "n": 99,
+          "n_subject_rows": 100
+        },
+        "Math Answer (anticlockwise)": {
+          "mean": 0.1726791726791727,
+          "n": 99,
+          "n_subject_rows": 100
+        }
+      }
+    },
+    "Fig_5d_4th": {
+      "header": [
+        "Subject No.",
+        "Story Answer (clockwise)",
+        "Story Answer (anticlockwise)",
+        "Math Answer (clockwise)",
+        "Math Answer (anticlockwise)"
+      ],
+      "columns": {
+        "Story Answer (clockwise)": {
+          "mean": 0.025510204081632654,
+          "n": 98,
+          "n_subject_rows": 100
+        },
+        "Story Answer (anticlockwise)": {
+          "mean": 0.18112244897959184,
+          "n": 98,
+          "n_subject_rows": 100
+        },
+        "Math Answer (clockwise)": {
+          "mean": 0.18112244897959184,
+          "n": 98,
+          "n_subject_rows": 100
+        },
+        "Math Answer (anticlockwise)": {
+          "mean": 0.14368723679948175,
+          "n": 98,
+          "n_subject_rows": 100
+        }
+      }
+    },
+    "cross_check_5a_col2_vs_5b_col1": {
+      "n_common": 99,
+      "n_identical": 67,
+      "max_abs_diff": 0.666666666666667
+    }
+  },
+  "runtime_s": 1.7096941471099854
+}

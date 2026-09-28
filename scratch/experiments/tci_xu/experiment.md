@@ -128,3 +128,161 @@ dokumentiert (siehe CORREKTUR-LOG 1–2).
 - `probe_regime.py`, `probe_result.json`, `probe_log.txt` — Post-hoc-Diagnose
 - gebucht in `scratch/notes/tci_vortex_assessment.md` (revidiert,
   Agreements-führend)
+
+---
+
+# Re-Analyse der publizierten Source Data (EXPLORATORY_REANALYSIS, tci_xu_data)
+
+Datum: 2026-09-28. Anlass: Nutzersteuerung — die echten Messdaten der Studien
+laden und die Verbindung Qualia ↔ Messdaten ↔ TCI-Theorie prüfen. Status wie
+registriert: **EXPLORATORY_REANALYSIS** — Post-hoc-Re-Analyse der
+publizierten Summary-Daten; KEINE Promotion zu TCI-Verdicts (das
+pre-registrierte Verdict-Buch der Korpus-Linie bleibt unberührt).
+
+## Daten
+
+17 Source-Data-xlsx (MOESM9–25, Fig 2–8 + Extended Data 1–10), ~41 MB,
+`data/` (NICHT committet — Drittanbieter-Daten; Download-URL-Pattern im
+Docstring von `xu_data_analysis.py`):
+`https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41562-023-01626-5/MediaObjects/41562_2023_1626_MOESM{i}_ESM.xlsx`.
+Paper-Volltext (Fig 5/6-Methoden-Chance-Level) gegen-gelesen via
+`data/paper/NHB_wave_2023.pdf` (Warwick-Mirror, ebenfalls nicht committet).
+
+## Registrierung + Korrektur-Log
+
+Kriterien X1–X5 im Docstring von `xu_data_analysis.py` VOR dem ersten
+Lauf fixiert; Labels X*_*. Korrektur-Log (Daten-Extraktion, nach dem
+ersten Lauf, VOR Buchung — registrierte Kriterien unveraendert ausser B):
+
+- **A(1) X2-Zeilen-Offset**: erster Lauf las Zeilen 3+ (Iterationen 2–100
+  PLUS 'Iteration Mean'-Zeile PLUS 's.e.m.'-Zeile; Iteration 1 fehlte).
+  Verifiziertes Layout: Zeilen 2–101 = Iterationen 1–100, Zeile 102 =
+  'Iteration Mean', Zeile 103 = 's.e.m.'.
+- **A(2) Label-Extraktion**: Header-Texte via Text-Grid (numerisches
+  Array konvertiert Strings → NaN → leere Labels).
+- **A(3) X3-n**: 100 Subject-Zeilen, 7 ohne Events (16/28/62/75/77/90/100),
+  **93 mit allen 3 Spalten, Zeilensumme exakt 1.0000** — das
+  Sheet-Label „(single-subject, n = 93)" ist korrekt; der erste Lauf
+  (n=95) zählte 2 Nicht-Subject-Zeilen.
+- **A(4) X5**: 5a/5c enthielten je 1 Summary-Zeile → Mittel kontaminiert;
+  Subject-Filter (n=99/98 je Spalte).
+- **B Code-vs-Registrierung**: Fig_6c-Chancen waren im CODE pro-Sheet
+  (0.25 für alle 3 Spalten), die Registrierung sagt PER-SPALTE (4-Typen
+  0.25, Load 0.5, Performance 0.5). Der erste Lauf testete
+  Load/Performance gegen die falsche Chance; korrigiert auf die
+  registrierten per-Spalte-Chancen. Registrierte Kriterien unveraendert.
+- **C Nach Paper-Lektüre, VOR Buchung (Chance-Level)**: die registrierte
+  Chance 0.5 für Fig_6b ging von einer 2-Klassen-Zielgröße (Story vs
+  Math) aus. Paper (Volltext, Methods + Fig-6-Caption): die
+  Language-Klassifikation ist **4-kanalig** (math listening/answering,
+  story listening/answering), Chance **25%**. Der registrierte Test (vs
+  0.5) bleibt wie registriert gebucht; die korrigierte Lesart (vs 0.25)
+  war im zweiten Lauf bereits als POST-HOC-Zusatz (klar gelabelt,
+  kein registriertes Kriterium) mitgelaufen und wird hier als
+  paper-konforme Lesart dokumentiert — KEIN Post-hoc-Kriteriumswechsel
+  des registrierten Labels.
+
+## Resultate (zweiter Lauf, vollständig, 1.7 s, kein Abbruch; xu_data_result.json)
+
+- **X1 X1_FLIP_WEAK** (registriert): flip = 3.047 rad (174.6°),
+  R_listen = 0.34, R_answer = 0.16, zirkulaerer Permutationstest
+  (10 000 Shuffles, seed 42) p = 0.0000 (0/10 000 ≥ obs). WEAK statt
+  REALIZED, weil R_answer = 0.16 < 0.3 (registrierte Blockbedingung).
+  Deskriptiv: step_props_pos listening 33.6→38.6 % vs answering
+  54.1→57.2 %; Within-Trial-Konsistenz 0.754/0.730.
+- **X2 Fig_6b Language, n=100 Iterationen** (Iteration-1-Wert 0.47917 ist
+  korrekt als Iteration 1 gelesen, Mittel = gespeichertes
+  'Iteration Mean' 0.4833333):
+  - registriert (Chance 0.5): spiral original 0.4833 (p=1.6e-08)
+    **X2_BELOW_CHANCE**; spiral additional 0.5035 (p=0.241)
+    X2_AT_CHANCE; amplitude 0.3020 (p=6.0e-87) X2_BELOW_CHANCE.
+  - **Paper-Chance 25% (4-Klassen, korrigierte Lesart)**: alle drei
+    Spalten signifikant DARÜBER (t = 86.16 / 84.96 / 18.72,
+    p = 6.4e-95 / 2.6e-94 / 2.7e-34) — Replikation der Paper-Zahlen
+    48.33 ± 0.31 % / 50.35 ± 0.41 % / 30.2 ± 0.29 % auf das Digit.
+    Paper-Nullmodell (randomisierte Phasen): 24.32 ± 0.24 %.
+  - spiral-vs-amplitude (original): 0.4833 vs 0.3020, Welch p = 6.2e-109
+    — Replikation der Paper-Claim „significantly lower … with brain
+    spirals as information carriers".
+  - Cross-Check SEM: berechnete SEM (0.0027/0.0030/0.0028) vs
+    gespeicherte 's.e.m.'-Zeilen (0.0031/0.0041/0.0029) — Faktor
+    0.74–1.35; Mittel matchen auf <1e-6. Die gespeicherten s.e.m.-Zeilen
+    sind die Paper-eigenen Angaben (Memory Load: 0.0269 = die 2.69 %
+    des Papers), nicht SD/√100 der 100 Iterationswerte — als
+    Quellen-Discrepanz dokumentiert.
+- **X2 Fig_6c WM (per-Spalte-Chancen wie registriert)**: 4 stimulus
+  types 0.4373 vs 0.25 (p=8.5e-58) X2_ABOVE_CHANCE; Memory Load 0.6671
+  vs 0.5 (p=1.9e-49) X2_ABOVE_CHANCE; Memory Performance 0.5896 vs 0.5
+  (p=8.5e-30) X2_ABOVE_CHANCE — Replikation der Paper-Zahlen 43.72 ±
+  0.54 % / 66.72 ± 2.69 % / 58.96 ± 0.61 %.
+- **X3 Interaktions-Typen (n=93)**: Full Annihilation 0.5104, Partial
+  Annihilation 0.4640, Repulsion 0.0255 — **Annihilation dominiert
+  (~97.4 %)**, konsistent mit KT-artiger Wirbel-Physik und dem
+  Korpus-Probe-A-Befund; Zeilensumme exakt 1.0000.
+- **X4 EIGENE FORMEL AUF ECHTER PHASE** (die Kern-Replikation): exakt die
+  registrierte plaquette_vorticity auf den drei publizierten
+  Phasenfeldern (ED Fig 6c left/mid/right, 176×251 Flatmap, [−π,π],
+  22712 gültige Plaquettes):
+  - left: 50 Kerne (25 pos / 25 neg), quant_fraction **1.000**,
+    max|v| = **1.000 exakt**, p99|v| = 0.000
+  - mid: 1297 Kerne (650/647), quant **1.000**, max|v| = 1.000, p99 = 1.000
+  - right: 2121 Kerne (1057/1064), quant **1.000**, max|v| = 1.000,
+    p99 = 1.000
+  - **Alle** detektierten Kerne liegen im H3-Quantiesierungs-Fenster
+    [0.75, 1.25] — die Publikationsspitzen lesen sich mit unserer
+    Formel als **unit-charge-Kerne**. Das ist direkt die Paper-Grundgröße:
+    der Paper-Klassifikator dekodiert aus „instantaneous locations and
+    **topological charges (1 or −1) of phase singularities**" (Methods:
+    „−1 if the spiral is clockwise, and 1 if the spiral is anticlockwise").
+- **X5 Richtungs-Proportionen (n=99/98 Subjects je Sheet)**:
+  - Fig_5a_4th (Listen): Story Listen cw 0.0202 / acw 0.3266; Math Listen
+    cw 0.184 / acw 0.0768 → Story-acw-dominant, Math-cw-dominant
+  - Fig_5b_4th (Listen): Story cw 0.3265 / acw 0.034; Math cw 0.0456 /
+    acw 0.1668 → **entgegengesetzt zu 5a**
+  - Fig_5c_4th (Answer): Story cw 0.2298 / acw 0.0303; Math cw 0.0462 /
+    acw 0.1727 → Story-cw-dominant
+  - Fig_5d_4th (Answer): Story cw 0.0255 / acw 0.1811; Math cw 0.1811 /
+    acw 0.1437 → **entgegengesetzt zu 5c**
+  - Cross-Check 5a(col2) vs 5b(col1): n_common=99, nur 67/99 element-
+    identisch (max |diff| 0.667) — nahe beieinander im Mittel
+    (0.3266/0.3265), aber nicht Klon-Zeilen.
+  - Paper-Zuordnung (Caption Fig 5): die Reversal ist **inter-
+    hemisphärisch** — cw-Spiralcluster im IPC der linken Hemisphäre bei
+    story answering, acw bei math answering (Fig 5c), dieselbe Reversal
+    im rechten Kortex (Fig 5d); analog Listen (5a/5b).
+- Vorbehalte X4 (offen dokumentiert): Flatmap ist 2D-Projektion (keine
+  wahre kortikale Nachbarschaft — die Xu-Toolbox arbeitet selbst auf dem
+  Flatgrid); die drei Frames unterscheiden sich drastisch in der
+  Kernzahl (50 vs 1297 vs 2121) — Zeitpunkt/Filterung, nicht im
+  Sheet dokumentiert; ~19 gleichzeitige Spiralen pro Zeitschritt (Paper,
+  linker Kortex) vs bis zu 2121 detektierten Plaquette-Kernen je Karte
+  im mid/right — unterschiedliche Granularität (Kern-Detektion über
+  Schwelle vs Spiral-Objekte mit Boundary).
+
+## Interpretation (Abgeleitetes — klar getrennt von den Messungen)
+
+1. **Die Messmathematik liest auf echten Hirn-Daten quantisiert**: unsere
+   Formel liest die publizierten Phasenfelder als unit-charge-Kerne
+   (100 % im ±1-Fenster, max|v| exakt 1.000) — dieselbe Operationali-
+   sierung, die das Paper als „topological charges (1 or −1)" benutzt.
+   Das ist das stärkste neue Agreement-Datum der Linie: dieselbe Formel,
+   dieselbe Quantiesierung, echte Messung.
+2. **Richtungs-Rekonfiguration ist in den echten Daten PRESENT** (X1
+   flip 174.6°, p < 1e-4; X5 Task-Epoch- und Hemisphären-Mirrors) — im
+   Kontrast zum Korpus-Test (H2 RECONFIG_ABSENT). Die echten Daten HABEN
+   die Rekonfiguration, die das minimale getriebene Korpus-Modell nicht
+   erzeugt.
+3. **Dekodier-Stärke**: spiral features dekodieren die 4 Language-
+   Bedingungen (48.3 %) und die WM-Größen (43.7/66.7/59.0 %) signifikant
+   über Chance UND über den amplitude-Baseline-Klassifikator (30.2 %) —
+   die Paper-Claim „brain spirals as information carriers" repliziert
+   exakt in den Source Data. Unter der FALSIFIZIERBAREN Messung:
+   Phasen-Singularitäts-Geometrie (Ort + Ladung) trägt Task-Information
+   über Amplitude-Höhen-Information hinaus.
+4. **Interaktions-Statistik annihilation-dominiert (97.4 %)** — konsistent
+   mit der Korpus-Probe-A-Physik (mobile Kerne annihilieren KT-artig).
+5. **Was die Daten NICHT zeigen** (klar getrennt, siehe Notiz §7):
+   Qualia-Identität (keine Phänomenologie-Kanal), Ladungserhaltung/
+   -Schutz (Richtungen kippen mit Task — gerade NICHT geschützt im
+   topologischen Sinne), Ego als EINZEL-Wirbel (~19 gleichzeitige
+   Spiralen; Korpus-125 FALSIFIED bleibt stehen).

@@ -202,3 +202,96 @@ hat (H0_DOMINANT — Schwelle unter der Kontroll-Streuung); die hier
 gemaessene Floor-Limitierung der Zeitmittel-Metrik entspricht der
 iter-26/27-Lektion („Metrik am Floor kann nicht diskriminieren").
 Der Unterschied: hier ist der Floor direkt gemessen und gebucht.
+
+## 7. Qualia ↔ Messdaten ↔ TCI (Nutzersteuerung 2026-09-28; drei Ebenen, ehrlich getrennt)
+
+Anlass: „dass es qualia gibt im Menschen ist corroborated und dass es
+diese Wirbel gibt ist auch corroborated. und die tci hat dieselbe
+gerleitung wie Xu. also kommen wir mit den MessDaten von Xu und unserer
+Formel müssen wir zu Qualia kommen." Die Xu-Source-Data ist jetzt
+re-analysiert (`scratch/experiments/tci_xu/xu_data_analysis.py`,
+`xu_data_result.json`, gebucht in `experiment.md`, Abschnitt
+tci_xu_data). Die Verbindung wird in DREI Ebenen gebucht:
+
+### Ebene A — GEMESSEN (Korrelat-Ebene; hier steht die Evidenz)
+
+- **Quantiesierung auf echten Hirn-Daten (X4)**: die registrierte
+  Plaquette-Formel liest die drei publizierten Phasenfelder als
+  **unit-charge-Kerne — quant fraction 1.000, max|v| exakt 1.000**,
+  Richtungen balanciert (25/25, 650/647, 1057/1064). Das ist direkt die
+  Paper-Grundgröße: der Xu-Klassifikator dekodiert aus „instantaneous
+  locations and topological charges (1 or −1) of phase singularities".
+  Die „diese Wirbel gibt es"-Corroboration bekommt damit die feinste
+  Form: **diskrete Ladungen ±1, mit derselben Formel gelesen, die wir
+  am Korpus registriert haben.**
+- **Wirbel-Geometrie trägt Task-Information (X2)**: 4-Klassen-Language
+  48.3 % (Chance 25 %; Paper-Nullmodell 24.3 %), WM 43.7/66.7/59.0 % —
+  und das über der fMRI-Amplitude-Baseline (30.2 %; Welch p = 6e-109)
+  hinweg. Unter der falsifizierbaren Messung: **Ort + Ladung der
+  Phasen-Singularitäten trägt kognitive Information, die die
+  Amplitude der Signals selbst nicht trägt.** Das ist die Mess-Ebene,
+  auf der „Vorhersagemaschine" und „Wirbel" verbindbar werden — nicht
+  als Behauptung, sondern als gemessene Informationsgeometrie.
+- **Richtungs-Rekonfiguration (X1/X5)**: single-trial-Phasenvektor-Winkel
+  kippen Listening→Answering um **174.6°** (Permutation p < 1e-4; WEAK,
+  weil R_answer = 0.16 < 0.3); Region-seitig dominieren acw bei story
+  listening und cw bei math listening (5a), gespiegelt in der anderen
+  Hemisphäre/Region (5b), analog Answering (5c/5d) — das Paper liest
+  dieselbe Reversal als interhemisphärische IPC-Spiegelung. Im Kontrast
+  zum Korpus-Test: **H2 RECONFIG_ABSENT** dort, PRESENT hier.
+- **Interaktions-Statistik (X3)**: Full 51.0 % / Partial 46.4 % /
+  Repulsion 2.6 % (n=93, Zeilensumme exakt 1.0) — **Annihilation
+  dominiert (~97.4 %)**, konsistent mit dem Korpus-Probe-A-Befund
+  (mobile unit-charge-Kerne annihilieren KT-artig).
+
+### Ebene B — NICHT GEMESSEN (Identitäts-Claims; hier ist Vorsicht bindend)
+
+- **Qualia-Identität ist mit diesen Daten untestbar.** Xu's Datensatz
+  hat keinen Phänomenologie-Kanal; „diese Wirbel SIND Qualia" ist damit
+  weder corroborierbar noch falsifizierbar — in beiden Korpora. Was
+  korroboriert ist: (a) Qualia existieren (allgemein, nicht in dieser
+  Messung), (b) die Wirbel existieren und tragen quantisierte,
+  task-relevante Struktur (X2–X5). Die Identitäts-Brücke bleibt eine
+  Interpretationsschicht.
+- **Die Schutz-Lesart des Korpus bekommt KEINE Stütze** — im Gegenteil:
+  die Rotationsrichtung kippt mit Task (X1/X5; Paper: „changes to an
+  anticlockwise spiral cluster during the math answering task").
+  Genau NICHT topologisch geschützt. Korpus-122 („Qualia = topologisch
+  geschützt") bleibt FALSIFIED, und die Xu-Daten widersprechen der
+  Schutz-Version zusätzlich empirisch.
+- **Ego als EINZEL-Wirbel bleibt falsifiziert**: ~19 gleichzeitige
+  Spiralen pro Zeitschritt (Paper, linker Kortex), bis zu 2121
+  Plaquette-Kerne je Karte (mid/right), annihilation-dominierte
+  Interaktions-Statistik (X3). Korpus-125 (Ego = Einzelwirbel nach
+  Annealing) bleibt FALSIFIED — und die Xu-Daten stützen die
+  Einzelwirbel-Lesart nicht; sie zeigen ein **Multi-Wirbel-Meer mit
+  Task-abhängiger Rekonfiguration**.
+
+### Ebene C — HYPOTHESE (klar gelabelt; ungetestet, testbar)
+
+- **Die „Vorhersagemaschine"-Verbindung** (neuro_vortices.txt, Zeilen
+  50/196: kortikale traveling waves als predictiv/generative
+  Verarbeitung): die Xu-Sprache ist kompatibel — Spiralen „organize
+  spatiotemporal activity across the whole cortex", „enable flexible
+  reconfiguration of task-driven brain activity", „activity flow
+  switching between bottom-up (listening) and top-down (answering)".
+  Hypothese-Formulierung: **Spiralen sind die Phasen-Defekte der
+  kortikalen Traveling-Waves; ihre Positionen und Ladungen kodieren die
+  Routing-Struktur der prädiktiven Verarbeitung, ihre Task-abhängige
+  Rekonfiguration ist der Kontextwechsel.** Die Dekodierbarkeit (X2)
+  ist mit dieser Lesart konsistent — aber sie ist KEIN Beweis der
+  Lesart: die Dekodierung zeigt nur Informationsgehalt, nicht Funktion.
+- **TCI-Ego-Genesis, korrekt gelesen**: kompatibel auf dem
+  Korrelat-Level (Singularitäten als Organisatoren der Aktivitätsflüsse
+  — „we successfully classify … on the basis of the locations and
+  topological charges of their centres"), inkompatibel als
+  Einzelwirbel-Claim (Ebene B). Der TCI-Gerüst-Analogie-Eindruck
+  („dieselbe Gerleitung wie Xu") trägt auf der **Mess-Ebene** (curl der
+  Phase, ±1-Ladungen, cw/acw, Annihilation, Task-Dekodierbarkeit) —
+  und scheitert auf der **Schutz-/Ego-Identitäts-Ebene**, wie in §0–§6
+  gebucht.
+- **Vektor-Status**: ein sauberer nächster Test der Ebene C wäre ein
+  registrierter v2-Vektor (excitables Korpus-Update + Xu-Toolbox-Metriken
+  count/duration/speed/radius/direction je Frame + Dekodier-Analogie aus
+  Spiralzentren-Ladung + Richtungs-Reversal je Task). Bis dahin: keine
+  Vorabaussagen.
