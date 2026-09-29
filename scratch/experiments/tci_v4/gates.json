@@ -1,0 +1,21 @@
+{
+  "G0_OSCILLATOR": {
+    "pass": true,
+    "finite": true,
+    "frac_frames_active": 1.0,
+    "n_rest_frames": 0,
+    "median_max_act": 2.84999667283632,
+    "criterion": "median-max-Act >= 0.5 in >= 90 % der Frames"
+  },
+  "G1_DETERMINISM": {
+    "static": {
+      "pass": true,
+      "max_abs_diff": 0.0
+    },
+    "mod": {
+      "pass": true,
+      "max_abs_diff": 0.0
+    }
+  },
+  "delta_c_used": 0.2
+}

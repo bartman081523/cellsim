@@ -365,3 +365,74 @@ in beiden Analog-Medien (FHN, Brusselator) nicht reproduziert.
 Buchung: `scratch/experiments/tci_v3/experiment.md`. Via-Negativa-
 Residuum: das Q1-Window liegt — falls existent — außerhalb des
 registrierten (D × σ_n)-Gitters; neue Regime = neue Registrierung.
+---
+
+## 9. tci_v4 (2026-09-29): Hylothese-Kette Glied (iii) getestet — R2_NULL (Falsifikator feuert)
+
+Datum/Steuerung: Task #84 — „verbessere die hylothese bis sie auf die
+daten passt. aber nur first principle, also mechanistisches fitting, kein
+numerisches oder statistisches fitting. mehrere formeln (hypothesen)
+testen". Denkmodus `GroundedMechanismMixMind`
+(`~/.claude/plans/tci-hylothese-fitting.md`); Formel-Kette F1–F6:
+`scratch/notes/tci_hylothese_formulas.md`.
+
+**Was verbessert wurde (Struktur-Fitting, keine Kalibrierung)**: die
+Hylothese (= Ebene-C-Kette) wurde Glied für Glied gegen A1–A7
+konfrontiert. F1 (topologische Identität) **FALSIFIZIERT** (A1 vs A3:
+Ladungspopulation mit entgegengesetztem Informations-Ergebnis bei
+identischer Pipeline — Ladung ist die Währung, nicht die Nachricht);
+F2 (Defekt-Routing) **UNVOLLSTÄNDIG** (A3: ~550 Kerne, gain 0 —
+Populations-Existenz ≠ Information); F3 (Heterogenitäts-Nukleation)
+**GETRAGEN als Vorzeichen** (A4: +5.9 %, p = 0.0013); F5
+(Energie-Bornierung) **GETRAGEN** (A5-Caps); F6 (LZ-Entropie-Träger)
+**KONSISTENT mit A6, offen testbar**. F4 wurde verbessert: (i) Träger
+Grenzzyklus — von „hinreichend" auf **„notwendig" demoted** (A3
+falsifizierte die Hinlänglichkeit); (ii) Struktur =
+**Wechselwirkungsstatistik eines heterogenitäts-nukleierten Defekt-Gases**
+(nicht Kerndichte, nicht Persistenz — Xu's ~19 Kerne/Frame sind bei
+97.4 % Annihilation selbst kurzlebig; trennend ist der Interaktions-
+Bruch 97.4 % vs 36.1 %); (iii) Information = Task koppelt DURCH die
+Kopplungsstruktur — **registrierter Test tci_v4**.
+
+**Registrierte Messung** (`scratch/experiments/tci_v4/`, 160 Trials,
+Seeds 1600–1609 × 4 Schedules × 2 Arme × 2 Replikate, δ_c = 0.2 primär):
+Gates **G0/G1/G2 alle PASS**; Feasibility FEASIBLE bei 0.2 (Tiefe im
+getriebenen Band +3.4 %/+5.4 %, 0.5 gemessen +8.3 %/+13 %). Zwei
+pre-booking-Repairs offen gebucht (Float-Key-Crash → Phasen-Keys;
+Feasibility-Kriterium (ii) vom globalen auf das eigen-bandige c0-Max —
+anti-phase Vorzeichenkonvention machte das andere Band zum Kriterium).
+**Keine δ-Eskalation** (Registrierung: nur bei Feasibility-Fail; PASS;
+nach Messung kein Wechsel).
+
+- **R2 NULL (Δacc = −0.0250, 2·SE = 0.1275, welch_p = 0.714)** — gemäß
+  registrierter Regel falsifiziert das ALLES-außer-MOD_CARRIES das
+  Kettenglied (iii) in der getesteten Instanziierung (Crowding-Route,
+  kleine Amplitude, Rausch-Turbulenz-Regime). NULL ist Regime-Aussage
+  (Residuum L2, nie Unmöglichkeit).
+- Beide Arme **Q2 WEAK** (0.3375/0.3250, p_perm 0.096/0.153); **gain =
+  0.0000 in BEIDEN Armen** — acc_spiral = acc_position exakt, auch je
+  Seed: Spiral-/Ladungs-/Dynamik-Features tragen exakt null.
+- **Defekt-Gas-Deskriptoren unverändert**: n_cores 557.3 vs 557.4,
+  Interaktions-Bruch 0.3610 vs 0.3611, quant@0.9 0.00 vs 0.00 — die
+  bänderweise −5.4 %…−13 % d-Modulation ist in der Gas-Statistik
+  unsichtbar.
+
+**Faire Lesart (drei Schichten)**: mechanisch ist die Modulation real
+gemessen, aber das geburts-dominante Defekt-Gas (~557
+Turbulenz-Kerne/Frame, Interaktion 36 % ≪ 97 %-Klasse) frisst sie — der
+Gas-Zustand dominiert die Kopplungs-Route. Auf Ebene C ist die Kette am
+Glied (iii) in dieser Instanz falsifiziert: Dekodier-Info läuft in beiden
+Armen vollständig über Positions-Histogramme; die Lücke zu A7 schließt
+kleine Crowding-Modulation auch im modulierten Arm nicht. Getragen
+bleiben: Träger-Notwendigkeit (G0 wieder PASS, zweifach) und das
+Struktur-Fenster als offen gerahmter, untest-direkt gebliebener Regler.
+Die verbesserte Hylothese steht danach als: **Träger = Grenzzyklus
+(notwendig); Struktur = annihilations-dominantes, heterogenitäts-
+nukleiertes Defekt-Gas (Fenster aus A1/A3 abgeleitet, nicht direkt
+bewegt); Information = Task-Kopplung DURCH die Struktur — getestete
+Instanz (kleine Crowding-Modulation) falsifiziert.** Buchung:
+`scratch/experiments/tci_v4/experiment.md`. Via-Negativa-Residuum: nächster
+Hebel = erst das Gas ins annihilations-dominierte Regime steuern (Ziel-
+Statistik Interaktions-Bruch, aus erster Physik — nicht gefittet), dann
+Glied (iii) dort nachtesten; δ_c = 0.5 bleibt unverwertet (Registrierung);
+F6 (LZ-Features) offen implementierbar.

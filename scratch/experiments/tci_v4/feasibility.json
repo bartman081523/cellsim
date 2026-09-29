@@ -1,0 +1,71 @@
+{
+  "status": "FEASIBLE",
+  "chosen_delta_c": 0.2,
+  "ladder": [
+    {
+      "delta": 0.2,
+      "depth": {
+        "story": {
+          "ratio_at_c0_max_own_band": 0.9456804743089781,
+          "depth_at_c0_max_own_band": 0.05431952569102194,
+          "ratio_at_c0_max_other_band": 1.0354468321093864,
+          "depth_at_c0_max_other_band": -0.03544683210938637,
+          "ratio_min": 0.9456804743089781,
+          "ratio_max": 1.0354468321093864,
+          "band_d_std_over_mean": 0.06381691854052106
+        },
+        "math": {
+          "ratio_at_c0_max_own_band": 0.9657666323270556,
+          "depth_at_c0_max_own_band": 0.03423336767294438,
+          "ratio_at_c0_max_other_band": 1.057439618525183,
+          "depth_at_c0_max_other_band": -0.05743961852518309,
+          "ratio_min": 0.9657666323270556,
+          "ratio_max": 1.057439618525183,
+          "band_d_std_over_mean": 0.03694367807827652
+        }
+      },
+      "depth_positive": true,
+      "finiteness": true,
+      "g0_pass": true,
+      "feasible": true
+    },
+    {
+      "delta": 0.5,
+      "depth": {
+        "story": {
+          "ratio_at_c0_max_own_band": 0.8696831492208474,
+          "depth_at_c0_max_own_band": 0.13031685077915256,
+          "ratio_at_c0_max_other_band": 1.090986833500637,
+          "depth_at_c0_max_other_band": -0.09098683350063697,
+          "ratio_min": 0.8696831492208474,
+          "ratio_max": 1.090986833500637,
+          "band_d_std_over_mean": 0.06381691854052106
+        },
+        "math": {
+          "ratio_at_c0_max_own_band": 0.9166013459496222,
+          "depth_at_c0_max_own_band": 0.08339865405037783,
+          "ratio_at_c0_max_other_band": 1.149844056304763,
+          "depth_at_c0_max_other_band": -0.14984405630476294,
+          "ratio_min": 0.9166013459496222,
+          "ratio_max": 1.149844056304763,
+          "band_d_std_over_mean": 0.03694367807827652
+        }
+      },
+      "depth_positive": true,
+      "finiteness": true,
+      "g0_pass": true,
+      "feasible": true
+    }
+  ],
+  "g0": {
+    "pass": true,
+    "finite": true,
+    "frac_frames_active": 1.0,
+    "n_rest_frames": 0,
+    "median_max_act": 2.84999667283632,
+    "criterion": "median-max-Act >= 0.5 in >= 90 % der Frames"
+  },
+  "korrektur_log": [],
+  "note": "Throwaway-Seed 1999 \u2014 nie gebucht (Registrierung)",
+  "runtime_s": 297.6
+}

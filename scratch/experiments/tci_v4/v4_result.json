@@ -1,0 +1,310 @@
+{
+  "status": "REGISTERED_RUN_v4_vollstaendig",
+  "registration": "Docstring v4_model.py (fixiert vor dem Lauf)",
+  "delta_c": 0.2,
+  "gates": {
+    "G0_OSCILLATOR": {
+      "pass": true,
+      "finite": true,
+      "frac_frames_active": 1.0,
+      "n_rest_frames": 0,
+      "median_max_act": 2.84999667283632,
+      "criterion": "median-max-Act >= 0.5 in >= 90 % der Frames"
+    },
+    "G1_DETERMINISM": {
+      "static": {
+        "pass": true,
+        "max_abs_diff": 0.0
+      },
+      "mod": {
+        "pass": true,
+        "max_abs_diff": 0.0
+      }
+    },
+    "delta_c_used": 0.2
+  },
+  "g2": {
+    "finite_decision_metrics": true,
+    "nan_fields": [],
+    "note": "NaN offen gebucht, konservativ gewertet"
+  },
+  "arms": {
+    "static": {
+      "acc_spiral": 0.3375,
+      "acc_position": 0.3375,
+      "gain": 0.0,
+      "null_mean": 0.2527725,
+      "p_perm": 0.0958,
+      "paired_p": 1.0,
+      "n_trials": 80,
+      "label": "Q2_DECODE_WEAK",
+      "per_seed": {
+        "features_spiral": [
+          {
+            "seed": 1600,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1601,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1602,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1603,
+            "acc": 0.375,
+            "n_trials": 8
+          },
+          {
+            "seed": 1604,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1605,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1606,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1607,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1608,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1609,
+            "acc": 0.375,
+            "n_trials": 8
+          }
+        ],
+        "features_position": [
+          {
+            "seed": 1600,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1601,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1602,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1603,
+            "acc": 0.375,
+            "n_trials": 8
+          },
+          {
+            "seed": 1604,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1605,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1606,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1607,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1608,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1609,
+            "acc": 0.375,
+            "n_trials": 8
+          }
+        ]
+      },
+      "pooled_desc": {
+        "median_n_cores": 557.31875,
+        "interaction_fraction": 0.36098384332828104,
+        "frac_frames_quant_ge_09": 0.0
+      }
+    },
+    "mod": {
+      "acc_spiral": 0.325,
+      "acc_position": 0.325,
+      "gain": 0.0,
+      "null_mean": 0.25269749999999996,
+      "p_perm": 0.1525,
+      "paired_p": 1.0,
+      "n_trials": 80,
+      "label": "Q2_DECODE_WEAK",
+      "per_seed": {
+        "features_spiral": [
+          {
+            "seed": 1600,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1601,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1602,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1603,
+            "acc": 0.375,
+            "n_trials": 8
+          },
+          {
+            "seed": 1604,
+            "acc": 0.125,
+            "n_trials": 8
+          },
+          {
+            "seed": 1605,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1606,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1607,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1608,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1609,
+            "acc": 0.25,
+            "n_trials": 8
+          }
+        ],
+        "features_position": [
+          {
+            "seed": 1600,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1601,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1602,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1603,
+            "acc": 0.375,
+            "n_trials": 8
+          },
+          {
+            "seed": 1604,
+            "acc": 0.125,
+            "n_trials": 8
+          },
+          {
+            "seed": 1605,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1606,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1607,
+            "acc": 0.0,
+            "n_trials": 8
+          },
+          {
+            "seed": 1608,
+            "acc": 0.25,
+            "n_trials": 8
+          },
+          {
+            "seed": 1609,
+            "acc": 0.25,
+            "n_trials": 8
+          }
+        ]
+      },
+      "pooled_desc": {
+        "median_n_cores": 557.4375,
+        "interaction_fraction": 0.3611194573072477,
+        "frac_frames_quant_ge_09": 0.0
+      }
+    }
+  },
+  "r2": {
+    "verdict": "R2_NULL",
+    "delta_acc": -0.024999999999999994,
+    "pooled_se": 0.06373774391990981,
+    "welch_p": 0.7142098528244774,
+    "acc_mean_mod": 0.15,
+    "acc_mean_static": 0.175,
+    "acc_per_seed_mod": [
+      0.0,
+      0.0,
+      0.0,
+      0.375,
+      0.125,
+      0.25,
+      0.25,
+      0.0,
+      0.25,
+      0.25
+    ],
+    "acc_per_seed_static": [
+      0.0,
+      0.0,
+      0.0,
+      0.375,
+      0.25,
+      0.25,
+      0.25,
+      0.0,
+      0.25,
+      0.375
+    ],
+    "criterion": "R2_MOD_CARRIES iff welch_p < 0.05 UND Δacc > 2·gepoolte SE; R2_WRONG_DIRECTION iff welch_p < 0.05 UND Δacc < −2·gepoolte SE; sonst R2_NULL",
+    "falsifies": "Hylothese-Kette Glied (iii) und mit ihm F4 (Ebene-C-Lesart) — außer bei MOD_CARRIES"
+  },
+  "runtime_s": 7.2
+}
