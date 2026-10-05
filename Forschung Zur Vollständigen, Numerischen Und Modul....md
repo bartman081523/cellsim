@@ -133,3 +133,36 @@ Diese Architektur stellt somit nicht lediglich eine verbesserte computergestütz
 #### **Quellenangaben**
 
 1\. Robert Rosen's Relational Biology Theory and His Emphasis on Non-Algorithmic Approaches to Living Systems \- MDPI, https://www.mdpi.com/2227-7390/12/22/3529 2\. (PDF) Robert Rosen's Relational Biology Theory and His Emphasis on Non-Algorithmic Approaches to Living Systems \- ResearchGate, https://www.researchgate.net/publication/385756014\_Robert\_Rosen's\_Relational\_Biology\_Theory\_and\_His\_Emphasis\_on\_Non-Algorithmic\_Approaches\_to\_Living\_Systems 3\. User:I.C. Baianu \- Scholarpedia, http://www.scholarpedia.org/article/User:I.C.\_Baianu 4\. Category Theory and Biology | The n-Category Café, https://golem.ph.utexas.edu/category/2007/11/category\_theory\_and\_biology.html 5\. Rosen's no-go theorem for regular categories \- arXiv, https://arxiv.org/pdf/2012.11648 6\. On the Ehresmann–Vanbremeersch Theory and Mathematical Biology \- ResearchGate, https://www.researchgate.net/publication/225669882\_On\_the\_Ehresmann-Vanbremeersch\_Theory\_and\_Mathematical\_Biology 7\. biology in nLab, https://ncatlab.org/nlab/show/biology 8\. The Spatial Entropy of Confined Liquids \- MDPI, https://www.mdpi.com/2673-8015/4/1/4 9\. Entropic force \- Wikipedia, https://en.wikipedia.org/wiki/Entropic\_force 10\. Structural Basis of Enhanced Facilitated Diffusion of DNA-Binding Protein in Crowded Cellular Milieu \- PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC6976804/ 11\. Crowders-Induced Compaction of Multi-kbp Long DNA Molecules Followed by TPM, https://pubs.acs.org/doi/abs/10.1021/acs.macromol.5c00631 12\. Assembly of Macromolecular Complexes in the Whole-Cell Model of a Minimal Cell, https://pubs.acs.org/doi/abs/10.1021/acs.jpcb.5c04532 13\. Two thermodynamically distinct mechanisms for depletion forces. (A)... \- ResearchGate, https://www.researchgate.net/figure/Two-thermodynamically-distinct-mechanisms-for-depletion-forces-A-Entropically-driven\_fig4\_269728954 14\. Bacterial Communication: The Possible Role of Quorum Sensing, Quantum Mechanics, and Quantum Tunneling \- MDPI, https://www.mdpi.com/2218-1989/16/8/542 15\. NONCOMUNICABLE/AGING DISEASES WITH THE PER- SPECTIVE OF QUANTUM PHYSIC \- Preprints.org, https://www.preprints.org/manuscript/202005.0149/v2/download 16\. qwav-papers/coherent-tunneling.html at main · rwnq8/qwav-papers, https://github.com/rwnq8/qwav-papers/blob/main/coherent-tunneling.html 17\. (PDF) Quantum Semantics: The Geometry of Feeling \- ResearchGate, https://www.researchgate.net/publication/399663811\_Quantum\_Semantics\_The\_Geometry\_of\_Feeling 18\. Scientists simulate the entire life cycle of a minimal cell in 3D \- R\&D World, https://www.rdworldonline.com/scientists-simulate-the-entire-life-cycle-of-a-minimal-cell-in-3d/ 19\. GitHub \- Luthey-Schulten-Lab/Minimal\_Cell\_4DWCM, https://github.com/Luthey-Schulten-Lab/Minimal\_Cell\_4DWCM 20\. QCB team simulates a living cell that grows and divides \- University of Illinois, https://qcb.illinois.edu/qcb-team-simulates-a-living-cell-that-grows-and-divides/ 21\. Bringing the Genetically Minimal Cell to Life on a Computer in 4D \- bioRxiv, https://www.biorxiv.org/content/10.1101/2025.06.10.658899v1.full.pdf 22\. UIUC JCVI-syn3A Simulation and AI World Models \- Champaign Magazine, https://champaignmagazine.com/2026/03/11/uiuc-jcvi-syn3a-simulation-and-ai-world-models/ 23\. Team simulates a living cell that grows and divides \- JCVI, https://www.jcvi.org/media-center/team-simulates-living-cell-grows-and-divides 24\. Essential metabolism for a minimal cell \- eLife, https://elifesciences.org/articles/36842 25\. Simulating A Living Cell: First Simulation Of An Entire Cell Cycle \- Astrobiology, https://astrobiology.com/2026/03/11/simulating-a-living-cell-first-simulation-of-an-entire-cell-cycle/ 26\. Qudit \- Wikipedia, https://en.wikipedia.org/wiki/Qudit 27\. Generalized Toffoli Gate Decomposition Using Ququints: Towards Realizing Grover's Algorithm with Qudits \- PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC9955871/ 28\. Mixed-Dimensional Quantum Circuit Simulation with Decision Diagrams \- Chair for Design Automation, https://www.cda.cit.tum.de/files/eda/2023\_qce\_mixed\_dimensional\_quantum\_circuit\_simulation\_with\_decision\_diagrams.pdf
+
+#### **Quellennachtrag + Status-Addendum (2026-10-05 — TCI-Wirbel-Linie)**
+
+Der Architekturtext oben bleibt als historischer Stand (2026-08) stehen;
+seine Bewusstseins-nahen Behauptungen wurden seitdem programmatisch
+geprüft (siehe `LIMITATIONS.md` §2 — Orch-OR-Schild/Kick/Photonik als
+ENERGIE-gewertete Grade C, in der Box inert). Neu hinzugekommen ist die
+**TCI-Wirbel-Linie** (tci_xu → tci_v2 → tci_v3 → tci_v4): sie testete die
+Brücke „Feld-Phase → topologische Defekte → kognitive Information" (a) am
+Original (Quellenangabe 29), (b) in zwei registrierten Analoga-Medien
+(FHN v2, Brusselator+Crowding v3) und (c) als aus erster Physik
+hergeleitete Hylothese-Kette F1–F6 mit registriertem Diskriminator (v4).
+Ergebnisstand: (i) die Messmathematik (Plaquette-Zirkulation der Phase,
+unit-charge-Kerne) trägt AUF den publizierten Hirn-Daten exakt
+(quant_fraction 1.000, max|v| exakt 1.000); (ii) die Kette trägt in
+KEINEM der beiden Analoga-Medien (keine persistenten quantisierten
+Spiralen; Dekodier-Gain exakt 0.0 über Position hinaus); (iii) die
+Hylothese-Kette ist am Glied (iii) in der getesteten Instanz falsifiziert
+(R2_NULL, Δacc −0.0250 vs 2·SE 0.1275) — die Materie-These (hylē) ist
+damit nicht widerlegt, die Hinreichung als Instanz tot; nächster Hebel:
+das Defekt-Gas erst ins annihilations-dominierte Regime steuern, dann
+Glied (iii) nachtesten. Protokolle: `scratch/experiments/tci_*/
+experiment.md`; Formel-Kette: `scratch/notes/tci_hylothese_formulas.md`;
+Bewertung: `scratch/notes/tci_vortex_assessment.md`. Rohdaten (per_seed
+der Vektoren v2/v3/v4) als Git LFS (Roh-Commit `11949ec`,
+SHA-256-Manifeste).
+
+29\. Xu, Y., Long, X., Feng, J. & Gong, P. — Interacting spiral wave patterns underlie complex brain dynamics and are related to cognitive processing \- Nature Human Behaviour, https://doi.org/10.1038/s41562-023-01626-5
+30\. Verzhbinsky, I. A., Daume, J., Cheng, S., Rutishauser, U. & Halgren, E. — Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations \- Nature Neuroscience, https://doi.org/10.1038/s41593-026-02403-z
+31\. Muller, L., Busch, A. N., Davis, Z. W. & Reynolds, J. H. — Neural traveling waves in cortex: Network mechanisms and potential roles in neural computation \- Neuron, https://doi.org/10.1016/j.neuron.2026.06.019 (Hintergrund: Muller et al. \- Nature Reviews Neuroscience 19, https://doi.org/10.1038/nrn.2018.20)
+32\. Anastassiou, C. A., Montgomery, S. M., Barahona, M., Buzsáki, G. & Koch, C. — The Effect of Spatially Inhomogeneous Extracellular Electric Fields on Neurons \- Journal of Neuroscience, https://doi.org/10.1523/JNEUROSCI.3635-09.2010
+33\. Pinotsis, D. A. & Miller, E. K. — In vivo ephaptic coupling allows memory network formation \- Cerebral Cortex, https://doi.org/10.1093/cercor/bhad251
+34\. Naqvi, N. H., Rudrauf, D., Damasio, H. & Bechara, A. — Damage to the Insula Disrupts Addiction to Cigarette Smoking \- Science, https://doi.org/10.1126/science.1135926

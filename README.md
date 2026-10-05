@@ -90,3 +90,29 @@ Siehe **LIMITATIONS.md** für detaillierte CellsimMixMind-Audit-Tabelle.
 - **Kinetische Konstanten**: 6 BRENDA-extrahiert (E. coli), 15 HYPOTHESE.
 - **QuQuint-Vorteil konservativ repliziert** (1.1×–1.3×, nicht die 1000× aus Architekturtext).
 - **105-min-Vollzyklus nicht in Scope** — Smoke-Test läuft 60 s.
+
+## Experiment-Linie tci_* — Rohdaten als Git LFS
+
+Seit Roh-Commit `11949ec` (2026-10-05) sind die Per-Seed-Rohdaten der
+TCI-Wirbel-Experimente öffentlich via Git LFS verfügbar:
+
+- `scratch/experiments/tci_v2/per_seed/**` — 130 Trial-JSONs
+- `scratch/experiments/tci_v3/per_seed/**` — 160
+- `scratch/experiments/tci_v4/per_seed/**` — 160
+
+Integrität: SHA-256 je Datei plus Manifest-Hash in den jeweiligen
+`per_seed_manifest.json` (v2 `8a305f27efd278a1…`, v3
+`5b0170d25588aa74…`, v4 `ab0988d5d5aae79c…`); ~792 von 1024 MB der
+GitHub-LFS-Quota (free tier) sind damit belegt.
+
+Bewusst NICHT im Repo: das Xu-Supplement (`scratch/experiments/tci_xu/
+data/`, 17 Source-Data-xlsx, Drittanbieter-Daten — Download-Pattern im
+Docstring von `xu_data_analysis.py`), Paper-PDFs, `neuro_vortices.txt`.
+
+Quelle der Linie: Xu, Y., Long, X., Feng, J. & Gong, P. (2023),
+„Interacting spiral wave patterns underlie complex brain dynamics and
+are related to cognitive processing", Nature Human Behaviour 7,
+1196–1215, DOI 10.1038/s41562-023-01626-5; weitere Video-Papers mit
+DOIs in `scratch/notes/tci_vortex_assessment.md` §10. Protokolle und
+Verdicts: `scratch/experiments/tci_{xu,v2,v3,v4}/experiment.md`;
+Formel-Kette: `scratch/notes/tci_hylothese_formulas.md`.

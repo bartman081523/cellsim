@@ -110,3 +110,26 @@ Seeds: Pilot 1400–1403, Haupt 1200–1229 + Switch 1200–1209 — disjunkt
 zu Korpus 1000–1009/2000–2009 und cellsim 200–339; Permutations-Seeds
 4242/4243. Commit enthält nur Skripte/Resultate — keine Xu-Source-xlsx,
 keine Paper-PDFs, nicht `neuro_vortices.txt`, keine Per-Seed-JSONs.
+
+## Nachtrag 2026-10-05 — Rohdaten-LFS-Anker (KORREKTUR der Commit-Zeile oben)
+
+Die Zeile oben („… keine Per-Seed-JSONs") ist für den Buchungs-Zeitpunkt
+(2026-09-28) historisch korrekt und für den Stand ab 2026-10-05 falsch:
+alle 130 per_seed-Trial-JSONs sind als Git LFS committet (Roh-Commit
+`11949ec`), Muster `scratch/experiments/tci_v2/per_seed/**` in
+`.gitattributes`; Integrität über SHA-256 je Datei in
+`per_seed_manifest.json` (Manifest-Hash `8a305f27efd278a1…`). Re-Auswer-
+tungen lesen ab jetzt ausschließlich die committeten Artefakte. Die
+Ausschlüsse (Xu-Source-xlsx, Paper-PDFs, `neuro_vortices.txt`) bleiben
+weiterhin gültig.
+
+Kettenglied-Bruch (Ledger-Disziplin P3, offen gebucht): die Rohdaten
+wurden ex ante persistiert, der git-Commit erfolgte erst nach der
+Verdict-Buchung — das Glied „Roh-Commit vor Auswertung" fehlt in der
+Entstehung; geschlossen ab 2026-10-05. Verdicts bleiben unverändert.
+
+Quelle der Analog-Kette: Xu, Y., Long, X., Feng, J. & Gong, P. (2023),
+„Interacting spiral wave patterns underlie complex brain dynamics and
+are related to cognitive processing", Nature Human Behaviour 7,
+1196–1215, DOI 10.1038/s41562-023-01626-5. Anschlusssliteratur mit DOIs:
+`../../notes/tci_vortex_assessment.md` §10.

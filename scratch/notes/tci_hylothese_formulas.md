@@ -307,3 +307,58 @@ eigen-bandiges c0-Max):
   Lauf sind registrierte Konstanten (Ladder, Seeds, Perm-Seeds,
   REP_PRIME) oder gemessene Anker; die R2-Regel wurde ex ante
   fixiert und exakt so angewandt.
+
+---
+
+## 9. Erforschungs-Tree + Quellen (2026-10-05 nachgetragen)
+
+```mermaid
+graph TD
+    A1["A1 Xu-Original: Dekodier 48,3 % vs Chance 25 %, Annihilation ~97 %, Flip 174,6°"]
+    A2["A2 v2-FHN am Ruhepunkt: keine Phase (K1)"]
+    A3["A3 v3-Brusselator: Grenzzyklus, ~550 Kerne/Frame, quant@0.9 = 0.00, gain 0.0"]
+    A4["A4 R1 SHIFTED: Crowding-Modul nukleiert (+5,9 %, p=0,0013)"]
+    A5["A5 Energie-Ketten (Schild/Kick/Photonen): inert in der Box"]
+    A6["A6 Damköhler-Linie: LZ-Entropie-Träger, 9/9 richtungsstabil"]
+    F1["F1 Topologische Identität: Ladung ist Mess-Währung<br/>FALSIFIZIERT als Nachrichten-Kanal (Ziel-Währung, nicht Nachricht)"]
+    F2["F2 Defekt-Routing: Ort+Ladung jenseits Position<br/>UNVOLLSTÄNDIG — im Analoga-Gas gain exakt 0.0 (v2/v3/v4)"]
+    F3["F3 Heterogenitäts-Nukleation<br/>GETRAGEN als schwacher systematischer Befund (A4)"]
+    F6["F6 Entropie-Träger: LZ-Sequenz-Statistik statt Momenten-Features<br/>KONSISTENT mit A6 — offen implementierbar"]
+    F4["F4 Hylothese-Kette: (i) Träger → (ii) Struktur-Fenster → (iii) Task-Kopplung DURCH die Struktur"]
+    Fi["Glied (i) Träger-Notwendigkeit<br/>GETRAGEN (v2-K1 + v3-G0: Ruhepunkt trägt keine Phase, Grenzzyklus tut es)"]
+    Fii["Glied (ii) Struktur-Fenster annihilations-dominantes Gas<br/>GETRAGEN als Ableitung aus A1/A3, nicht direkt bewegt — offener Regler"]
+    Fiii["Glied (iii) Task-Kopplung DURCH die Kopplungsstruktur<br/>FALSIFIZIERT IN INSTANZ (tci_v4 R2_NULL: Δacc −0,0250 vs 2·SE 0,1275, welch_p 0,714, δ_c 0.2, Crowding-Route, Rausch-Turbulenz-Gas)"]
+    OPEN1["OFFEN tci_v5: Gas erst annihilations-dominant steuern (Interaktions-Bruch als Ziel-Statistik aus erster Physik), dann Glied (iii) nachtesten — neue disjunkte Seeds"]
+    OPEN2["OFFEN: δ_c = 0.5 unverwertet (Registrierung)"]
+    OPEN3["OFFEN: F6 LZ-Features in die Pipeline"]
+    A1 --> F1
+    A2 --> Fi
+    A3 --> F1
+    A3 --> F2
+    A1 --> Fii
+    A3 --> Fii
+    A4 --> F3
+    F3 --> Fii
+    A5 --> F4
+    A6 --> F6
+    Fi --> F4
+    Fii --> F4
+    Fiii --> F4
+    F1 --> Fiii
+    F2 --> OPEN3
+    Fiii --> OPEN2
+    F4 --> OPEN1
+```
+
+**Quellen** (verifiziert 2026-10-05, Vollzitate mit DOIs in
+`tci_vortex_assessment.md` §10): A1 — Xu, Y., Long, X., Feng, J. &
+Gong, P. (2023), Nature Human Behaviour 7, 1196–1215,
+DOI 10.1038/s41562-023-01626-5; Anschlussliteratur der Video-Linie —
+Verzhbinsky et al. (2026, Nat Neurosci, 10.1038/s41593-026-02403-z),
+Muller et al. (2026, Neuron, 10.1016/j.neuron.2026.06.019),
+Anastassiou et al. (2010, J Neurosci, 10.1523/JNEUROSCI.3635-09.2010),
+Pinotsis & Miller (2023, Cereb Cortex, 10.1093/cercor/bhad251),
+Naqvi et al. (2007, Science, 10.1126/science.1135926). Modell-Literatur:
+FitzHugh (1961)/Nagumo (1962), Prigogine & Lefever (1968).
+Rohdaten-Anker: per_seed v2/v3/v4 als LFS (Commit `11949ec`),
+Manifest-Hash v4 `ab0988d5d5aae79c…`.

@@ -436,3 +436,71 @@ Hebel = erst das Gas ins annihilations-dominierte Regime steuern (Ziel-
 Statistik Interaktions-Bruch, aus erster Physik — nicht gefittet), dann
 Glied (iii) dort nachtesten; δ_c = 0.5 bleibt unverwertet (Registrierung);
 F6 (LZ-Features) offen implementierbar.
+
+---
+
+## 10. Quellen + Rohdaten-Anker (2026-10-05 nachgetragen)
+
+Anlass: Nutzersteuerung „die Forscher wie gewünscht zitieren" — der Wunsch
+stand in der Video-Analyse (`neuro_vortices.txt`, ChatGPT-Dump mit zwei
+unbeantworteten DOI-Anfragen; das lokale File bleibt bewusst un-committet).
+Alle DOIs wurden 2026-10-05 gegen Originalseiten verifiziert; zwei
+Transkript-Fehler dabei korrigiert: „Verbinsky" → **Verzhbinsky**; Naqvi-DOI
+…1135929 → **…1135926**.
+
+- **Xu, Y., Long, X., Feng, J. & Gong, P. (2023)** — „Interacting spiral
+  wave patterns underlie complex brain dynamics and are related to
+  cognitive processing", Nature Human Behaviour 7, 1196–1215,
+  DOI 10.1038/s41562-023-01626-5 (PMID 37322235) — der Original-Träger
+  der Ebene-C-Struktur (A1/X2–X5; BrainVortexToolbox:
+  github.com/BrainDynamicsUSYD/BrainVortexToolbox).
+- **Research Briefing (2023)** — DOI 10.1038/s41562-023-01628-3
+  (autorenbeteiligte Kurzdarstellung derselben Studie).
+- **Verzhbinsky, I. A., Daume, J., Cheng, S., Rutishauser, U. & Halgren,
+  E. (2026)** — „Cross-region neuron co-firing mediated by ripple
+  oscillations supports distributed working memory representations",
+  Nature Neuroscience, DOI 10.1038/s41593-026-02403-z (bioRxiv
+  2025.09.04.674061; Daten: DANDI 000673; Code: iverzh/
+  ripple-working-memory) — Ripple-koordiniertes Co-Firing koppelt
+  verteilte (auch inter-hemisphärische) Regionen; stützt die
+  Multi-Wirbel-Meer-Lesart (§7, Ebene B), nicht den Einzelwirbel-Ego.
+- **Muller, L., Busch, A. N., Davis, Z. W. & Reynolds, J. H. (2026)** —
+  „Neural traveling waves in cortex: Network mechanisms and potential
+  roles in neural computation", Neuron 114(17), 3156–3174,
+  DOI 10.1016/j.neuron.2026.06.019 (PMID 42480536); Hintergrund-Review:
+  Muller, Chavane, Reynolds & Sejnowski (2018), Nature Reviews
+  Neuroscience 19, 255–268, DOI 10.1038/nrn.2018.20 — der
+  Traveling-Wave-Rahmen, aus dem die Spiralen als Phasen-Defekte gelesen
+  werden.
+- **Anastassiou, C. A., Montgomery, S. M., Barahona, M., Buzsáki, G. &
+  Koch, C. (2010)** — „The Effect of Spatially Inhomogeneous
+  Extracellular Electric Fields on Neurons", Journal of Neuroscience
+  30(5), 1925–1936, DOI 10.1523/JNEUROSCI.3635-09.2010 — ephaptische
+  Kopplung (Feld→Membran) als Wirk-Kanal; Begleit-Arbeit: Anastassiou,
+  Perin, Markram & Koch, „Ephaptic coupling of cortical neurons",
+  Nature Neuroscience, DOI 10.1038/nn.2727.
+- **Pinotsis, D. A. & Miller, E. K. (2023)** — „In vivo ephaptic coupling
+  allows memory network formation", Cerebral Cortex 33(17), 9877–9895,
+  DOI 10.1093/cercor/bhad251 (PMC10472500) — das MIT-Picower-Paper der
+  Video-Stelle („MIT / J Neurosci" komprimiert vermutlich die beiden
+  ephaptischen Linien; beide zitiert, Zuordnung offen markiert).
+- **Naqvi, N. H., Rudrauf, D., Damasio, H. & Bechara, A. (2007)** —
+  „Damage to the Insula Disrupts Addiction to Cigarette Smoking",
+  Science 315(5811), 531–534, DOI 10.1126/science.1135926 (PMID
+  17255515) — die Insula-Integrations-Stelle des Videos (Ebene B);
+  für die Wirbel-Linie selbst nicht messverbunden, nur Kontext.
+- **Video (Provenienz der Anschluss-Linie)**: Anton Petrov — „How Brain
+  Waves and Electric Fields Really Create Consciousness",
+  youtube.com/watch?v=yUa90sZ0LA8 — Quelle der Hypothesen-Vorschläge,
+  die zu tci_xu/v2/v3/v4 führten; als Provenienz gebucht, nicht als
+  Autorität.
+- Modell-Literatur der Analoga: FitzHugh (1961)/Nagumo (1962) —
+  FHN-Medium v2; Prigogine & Lefever (1968) — Brusselator v3.
+
+**Rohdaten-Anker (2026-10-05)**: `per_seed/` der Vektoren v2/v3/v4 als
+Git LFS committet (Roh-Commit `11949ec`, `.gitattributes`); SHA-256 je
+Datei plus Manifest-Hash in `scratch/experiments/tci_v{2,3,4}/
+per_seed_manifest.json` (v2 `8a305f27efd278a1…`, v3
+`5b0170d25588aa74…`, v4 `ab0988d5d5aae79c…`). Xu-Source-xlsx (~58 MB)
+bleiben lokal (Lizenzprüfung offen). Kettenglied-Bruch P3 (Roh-Commit
+erst nach der Verdict-Buchung) in allen drei Protokollen offen gebucht.

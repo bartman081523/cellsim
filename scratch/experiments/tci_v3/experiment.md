@@ -138,3 +138,26 @@ reproduziert.
 - `v3_model.py` (Registrierung + Analyse), `v3_run.py` (Stufen)
 - `g0.json`, `gates.json`, `selection.json`, `pilot_result.json`,
   `v3_result.json`, `per_seed/*.json` (persistiert, nicht committed)
+
+## Nachtrag 2026-10-05 — Rohdaten-LFS-Anker (KORREKTUR der Dateien-Zeile oben)
+
+Die Dateien-Zeile oben („persistiert, nicht committed") ist für den
+Analyse-Zeitpunkt (2026-09-28) historisch korrekt und für den Stand ab
+2026-10-05 falsch: alle 160 per_seed-Trial-JSONs sind als Git LFS
+committet (Roh-Commit `11949ec`), Muster
+`scratch/experiments/tci_v3/per_seed/**` in `.gitattributes`; Integrität
+über SHA-256 je Datei in `per_seed_manifest.json` (Manifest-Hash
+`5b0170d25588aa74…`). Re-Auswertungen lesen ab jetzt ausschließlich die
+committeten Artefakte.
+
+Kettenglied-Bruch (Ledger-Disziplin P3, offen gebucht): die Rohdaten
+wurden ex ante persistiert, der git-Commit erfolgte erst nach der
+Verdict-Buchung — das Glied „Roh-Commit vor Auswertung" fehlt in der
+Entstehung; geschlossen ab 2026-10-05. Verdicts bleiben unverändert
+(Einstufung statt Re-Decide).
+
+Quelle der Analog-Kette: Xu, Y., Long, X., Feng, J. & Gong, P. (2023),
+„Interacting spiral wave patterns underlie complex brain dynamics and
+are related to cognitive processing", Nature Human Behaviour 7,
+1196–1215, DOI 10.1038/s41562-023-01626-5. Anschlusssliteratur mit DOIs:
+`../../notes/tci_vortex_assessment.md` §10.

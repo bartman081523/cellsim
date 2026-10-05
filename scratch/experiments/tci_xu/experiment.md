@@ -286,3 +286,22 @@ ersten Lauf, VOR Buchung — registrierte Kriterien unveraendert ausser B):
    -Schutz (Richtungen kippen mit Task — gerade NICHT geschützt im
    topologischen Sinne), Ego als EINZEL-Wirbel (~19 gleichzeitige
    Spiralen; Korpus-125 FALSIFIED bleibt stehen).
+
+## Nachtrag 2026-10-05 — Daten-Provenienz + Quellen
+
+- `data/` (17 Source-Data-xlsx, ~58 MB) bleibt **lokal und un-committet**
+  — Drittanbieter-Supplement zu Xu et al. 2023; Lizenzprüfung für
+  öffentliches Hosting offen. Reproduktion über das URL-Pattern im
+  Docstring von `xu_data_analysis.py` (MOESM9–25). Der Paper-Volltext
+  (`data/paper/NHB_wave_2023.pdf`, Warwick-Mirror) bleibt ebenso lokal.
+- Vollzitat (wie gewünscht mit DOI): **Xu, Y., Long, X., Feng, J. &
+  Gong, P.** — „Interacting spiral wave patterns underlie complex brain
+  dynamics and are related to cognitive processing", Nature Human
+  Behaviour 7, 1196–1215 (2023), DOI 10.1038/s41562-023-01626-5, PMID
+  37322235; Research Briefing: DOI 10.1038/s41562-023-01628-3.
+- Die Rohdaten der EIGENEN Analoga-Linie (tci_v2/v3/v4, `per_seed/`) sind
+  seit 2026-10-05 als Git LFS committet (Roh-Commit `11949ec`,
+  SHA-256-Manifeste) — Quellen-Anker für die ganze Wirbel-Linie:
+  `../../notes/tci_vortex_assessment.md` §10 (Video-Papers Verzhbinsky
+  2026, Muller 2026, Anastassiou 2010, Pinotsis & Miller 2023, Naqvi
+  2007, jeweils mit DOI).

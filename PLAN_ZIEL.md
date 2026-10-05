@@ -130,3 +130,32 @@ Falls nicht → Cryptochrom als generisches UV-/B-Feld-Sensor behandeln.
 - Letzte Commits: siehe `git log --oneline`
 - `LIMITATIONS.md` (CellsimMixMind-Status nach jeder Iter aktualisieren)
 
+## Status-Nachtrag 2026-10-05 — TCI-Wirbel-Linie
+
+Der Plan selbst (2026-08-22, „Aktuelle Aufgabe" iter-4) bleibt als
+Geschichte stehen; seitdem liefen mehrere Linien, zuletzt die
+Bewusstseins-Wirbel-Kette `tci_xu → tci_v2 → tci_v3 → tci_v4`
+(Protokolle `scratch/experiments/tci_*/experiment.md`, Bewertung
+`scratch/notes/tci_vortex_assessment.md`, Formel-Kette
+`tci_hylothese_formulas.md`):
+
+- **tci_xu**: Agreement-Test + Source-Data-Re-Analyse — persistenter
+  Drive allein reproduziert Xu-Spiralen NICHT; die publizierten
+  Phasenfelder lesen sich mit der eigenen Plaquette-Formel als
+  unit-charge-Kerne (quant 1.000, max|v| exakt 1.000).
+- **tci_v2 (FHN) / tci_v3 (Brusselator+Crowding)**: die Ebene-C-Kette
+  ist in beiden Analoga-Medien falsifiziert (Q1 ABSENT, quant@0.9
+  = 0.00; Grenzzyklus notwendig, nicht hinreichend; R1 SHIFTED —
+  Crowding as schwache, systematische Nukleationsquelle).
+- **tci_v4**: Hylothese-Diskriminator **R2_NULL** — Glied (iii) in der
+  Instanz falsifiziert (Δacc −0.0250 vs 2·SE 0.1275, welch_p 0.714;
+  gain exakt 0.0 in beiden Armen; Gas-Deskriptoren arminvariant).
+- **Rohdaten**: `per_seed/` (v2/v3/v4) seit 2026-10-05 als Git LFS
+  (Roh-Commit `11949ec`, SHA-256-Manifeste).
+
+Offene Queue-Hebel: (1) das Defekt-Gas erst ins annihilations-dominierte
+Regime steuern (Interaktions-Bruch als Ziel-Statistik aus erster Physik,
+nicht gefittet; tci_v5, neue disjunkte Seeds ≠ 1600–1609), DANN Glied
+(iii) nachtesten; (2) δ_c = 0.5 unverwertet; (3) F6 LZ-Sequenz-Features
+implementieren; (4) Lizenzklärung der Xu-Supplement-Daten (bleibt lokal).
+

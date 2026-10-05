@@ -177,3 +177,31 @@ fitting, kein numerisches oder statistisches fitting. mehrere formeln
   `v4_result.json` (R2 + Arme + per-seed Vektoren)
 - `per_seed/trial_*.json` (160, vollständig persistiert — mean-level-
   Buchung unauditierbar; nicht eingecheckt)
+
+## Provenienz + Rohdaten-Anker (2026-10-05 nachgetragen)
+
+- **Kettenglied-Bruch (Ledger-Disziplin P3) offen gebucht**: Registrierung
+  (Docstring `v4_model.py`) und Rohdaten (`per_seed/`, 160 Trial-JSONs)
+  wurden ex ante persistiert — vor der Verdict-Buchung von 2026-09-29 —
+  aber beides wurde erst NACH der Analyse in git committet (db57dee).
+  Das Glied „Roh-Commit vor Auswertung" fehlt für dieses Experiment in
+  der Entstehung. Das ist ein Provenienz-Defizienz-Befund, kein Grund
+  zur Neu-Bewertung der Verdicts (Einstufung statt Re-Decide, P4); die
+  Kette ist ab 2026-10-05 geschlossen.
+- **Roh-Commit (2026-10-05)**: alle 160 per_seed-Trial-JSONs als Git LFS
+  committet (`11949ec`), Muster `scratch/experiments/tci_v4/per_seed/**`
+  in `.gitattributes`; Integrität über SHA-256 je Datei in
+  `per_seed_manifest.json` (Manifest-Hash `ab0988d5d5aae79c…`). Jede
+  Re-Auswertung liest ab sofort ausschließlich die committeten Artefakte.
+  Diese Zeile korrigiert die Dateien-Zeile oben („nicht eingecheckt")
+  für den Stand ab 2026-10-05 — der Originaltext bleibt stehen (Korrektur-
+  Stil b).
+- **Quelle des Phänomen-Kandidaten**: Xu, Y., Long, X., Feng, J. &
+  Gong, P. — „Interacting spiral wave patterns underlie complex brain
+  dynamics and are related to cognitive processing", Nature Human
+  Behaviour 7, 1196–1215 (2023), DOI 10.1038/s41562-023-01626-5
+  (PMID 37322235; Tool:
+  github.com/BrainDynamicsUSYD/BrainVortexToolbox). Die restliche
+  Anschlussliteratur (Video-Papers mit DOI, Provenienz der
+  TCI-Wirbel-Linie) ist zitiert in
+  `../../../scratch/notes/tci_vortex_assessment.md` §10.
