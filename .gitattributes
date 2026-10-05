@@ -1,0 +1,5 @@
+# Git LFS — Rohdaten der TCI-Experiment-Serie (per_seed-Trial-JSONs)
+# Freigegeben 2026-10-05 (Nutzersteuerung: Rohdaten auf GitHub als LFS).
+scratch/experiments/tci_v2/per_seed/** filter=lfs diff=lfs merge=lfs -text
+scratch/experiments/tci_v3/per_seed/** filter=lfs diff=lfs merge=lfs -text
+scratch/experiments/tci_v4/per_seed/** filter=lfs diff=lfs merge=lfs -text
