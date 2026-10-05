@@ -50,3 +50,7 @@ erlauben dem System, uns zu widerlegen.
 - **Jedes Experiment hat einen** `experiment.md` mit Hypothese + Method + Result
 - **Jeder Iter erzeugt eine** `strategic_vector.md` mit konkreten nächsten Schritten
 - **Bei Trockenheit** (kein neues Signal in 2 Iters) → Konsultiere externe Quellordner neu
+
+## Verweise (Nachtrag 2026-10-05)
+
+- **Vollprotokoll aller Experimente** (Rekonstruktion aus Dateien, Commits und Ergebnissen): `scratch/notes/full_experiment_protocol.md` — 36 Vektoren (iter-1…31 + tci_xu/v2/v3/v4), 41 Commits, Master-Tabelle, Korrektur-Netz, LFS-Anker.
