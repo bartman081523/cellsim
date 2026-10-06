@@ -18,6 +18,17 @@
 - Radix-Demo: Zensus der Quersummen-10-Treffer in Basen {2, 8, 10, 12, 16} über FAM_MONOISOTOPIC_26 — Erwartung vorab: Treffermenge wandert mit der Basis (Beweis der Repräsentationsabhängigkeit).
 - Ehrliche Grenze (vorab): die symbolische Ebene (Zohar I:30a — Yod als nekudah rishonah, kleinster Buchstabe, Beginn des Tetragrammatons; Bahir §56 — Hand Gottes; 10 Sephirot; „Hand" → 10 Finger → Basis 10 als semiotischer Mechanismus) wird als SYMBOLISCH dokumentiert und nicht als Kausalpfad verbucht. Keine zusätzliche Bewusstseins-Behauptung; die TCI-Vektor-Bilanz bleibt unverändert.
 
-## ERGEBNIS (Append nach Lauf)
+## ERGEBNIS (Append nach Lauf) — 2026-10-06
 
-- (wird nach dem Lauf eingefügt)
+- **Lauf:** `yod_census.py`; deterministisch, < 1 s, kein RNG. DISCLOSE: post-registration-Fix am Skript (Reaction-API: `species_change` statt inexistenter Attribute reactants/products — 3 ersetzte Zeilen, im Folge-Commit disclost); Registrierungs-Commit 2ece6b7 lag VOR dem Lauf.
+- **H-A:** `HOMONYM_VERIFIED` (deutsch Jod=Jod als Oberflächen-Identität) UND `ETYMOLOGY_LINK_FALSIFIED` (iode ← griech. ἴον „Violett-Blume" + eidos, Gay-Lussac 1813; Yod ← phöniz. *yodh* „Hand" → iota. Geteiltes Wort, getrennte Wurzel.)
+- **H-B Familien-Zensus** (Treffer = Quersumme(base 10) = 10; exakter zweiseitiger Binomial-p):
+  - `FAM_HALOGEN_ISO`: **TEN_STANDOUT** mechanisch gefeuert — 3/6 = [19 (F), 37 (Cl-37), 127 (I)], erwartet 0.66, p = 0.0206. **ABER**: Familienwahl war post-hoc (Jod wegen des Namens gewählt); ohne Mehrfachtest-Korrektur (3 Familien → Bonferroni p = 0.062). Die beiden a-priori-Kontrollfamilien arbitrieren: kein überlebendes Signal.
+  - `FAM_MONOISOTOPIC_26`: **TEN_CHANCE_CONSISTENT** — 3/26 = [19, 55, 127], erwartet 2.61, p = 0.74.
+  - `FAM_ESSENTIAL_26`: **TEN_CHANCE_CONSISTENT** — 5/26 = [64 (Zn), 55 (Mn), 127 (I), 19 (F), 28 (Si)], erwartet 2.46, p = 0.093.
+  - `Z10` (Ordnungszahlen essential-26): 2/26 = [19 (K), 28 (Ni)] — kein Ausreißer.
+- **Radix-Demo** (Basiswechsel über {2, 8, 10, 12, 16}): Treffermengen wandern mit der Basis — Basis 10: {19, 37, 127, …}, Basis 2: leer, Basis 8: {31, 45, 59, 185}, Basis 12: {153, 175, 197}, Basis 16: {55, 85}. **127 ist nur in Basis 10 ein „10er"** — Quersummen-10s sind Repräsentationseigenschaften, nicht physikalische Invarianten. Bestätigt.
+- **Radix-Filter:** 2 a-priori-Überlebende bestätigt — C1: 4d¹⁰ (10 Elektronen in geschlossener Unterschale, COUNT); C2: Deiodinations-Kaskade 4+3+2+1+0 = 10 Jod-Atome (T4→T3→T2→T1→Thyronin, COUNT, post-hoc deklariert). 127 = 2⁷−1 (Mersenne) radix-invariant, aber keine 10-Aussage.
+- **Hormon-Treppe (im Skript gerechnet):** T4 776.87 g/mol mit 65.34 % Jod-Massenanteil, T3 650.98 mit 58.48 % — deckungsgleich mit der Literatur (65 %/59 %).
+- **H-C cellsim-Zensus:** `IODINE_ABSENT_IN_SYN3A` — Grep src/configs/tests = 0; Registry (26 Spezies, 20 Reaktionen, alle species_change-Namen) = 0; UniProt REST UP000326712 = 0; AF-Modelle konstruktiv ohne Heteroatome. Sekundär: `SELENOCYSTEINE_ABSENT_IN_SYN3A` (REST = 0) — **die beiden schwersten essenziellen Elemente sind gemeinsamer Abbau-Posten des Minimalgenoms.**
+- **Gesamt-Verdict:** `HEAVIEST_ESSENTIAL_BRIDGE_DOCUMENTED (Symbol+Biochemie, keine Kausalbehauptung)` — die Yod=10-Kette überlebt ausschließlich als (i) deutsches Homonym, (ii) zwei radix-invariante COUNTs, (iii) der ECHTE Mechanismus: schwerstes essenzielles Element → T4/T3 → Hirnentwicklung (WHO: häufigste vermeidbare Ursache geistiger Behinderung). Kein numerisches Trägersignal über der Null.

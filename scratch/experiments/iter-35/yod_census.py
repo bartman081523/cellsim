@@ -114,8 +114,8 @@ def registry_iodine() -> int:
     reg = default_registry()
     names: list[str] = list(reg.species_ids)
     for rxn in reg.reactions:
-        for side in (rxn.reactants, rxn.products):
-            names.extend(side if isinstance(side, (list, tuple)) else [side])
+        names.append(str(rxn.name))
+        names.extend(str(s) for s in rxn.species_change)
     return sum(1 for nm in names if "iod" in str(nm).lower())
 
 

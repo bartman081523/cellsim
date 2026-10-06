@@ -1,0 +1,282 @@
+{
+  "vector": "VECTOR_YOD_IODINE (iter-35)",
+  "registration": "experiment.md 2026-10-06, VOR der Messung",
+  "deterministic": true,
+  "dossier": {
+    "Z": 53,
+    "Ar_CIAAW": "126.90447(3)",
+    "A_stable": 127,
+    "neutrons": 74,
+    "group_period": [
+      17,
+      5
+    ],
+    "electron_config": "[Kr] 4d10 5s2 5p5",
+    "d10_electrons": 1,
+    "k_edge_keV": 33.17,
+    "redox_I_HOI_V": 0.54,
+    "redox_Br_HOBr_V": 0.76,
+    "redox_Cl_HOCl_V": 1.28,
+    "c_i_bond_lability_rank": "labilste aller C-X (F>Cl>Br>I)",
+    "heaviest_essential_element": true,
+    "who_deficiency_claim": "haeufigste vermeidbare Ursache geistiger Behinderung",
+    "monoisotopic": true,
+    "violet_vapor_named_gay_lussac_1813": true,
+    "se_water_I_uM": 0.45,
+    "se_water_Br_uM": 800.0
+  },
+  "radix_filter": {
+    "candidates": [
+      {
+        "item": "Quersumme(Z=53)=8",
+        "is_ten": false,
+        "survives_radix_change": "n.a."
+      },
+      {
+        "item": "Quersumme(A=127)=10",
+        "is_ten": true,
+        "survives_radix_change": false,
+        "note": "in Basis 16: 0x7F -> 22; Basis 12: A7 -> 17"
+      },
+      {
+        "item": "127 = 2^7-1 (Mersenne-Primzahl)",
+        "is_ten": false,
+        "survives_radix_change": true,
+        "note": "Fakt, keine 10-Aussage"
+      },
+      {
+        "item": "4d-Unterschallektronenzahl = 10",
+        "is_ten": true,
+        "survives_radix_change": true,
+        "note": "COUNT, basisunabhaengig (C1)"
+      },
+      {
+        "item": "Deiodinations-Kaskade 4+3+2+1+0 = 10",
+        "is_ten": true,
+        "survives_radix_change": true,
+        "note": "COUNT der Jod-Atome (C2), post-hoc deklariert"
+      }
+    ],
+    "n_survivors": 2
+  },
+  "family_census": [
+    {
+      "family": "FAM_HALOGEN_ISO",
+      "n": 6,
+      "masses": [
+        19,
+        35,
+        37,
+        79,
+        81,
+        127
+      ],
+      "hits_m10": [
+        19,
+        37,
+        127
+      ],
+      "n_hits": 3,
+      "expected": 0.661,
+      "sd": 0.767,
+      "null_frac": 0.1101,
+      "interval": [
+        19,
+        127
+      ],
+      "two_sided_p": 0.0206,
+      "verdict": "TEN_STANDOUT"
+    },
+    {
+      "family": "FAM_MONOISOTOPIC_26",
+      "n": 26,
+      "masses": [
+        9,
+        19,
+        23,
+        27,
+        31,
+        45,
+        51,
+        55,
+        59,
+        75,
+        85,
+        89,
+        93,
+        103,
+        113,
+        127,
+        133,
+        139,
+        141,
+        153,
+        159,
+        165,
+        169,
+        175,
+        185,
+        197
+      ],
+      "hits_m10": [
+        19,
+        55,
+        127
+      ],
+      "n_hits": 3,
+      "expected": 2.614,
+      "sd": 1.533,
+      "null_frac": 0.1005,
+      "interval": [
+        9,
+        197
+      ],
+      "two_sided_p": 0.7417,
+      "verdict": "TEN_CHANCE_CONSISTENT"
+    },
+    {
+      "family": "FAM_ESSENTIAL_26",
+      "n": 26,
+      "masses": [
+        1,
+        12,
+        14,
+        16,
+        31,
+        32,
+        23,
+        39,
+        24,
+        40,
+        35,
+        56,
+        64,
+        63,
+        55,
+        127,
+        80,
+        59,
+        98,
+        19,
+        52,
+        120,
+        51,
+        11,
+        28,
+        58
+      ],
+      "hits_m10": [
+        64,
+        55,
+        127,
+        19,
+        28
+      ],
+      "n_hits": 5,
+      "expected": 2.457,
+      "sd": 1.491,
+      "null_frac": 0.0945,
+      "interval": [
+        1,
+        127
+      ],
+      "two_sided_p": 0.0929,
+      "verdict": "TEN_CHANCE_CONSISTENT"
+    }
+  ],
+  "z10_census": {
+    "FAM_ESSENTIAL_26_z_hits": [
+      19,
+      28
+    ],
+    "iodine_Z_digit_sum": 8
+  },
+  "radix_demo": {
+    "bases": [
+      2,
+      8,
+      10,
+      12,
+      16
+    ],
+    "hit_sets": {
+      "2": [],
+      "8": [
+        31,
+        45,
+        59,
+        185
+      ],
+      "10": [
+        19,
+        37,
+        127,
+        19,
+        55,
+        127
+      ],
+      "12": [
+        153,
+        175,
+        197
+      ],
+      "16": [
+        55,
+        85
+      ]
+    },
+    "interpretation": "Treffermenge wandert mit der Basis -> Quersummen-10s sind Repräsentationseigenschaften, keine physikalischen Invarianten."
+  },
+  "hormone_ladder": {
+    "T4_C15H11I4NO4": {
+      "MW": 776.87,
+      "iodine_mass_fraction": 0.6534
+    },
+    "T3_C15H12I3NO4": {
+      "MW": 650.98,
+      "iodine_mass_fraction": 0.5848
+    },
+    "T2_C14H13I2NO4": {
+      "MW": 513.07,
+      "iodine_mass_fraction": 0.4947
+    },
+    "T1_C14H14I1NO4": {
+      "MW": 387.17,
+      "iodine_mass_fraction": 0.3278
+    },
+    "T0_C14H15I0NO4_thyronine": {
+      "MW": 261.28,
+      "iodine_mass_fraction": 0.0
+    },
+    "cascade_ladder": [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "ladder_sum": 10,
+    "ladder_posthoc_declared": true
+  },
+  "cellsim_census": {
+    "uniprot_iodine_iodide_hits": 0,
+    "uniprot_selenocysteine_hits": 0,
+    "source_grep_matches": 0,
+    "registry_iodine_species": 0,
+    "alphafold_models": "nach Konstruktion ohne Heteroatome",
+    "verdict": "IODINE_ABSENT_IN_SYN3A",
+    "secondary": "SELENOCYSTEINE_ABSENT_IN_SYN3A"
+  },
+  "verdict_labels": [
+    "HOMONYM_VERIFIED (deutsch: Jod=Jod als Oberflaechen-Identitaet)",
+    "ETYMOLOGY_LINK_FALSIFIED (iode<-griech. ion 'Violett-Blume', NICHT iota/yodh 'Hand')",
+    "TEN_STANDOUT",
+    "TEN_CHANCE_CONSISTENT",
+    "TEN_CHANCE_CONSISTENT",
+    "RADIX_INVARIANT_SURVIVORS_COUNTED",
+    "IODINE_ABSENT_IN_SYN3A",
+    "SELENOCYSTEINE_ABSENT_IN_SYN3A",
+    "Z10_hits_no_outlier",
+    "HEAVIEST_ESSENTIAL_BRIDGE_DOCUMENTED (Symbol+Biochemie, keine Kausalbehauptung)"
+  ]
+}
